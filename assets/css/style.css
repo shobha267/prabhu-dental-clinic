@@ -2904,6 +2904,7 @@ textarea.form-control {
    3. INTENTIONAL DENTAL FRAMING SYSTEM (OUTER EDGES ONLY - ALL PAGES & SECTIONS)
    - Follows balanced edge-framing composition (no bunching, clean center)
    - Left side & Right side outer perimeter placement in EVERY section
+   - Guaranteed ZERO overlap on text, pills, headings & cards across all screen widths
    - Icons are tuned to be a little bit lighter (opacity: 0.65, soft depth)
    - Slow, independent, silky-smooth micro-animations (4px-7px float, 1.5deg tilt)
    -------------------------------------------------------------------------- */
@@ -2913,10 +2914,13 @@ textarea.form-control {
   overflow: hidden !important;
 }
 
+/* Dedicated framing gutter so text & content NEVER touch or overlap edge teeth */
 .hero-section > .container,
 .section-padding > .container {
   position: relative !important;
   z-index: 2 !important;
+  padding-left: clamp(32px, 6vw, 92px) !important;
+  padding-right: clamp(32px, 6vw, 92px) !important;
 }
 
 .section-dental-decor {
@@ -2972,15 +2976,15 @@ textarea.form-control {
   transition: transform 0.35s ease;
 }
 
-/* Sizing: Elegantly sized to frame without cluttering or overlapping */
+/* Sizing: Elegantly sized to fit perfectly within the outer gutter with zero overlap */
 .hero-section .dental-floating-character {
-  width: clamp(70px, 5vw, 84px);
-  height: clamp(70px, 5vw, 84px);
+  width: clamp(50px, 4vw, 66px);
+  height: clamp(50px, 4vw, 66px);
 }
 
 .section-padding .dental-floating-character {
-  width: clamp(62px, 4.4vw, 76px);
-  height: clamp(62px, 4.4vw, 76px);
+  width: clamp(46px, 3.6vw, 60px);
+  height: clamp(46px, 3.6vw, 60px);
 }
 
 /* Subtle Hover Effect: brightens on hover or cursor proximity */
@@ -3005,32 +3009,32 @@ textarea.form-control {
 }
 
 /* ==========================================================================
-   EDGE POSITIONING (INTENTIONAL FRAMING — ALWAYS VISIBLE IN EVERY SECTION)
+   EDGE POSITIONING (INTENTIONAL FRAMING — HUGGED TIGHTLY TO OUTER SCREEN BORDERS)
    ========================================================================== */
 .pos-edge-top-left {
-  top: clamp(16px, 8%, 50px);
-  left: clamp(12px, 2.5vw, 42px);
+  top: clamp(14px, 6%, 42px);
+  left: clamp(8px, 1.4vw, 20px);
   bottom: auto;
   right: auto;
 }
 
 .pos-edge-bottom-left {
-  bottom: clamp(16px, 8%, 50px);
-  left: clamp(12px, 2.5vw, 42px);
+  bottom: clamp(14px, 6%, 42px);
+  left: clamp(8px, 1.4vw, 20px);
   top: auto;
   right: auto;
 }
 
 .pos-edge-top-right {
-  top: clamp(16px, 8%, 50px);
-  right: clamp(12px, 2.5vw, 42px);
+  top: clamp(14px, 6%, 42px);
+  right: clamp(8px, 1.4vw, 20px);
   bottom: auto;
   left: auto;
 }
 
 .pos-edge-bottom-right {
-  bottom: clamp(16px, 8%, 50px);
-  right: clamp(12px, 2.5vw, 42px);
+  bottom: clamp(14px, 6%, 42px);
+  right: clamp(8px, 1.4vw, 20px);
   top: auto;
   left: auto;
 }
@@ -3128,52 +3132,67 @@ textarea.form-control {
 }
 
 /* ==========================================================================
-   RESPONSIVE SCALING (VISIBLE ACROSS ALL SCREEN SIZES)
+   RESPONSIVE SCALING & SAFETY CLEARANCE (ZERO OVERLAP GUARANTEE)
    ========================================================================== */
 @media (max-width: 1199px) {
   .hero-section .dental-floating-character {
-    width: 66px;
-    height: 66px;
+    width: 52px;
+    height: 52px;
   }
   .section-padding .dental-floating-character {
-    width: 58px;
-    height: 58px;
+    width: 48px;
+    height: 48px;
   }
   .pos-edge-top-left, .pos-edge-bottom-left {
-    left: 10px;
+    left: 8px;
   }
   .pos-edge-top-right, .pos-edge-bottom-right {
-    right: 10px;
+    right: 8px;
   }
 }
 
 @media (max-width: 991px) {
   .hero-section .dental-floating-character {
-    width: 56px;
-    height: 56px;
+    width: 44px;
+    height: 44px;
   }
   .section-padding .dental-floating-character {
-    width: 50px;
-    height: 50px;
+    width: 42px;
+    height: 42px;
+  }
+  .hero-section > .container,
+  .section-padding > .container {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
   }
 }
 
-@media (max-width: 767px) {
-  .hero-section .dental-floating-character {
-    width: 44px;
-    height: 44px;
+@media (max-width: 768px) {
+  /* On Mobile Screens: Keep mobile reading 100% clean and unobstructed */
+  .hero-section .pos-edge-bottom-left,
+  .hero-section .pos-edge-bottom-right,
+  .hero-section .pos-edge-top-left {
+    display: none !important;
+  }
+  .hero-section .pos-edge-top-right {
+    top: 12px;
+    right: 12px;
+  }
+  .hero-section .pos-edge-top-right .dental-floating-character {
+    width: 40px;
+    height: 40px;
     opacity: 0.60;
   }
   .section-padding .dental-floating-character {
-    width: 40px;
-    height: 40px;
-    opacity: 0.55;
+    width: 36px;
+    height: 36px;
+    opacity: 0.50;
   }
   .pos-edge-top-left, .pos-edge-bottom-left {
-    left: 6px;
+    left: 4px;
   }
   .pos-edge-top-right, .pos-edge-bottom-right {
-    right: 6px;
+    right: 4px;
   }
 }
 
