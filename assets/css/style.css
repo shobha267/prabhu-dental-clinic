@@ -4378,82 +4378,56 @@ textarea.form-control {
 }
 
 /* ==========================================================================
-   ABOUT CARDS: INTERACTIVE RIGHTWARD SLIDE WITH STANDBY & RETURN
+   ABOUT CARDS: 100% FLICKER-FREE ELEVATION & GLOW SYSTEM
+   - Completely eliminated horizontal translateX which caused edge-hover flickering!
+   - Uses an expanded invisible hit buffer (::before inset: -8px) to prevent mouse dropout
+   - Smooth, stable vertical micro-lift with crimson glow border & gentle shadow
    ========================================================================== */
 .about-pillar-item,
 .legacy-node-card {
   cursor: pointer;
   position: relative;
-  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.38s ease,
-              border-color 0.38s ease;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s ease,
+              border-color 0.28s ease,
+              background-color 0.28s ease;
   user-select: none;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-/* Hover: Slides noticeably to the right */
+/* Invisible Hit-Buffer: Prevents cursor from ever falling off the card edge */
+.about-pillar-item::before,
+.legacy-node-card::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  pointer-events: auto;
+  z-index: 0;
+}
+
+/* Stable In-Place Hover Elevation: 100% flicker-free */
 .about-pillar-item:hover,
 .legacy-node-card:hover {
-  transform: translateX(14px);
-  border-color: rgba(200, 35, 51, 0.45);
-  box-shadow: -6px 12px 28px rgba(200, 35, 51, 0.16);
-}
-
-/* Click Animation: Slides right, stands by, then smoothly returns to original place */
-.card-slide-standby {
-  animation: cardSlideRightReturn 1.25s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
-}
-
-@keyframes cardSlideRightReturn {
-  0% {
-    transform: translateX(0) scale(1);
-  }
-  28% {
-    transform: translateX(28px) scale(1.025);
-    border-color: var(--primary);
-    box-shadow: -10px 16px 36px rgba(200, 35, 51, 0.28);
-  }
-  58% {
-    transform: translateX(22px) scale(1.02);
-    border-color: var(--primary);
-    box-shadow: -8px 14px 30px rgba(200, 35, 51, 0.24);
-  }
-  78% {
-    transform: translateX(18px) scale(1.01);
-  }
-  100% {
-    transform: translateX(0) scale(1);
-    border-color: var(--neutral-200);
-    box-shadow: var(--shadow-card, 0 4px 14px rgba(0, 0, 0, 0.05));
-  }
-}
-
-/* Toggle Standby State: Holds card slightly shifted to right until clicked again */
-.is-standby-right {
-  transform: translateX(20px) !important;
+  transform: translateY(-4px);
   border-color: var(--primary) !important;
-  box-shadow: -8px 16px 36px rgba(200, 35, 51, 0.24) !important;
+  box-shadow: 0 12px 28px rgba(200, 35, 51, 0.14) !important;
+  background-color: #FFFFFF !important;
 }
 
-.is-standby-right::after {
-  content: 'STANDBY';
-  position: absolute;
-  top: -10px;
-  right: 14px;
-  font-size: 9.5px;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--primary) 0%, #9E1B28 100%);
-  color: #FFFFFF;
-  padding: 3px 9px;
-  border-radius: var(--radius-full);
-  letter-spacing: 0.8px;
-  box-shadow: 0 4px 12px rgba(200, 35, 51, 0.35);
-  animation: standbyBadgePulse 1.8s ease-in-out infinite;
-  pointer-events: none;
+.about-pillar-item:hover .about-pillar-icon,
+.legacy-node-card:hover .legacy-node-badge {
+  transform: scale(1.08);
+  background: var(--primary) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 16px rgba(200, 35, 51, 0.28);
 }
 
-@keyframes standbyBadgePulse {
-  0%, 100% { transform: scale(1); opacity: 0.95; }
-  50%      { transform: scale(1.08); opacity: 1; box-shadow: 0 4px 16px rgba(200, 35, 51, 0.55); }
+.about-pillar-item:active,
+.legacy-node-card:active {
+  transform: translateY(-1px) scale(0.99);
 }
 
 
@@ -5916,37 +5890,45 @@ textarea.form-control {
   box-shadow: 0 2px 8px rgba(200, 35, 51, 0.08);
 }
 
-.treatments-nav-arrows {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.treatment-nav-btn {
-  width: 44px;
-  height: 44px;
+/* Middle Floating Side Navigation Arrows (Left on Left side, Right on Right side) */
+.treatment-nav-side {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 15;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  border: 1.5px solid var(--neutral-300);
   background: #FFFFFF;
-  color: var(--neutral-700);
-  display: inline-flex;
+  border: 1.5px solid rgba(200, 35, 51, 0.28);
+  color: #0F172A;
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(200, 35, 51, 0.14);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  outline: none;
 }
 
-.treatment-nav-btn:hover {
-  background: var(--primary);
-  border-color: var(--primary);
+.treatment-nav-side-prev {
+  left: -26px;
+}
+
+.treatment-nav-side-next {
+  right: -26px;
+}
+
+.treatment-nav-side:hover {
+  background: linear-gradient(135deg, #C82333 0%, #A51D2A 100%);
+  border-color: #C82333;
   color: #FFFFFF;
-  transform: scale(1.08);
-  box-shadow: 0 8px 20px rgba(200, 35, 51, 0.3);
+  transform: translateY(-50%) scale(1.12);
+  box-shadow: 0 12px 30px rgba(200, 35, 51, 0.42);
 }
 
-.treatment-nav-btn:active {
-  transform: scale(0.95);
+.treatment-nav-side:active {
+  transform: translateY(-50%) scale(0.95);
 }
 
 .treatments-carousel-viewport {
@@ -6368,13 +6350,64 @@ textarea.form-control {
   box-shadow: 0 2px 8px rgba(200, 35, 51, 0.3);
 }
 
+/* Bottom Controls Bar: Left Arrow on Left, Pagination in Center, Right Arrow on Right */
+.treatments-bottom-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 0 4px;
+  gap: 16px;
+}
+
+.treatment-bottom-arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 24px;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(200, 35, 51, 0.28);
+  color: #0F172A;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(200, 35, 51, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  user-select: none;
+}
+
+.treatment-bottom-arrow-btn:hover {
+  background: linear-gradient(135deg, #C82333 0%, #A51D2A 100%);
+  border-color: #C82333;
+  color: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(200, 35, 51, 0.35);
+  transform: translateY(-2px);
+}
+
+.treatment-bottom-arrow-btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.treatment-bottom-prev:hover svg {
+  transform: translateX(-3px);
+}
+
+.treatment-bottom-next:hover svg {
+  transform: translateX(3px);
+}
+
+.treatment-bottom-arrow-btn svg {
+  transition: transform 0.25s ease;
+}
+
 /* Pagination Dots */
 .treatments-pagination {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin-top: 28px;
 }
 
 .treatment-dot {
@@ -6396,6 +6429,15 @@ textarea.form-control {
 }
 
 /* Responsive adjustments */
+@media (max-width: 1260px) {
+  .treatment-nav-side-prev {
+    left: -12px;
+  }
+  .treatment-nav-side-next {
+    right: -12px;
+  }
+}
+
 @media (max-width: 1024px) {
   .treatment-card-item {
     flex: 0 0 calc((100% - 28px) / 2);
@@ -6406,6 +6448,16 @@ textarea.form-control {
   }
   .treatment-card-thumb-wrap {
     height: 150px;
+  }
+  .treatment-nav-side {
+    width: 46px;
+    height: 46px;
+  }
+  .treatment-nav-side-prev {
+    left: 2px;
+  }
+  .treatment-nav-side-next {
+    right: 2px;
   }
 }
 
@@ -6419,6 +6471,19 @@ textarea.form-control {
   }
   .treatment-card-thumb-wrap {
     height: 170px;
+  }
+  .treatment-nav-side {
+    display: none; /* Rely on bottom separated arrows and touch swipe on phones */
+  }
+  .treatment-bottom-arrow-btn span {
+    display: none; /* Keep compact icon-only circular buttons on mobile */
+  }
+  .treatment-bottom-arrow-btn {
+    padding: 10px;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
   }
 }
 

@@ -87,6 +87,8 @@ const translations = {
     "treatments.title": "Treatments",
     "treatments.subtitle": "Comprehensive restorative, cosmetic, and advanced dental procedures tailored to your smile.",
     "treatments.learn_more": "Learn more",
+    "treatments.prev": "Previous",
+    "treatments.next": "Next",
     // Treatments Back-Face Translations
     "treatments.overview": "Procedure Details",
     "treatments.back": "Back",
@@ -380,6 +382,8 @@ const translations = {
     "treatments.title": "ಚಿಕಿತ್ಸೆಗಳು (Treatments)",
     "treatments.subtitle": "ನಿಮ್ಮ ಸುಂದರ ನಗು ಮತ್ತು ದಂತ ಆರೋಗ್ಯಕ್ಕಾಗಿ ಸುಧಾರಿತ ಚಿಕಿತ್ಸಾ ವಿಧಾನಗಳು.",
     "treatments.learn_more": "ಹೆಚ್ಚಿನ ಮಾಹಿತಿ",
+    "treatments.prev": "ಹಿಂದಿನದು",
+    "treatments.next": "ಮುಂದಿನದು",
     // Treatments Back-Face Kannada
     "treatments.overview": "ಚಿಕಿತ್ಸಾ ವಿವರಗಳು",
     "treatments.back": "ಹಿಂದಕ್ಕೆ",
@@ -1396,50 +1400,26 @@ function initTimelineProgress() {
 
 
 /**
- * 11. About Section Cards Interactive Slide Right & Standby Engine
- * When clicked: smoothly slides to the right, stands by, and returns to original place.
- * Also toggles standby state if clicked.
+ * 11. About Section: Flicker-Free Interactive Click Sparkle Feedback
+ * Stable in-place click celebration without displacing card or altering layout.
  */
 function initAboutCardsSlide() {
   const cards = document.querySelectorAll('.about-pillar-item, .legacy-node-card');
   if (!cards.length) return;
 
   cards.forEach(card => {
-    card.addEventListener('click', () => {
-      // If already in standby, toggle off and return
-      if (card.classList.contains('is-standby-right')) {
-        card.classList.remove('is-standby-right');
-        card.classList.remove('card-slide-standby');
-        return;
-      }
-
-      // Remove active standby from other cards in the same grid
-      const parent = card.closest('.about-pillars-grid, .legacy-flow-nodes');
-      if (parent) {
-        parent.querySelectorAll('.is-standby-right').forEach(c => c.classList.remove('is-standby-right'));
-      }
-
-      // Trigger the slide-right-standby animation that slides right and returns
-      card.classList.remove('card-slide-standby');
-      void card.offsetWidth; // Force reflow
-      card.classList.add('card-slide-standby');
-
+    card.addEventListener('click', (e) => {
       // Create click burst particle at click location
       const rect = card.getBoundingClientRect();
       const spark = document.createElement('span');
       spark.className = 'dental-cursor-sparkle';
       spark.textContent = '✨';
-      spark.style.left = (rect.right - 20) + 'px';
-      spark.style.top = (rect.top + rect.height / 2) + 'px';
-      spark.style.setProperty('--dx', '25px');
-      spark.style.setProperty('--dy', '-20px');
+      spark.style.left = (e.clientX || (rect.right - 20)) + 'px';
+      spark.style.top = (e.clientY || (rect.top + rect.height / 2)) + 'px';
+      spark.style.setProperty('--dx', '20px');
+      spark.style.setProperty('--dy', '-18px');
       document.body.appendChild(spark);
-      setTimeout(() => spark.remove(), 900);
-
-      // After slide completes, clean up class so it stays interactive
-      setTimeout(() => {
-        card.classList.remove('card-slide-standby');
-      }, 1300);
+      setTimeout(() => spark.remove(), 800);
     });
   });
 }
@@ -1811,8 +1791,8 @@ function initContactCardsHighlight() {
 function initTreatmentsCarousel() {
   const track = document.getElementById('treatmentsTrack');
   const viewport = document.getElementById('treatmentsViewport');
-  const prevBtn = document.querySelector('.js-treat-prev');
-  const nextBtn = document.querySelector('.js-treat-next');
+  const prevBtns = document.querySelectorAll('.js-treat-prev');
+  const nextBtns = document.querySelectorAll('.js-treat-next');
   const pagination = document.getElementById('treatmentsPagination');
   const counterEl = document.getElementById('treatmentsCounter');
   if (!track || !viewport) return;
@@ -1959,21 +1939,23 @@ function initTreatmentsCarousel() {
     }
   }
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      unflipAllCards();
-      nextCard();
-      restartAutoPlay();
-    });
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
+  // Attach listeners to all Prev buttons (both side floating & bottom controls)
+  prevBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
       unflipAllCards();
       prevCard();
       restartAutoPlay();
     });
-  }
+  });
+
+  // Attach listeners to all Next buttons (both side floating & bottom controls)
+  nextBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      unflipAllCards();
+      nextCard();
+      restartAutoPlay();
+    });
+  });
 
   // Dynamic Cursor Move Highlight:
   // When cursor moves into ANY card, THAT card highlights immediately!

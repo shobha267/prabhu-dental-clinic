@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@500;600;700&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=19.0">
+  <link rel="stylesheet" href="assets/css/style.css?v=21.0">
 
   <!-- Structured Data / JSON-LD for Local Medical Clinic -->
   <script type="application/ld+json">
@@ -635,26 +635,20 @@
         </div>
 
         <div class="treatments-carousel-wrap" data-reveal="fade-up" data-reveal-delay="100">
-          <!-- Header Bar with Live Step Counter (1 / 8 to 8 / 8) & Navigation Arrows -->
+          <!-- Header Bar with Live Step Counter (1 / 8 to 8 / 8) -->
           <div class="treatments-header-bar">
             <span class="treatments-counter-badge">
               <span style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--primary);"></span>
               <span id="treatmentsCounter">1 / 8</span>
             </span>
-
-            <div class="treatments-nav-arrows">
-              <button type="button" class="treatment-nav-btn js-treat-prev" aria-label="Previous Treatment Card" title="Previous Treatment">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
-                  <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-              </button>
-              <button type="button" class="treatment-nav-btn js-treat-next" aria-label="Next Treatment Card" title="Next Treatment">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
-                  <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-              </button>
-            </div>
           </div>
+
+          <!-- Middle Left Slide Navigation Arrow (Left Side) -->
+          <button type="button" class="treatment-nav-side treatment-nav-side-prev js-treat-prev" aria-label="Slide Left (Previous Treatment)" title="Previous Treatment">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
 
           <!-- Carousel Viewport & Moving Track -->
           <div class="treatments-carousel-viewport" id="treatmentsViewport">
@@ -1272,8 +1266,34 @@
             </div>
           </div>
 
-          <!-- Pagination Dots Indicators (8 dots for all 8 cards) -->
-          <div class="treatments-pagination" id="treatmentsPagination"></div>
+          <!-- Middle Right Slide Navigation Arrow (Right Side) -->
+          <button type="button" class="treatment-nav-side treatment-nav-side-next js-treat-next" aria-label="Slide Right (Next Treatment)" title="Next Treatment">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Bottom Separated Controls: Left Arrow on Left, Pagination in Center, Right Arrow on Right -->
+          <div class="treatments-bottom-controls">
+            <!-- Left Arrow (Placed on Left Side Below Cards) -->
+            <button type="button" class="treatment-bottom-arrow-btn treatment-bottom-prev js-treat-prev" aria-label="Previous Treatment Card" title="Previous Treatment">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+              <span data-i18n="treatments.prev">Previous</span>
+            </button>
+
+            <!-- Center: Pagination Dots for All 8 Cards -->
+            <div class="treatments-pagination" id="treatmentsPagination"></div>
+
+            <!-- Right Arrow (Placed on Right Side Below Cards) -->
+            <button type="button" class="treatment-bottom-arrow-btn treatment-bottom-next js-treat-next" aria-label="Next Treatment Card" title="Next Treatment">
+              <span data-i18n="treatments.next">Next</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -2426,7 +2446,7 @@
   </div>
 
   <!-- Main JavaScript Logic -->
-  <script src="assets/js/main.js?v=19.0"></script>
+  <script src="assets/js/main.js?v=21.0"></script>
   <script>
     // Update copyright year
     document.getElementById('yearSpan').textContent = new Date().getFullYear();
