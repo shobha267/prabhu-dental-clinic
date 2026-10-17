@@ -21,6 +21,7 @@ const translations = {
     "nav.home": "Home",
     "nav.about": "About",
     "nav.doctors": "Our Doctors",
+    "nav.treatments": "Treatments",
     "nav.specialities": "Specialities",
     "nav.team": "Our Team",
     "nav.legacy": "Clinic Legacy",
@@ -50,8 +51,8 @@ const translations = {
     "hero.verified_badge": "Clinic Exterior",
     "hero.badge_loc_title": "Saraswathipuram",
     "hero.badge_loc_sub": "Near Bus Stop, Mysore",
-    "hero.badge_timing_title": "Monday – Saturday",
-    "hero.badge_timing_sub": "10 AM–1 PM &bull; 5 PM–9 PM",
+    "hero.badge_timing_title": "Monday – Saturday & Sunday",
+    "hero.badge_timing_sub": "10:30 AM–1 PM, 5–9 PM &bull; Sun: 10:30 AM–1 PM",
     "hero.badge_sparkle": "Specialist Care Duo",
 
     // About Section
@@ -78,8 +79,80 @@ const translations = {
     "doctors.mahesh_spec": "Periodontist &amp; Implantologist",
     "doctors.ramya_spec": "Orthodontist and Dentofacial Orthopaedist",
     "doctors.consult_label": "Consultations:",
-    "doctors.consult_days": "Monday – Saturday",
+    "doctors.consult_days": "Mon – Sat & Sun (Morning)",
     "doctors.btn_consult": "Request Consult",
+
+    // Treatments Section
+    "treatments.tag": "Clinical Treatments",
+    "treatments.title": "Treatments",
+    "treatments.subtitle": "Comprehensive restorative, cosmetic, and advanced dental procedures tailored to your smile.",
+    "treatments.learn_more": "Learn more",
+    // Treatments Back-Face Translations
+    "treatments.overview": "Procedure Details",
+    "treatments.back": "Back",
+    "treatments.book_btn": "Book Appointment",
+    "treatments.lbl_duration": "Duration",
+    "treatments.lbl_comfort": "Comfort",
+    "treatments.val_painless": "100% Gentle",
+    "treatments.val_natural": "Natural Aesthetic",
+    "treatments.val_instant": "Instant Result",
+    "treatments.t1_p1": "Digital diagnostic checkup & low-radiation X-rays",
+    "treatments.t1_p2": "Ultrasonic scaling & enamel-safe cavity fillings",
+    "treatments.t1_p3": "Preventive fluoride care & routine dental wellness",
+    "treatments.t1_dur": "30–45 Mins",
+    "treatments.t2_p1": "Custom porcelain veneers & aesthetic composite bonding",
+    "treatments.t2_p2": "Diastema (gap) closure & precision tooth contouring",
+    "treatments.t2_p3": "Digital smile makeover tailored to facial aesthetics",
+    "treatments.t2_dur": "1–2 Visits",
+    "treatments.t3_p1": "Clear invisible aligners (discreet, removable & custom)",
+    "treatments.t3_p2": "Modern ceramic & metallic braces for teens and adults",
+    "treatments.t3_p3": "Malocclusion correction & dentofacial orthopaedics",
+    "treatments.t3_dur": "6–18 Mos Plan",
+    "treatments.t4_p1": "Biocompatible titanium screw implants for missing teeth",
+    "treatments.t4_p2": "Immediate loading implants & full-arch fixed bridges",
+    "treatments.t4_p3": "Preserves bone density and restores 100% bite strength",
+    "treatments.t4_dur": "Permanent Fix",
+    "treatments.t5_p1": "In-office laser LED cold-light whitening technology",
+    "treatments.t5_p2": "Removes stubborn stains from tea, coffee & tobacco",
+    "treatments.t5_p3": "Safely lightens teeth up to 6–8 shades in a single sitting",
+    "treatments.t5_dur": "45 Mins Visit",
+    "treatments.t6_p1": "Single-sitting rotary endodontics with 3D apex locator",
+    "treatments.t6_p2": "Painless infection removal & bioceramic root sealing",
+    "treatments.t6_p3": "Crown restoration to save your natural tooth for life",
+    "treatments.t6_dur": "45–60 Mins",
+    "treatments.t7_p1": "Gentle checkups, habit-breaking & caries prevention for kids",
+    "treatments.t7_p2": "Painless cavity fillings & tooth-protecting pit sealants",
+    "treatments.t7_p3": "Friendly, patient environment designed to eliminate dental fear",
+    "treatments.t7_dur": "20–30 Mins",
+    "treatments.t8_p1": "Deep subgingival scaling & root planing for gum disease",
+    "treatments.t8_p2": "Laser periodontal therapy for bleeding gums & gingivitis",
+    "treatments.t8_p3": "Gum grafting, pocket reduction & regenerative treatments",
+    "treatments.t8_dur": "1–2 Sessions",
+
+    "treatments.t1_title": "General Dentistry",
+    "treatments.t1_sub": "The foundation of a healthy smile",
+    "treatments.t1_desc": "Comprehensive preventive and restorative care for the whole family.",
+    "treatments.t2_title": "Cosmetic Dentistry",
+    "treatments.t2_sub": "Perfect the smile you have",
+    "treatments.t2_desc": "Veneers, bonding, contouring, and smile makeovers designed around you.",
+    "treatments.t3_title": "Orthodontics & Aligners",
+    "treatments.t3_sub": "Straighter teeth at any age",
+    "treatments.t3_desc": "Invisible aligners and modern braces for a healthier, more confident smile.",
+    "treatments.t4_title": "Dental Implants",
+    "treatments.t4_sub": "Permanent, natural-looking replacements",
+    "treatments.t4_desc": "State-of-the-art implants that look, feel, and function like your natural teeth.",
+    "treatments.t5_title": "Teeth Whitening",
+    "treatments.t5_sub": "A brighter smile in one visit",
+    "treatments.t5_desc": "Professional-grade whitening for dramatically whiter teeth, safely and quickly.",
+    "treatments.t6_title": "Root Canal",
+    "treatments.t6_sub": "Gentle, pain-free treatment",
+    "treatments.t6_desc": "Advanced rotary techniques to save your tooth comfortably and efficiently.",
+    "treatments.t7_title": "Paediatric Dentistry",
+    "treatments.t7_sub": "Gentle care for little smiles",
+    "treatments.t7_desc": "Gentle preventive and restorative treatments designed with patience for growing children.",
+    "treatments.t8_title": "Periodontics & Gum Care",
+    "treatments.t8_sub": "Healthy gums for lifelong teeth",
+    "treatments.t8_desc": "Specialised periodontal treatments for gum health, bleeding prevention, and laser care.",
 
     // Specialities Section
     "spec.tag": "Clinical Scope",
@@ -168,11 +241,11 @@ const translations = {
     "app.plan_title": "Plan Your Clinic Visit",
     "app.plan_desc": "Fill out the request form with your preferred consultation date and dental concern.",
     "app.benefit1": "Consultations with Dr. Mahesh H.V. (MDS) or Dr. Ramya K.S. (MDS)",
-    "app.benefit2": "Morning Session (10:00 AM – 01:00 PM)",
+    "app.benefit2": "Morning Session (10:30 AM – 01:00 PM)",
     "app.benefit3": "Evening Session (05:00 PM – 09:00 PM)",
     "app.benefit4": "Convenient location near Bus Stop, Saraswathipuram, Mysore",
     "app.timings_heading": "Clinic Timings",
-    "app.timings_schedule": "Monday – Saturday:<br>10:00 AM – 01:00 PM<br>05:00 PM – 09:00 PM",
+    "app.timings_schedule": "Monday – Saturday:<br>10:30 AM – 01:00 PM<br>05:00 PM – 09:00 PM<br><br>Sunday:<br>10:30 AM – 01:00 PM",
     "app.label_name": "Patient Name",
     "app.ph_name": "Patient full name",
     "app.label_mobile": "Mobile Number",
@@ -180,7 +253,7 @@ const translations = {
     "app.label_date": "Preferred Date",
     "app.label_time": "Preferred Time",
     "app.opt_time_select": "Select preferred session...",
-    "app.opt_time_morning": "10:00 AM - 01:00 PM (Morning Session)",
+    "app.opt_time_morning": "10:30 AM - 01:00 PM (Morning Session)",
     "app.opt_time_evening": "05:00 PM - 09:00 PM (Evening Session)",
     "app.label_reason": "Reason for Visit",
     "app.opt_reason_select": "Select specialty or reason...",
@@ -205,7 +278,9 @@ const translations = {
     "loc.full_address": "388, 5th Cross, 14th Main,<br>Near Bus Stop,<br>Saraswathipuram, Saraswatipuram.,<br>Mysore",
     "loc.timings_title": "Clinic Timings",
     "loc.days": "MONDAY – SATURDAY",
-    "loc.hours": "10:00 AM – 01:00 PM<br>05:00 PM – 09:00 PM",
+    "loc.hours": "10:30 AM – 01:00 PM<br>05:00 PM – 09:00 PM",
+    "loc.sunday_label": "SUNDAY",
+    "loc.sunday_hours": "10:30 AM – 01:00 PM",
     "loc.landmark": "Near Bus Stop, Saraswathipuram, Mysore",
     "loc.btn_directions": "GET DIRECTIONS",
 
@@ -214,13 +289,15 @@ const translations = {
     "contact.title": "Contact",
     "contact.subtitle": "Prabhu Dental Clinic, Saraswathipuram, Mysore.",
     "contact.details_title": "Contact Details",
-    "contact.phone_label": "Phone:",
+    "contact.phone_label": "Contact Number:",
+    "contact.emergency_label": "Emergency:",
+    "contact.whatsapp_label": "WhatsApp:",
     "contact.email_label": "Email:",
-    "contact.to_be_provided": "[To be provided by client]",
+    "contact.working_hours_title": "Working Hours",
 
     // Footer
     "footer.nav_title": "Navigation",
-    "footer.address_timings": "Clinic Address &amp; Timings",
+    "footer.address_timings": "Clinic Address, Timings &amp; Contact",
     "footer.rights": "All rights reserved.",
     "footer.draft": "Local Presentation Draft",
 
@@ -267,8 +344,8 @@ const translations = {
     "hero.verified_badge": "ಕ್ಲಿನಿಕ್ ಮುಂಭಾಗ",
     "hero.badge_loc_title": "ಸರಸ್ವತಿಪುರಂ",
     "hero.badge_loc_sub": "ಬಸ್ ನಿಲ್ದಾಣದ ಹತ್ತಿರ, ಮೈಸೂರು",
-    "hero.badge_timing_title": "ಸೋಮವಾರ – ಶನಿವಾರ",
-    "hero.badge_timing_sub": "ಬೆಳಿಗ್ಗೆ 10–1 &bull; ಸಂಜೆ 5–9",
+    "hero.badge_timing_title": "ಸೋಮವಾರ – ಶನಿವಾರ & ಭಾನುವಾರ",
+    "hero.badge_timing_sub": "10:30 AM–1 PM, 5–9 PM &bull; ಭಾನು: 10:30 AM–1 PM",
     "hero.badge_sparkle": "ತಜ್ಞ ವೈದ್ಯ ದಂಪತಿ",
 
     // About Section
@@ -295,8 +372,80 @@ const translations = {
     "doctors.mahesh_spec": "ಪಿರಿಯೊಡಾಂಟಿಸ್ಟ್ ಮತ್ತು ಇಂಪ್ಲಾಂಟಾಲಜಿಸ್ಟ್",
     "doctors.ramya_spec": "ಆರ್ಥೊಡಾಂಟಿಸ್ಟ್ ಮತ್ತು ಡೆಂಟೊಫೇಶಿಯಲ್ ಆರ್ಥೋಪೀಡಿಸ್ಟ್",
     "doctors.consult_label": "ಸಮಾಲೋಚನೆ:",
-    "doctors.consult_days": "ಸೋಮವಾರ – ಶನಿವಾರ",
+    "doctors.consult_days": "ಸೋಮವಾರ – ಶನಿವಾರ & ಭಾನುವಾರ (ಬೆಳಿಗ್ಗೆ)",
     "doctors.btn_consult": "ಸಮಾಲೋಚನೆ ಪಡೆಯಿರಿ",
+
+    // Treatments Section
+    "treatments.tag": "ದಂತ ಚಿಕಿತ್ಸಾ ವಿಭಾಗಗಳು",
+    "treatments.title": "ಚಿಕಿತ್ಸೆಗಳು (Treatments)",
+    "treatments.subtitle": "ನಿಮ್ಮ ಸುಂದರ ನಗು ಮತ್ತು ದಂತ ಆರೋಗ್ಯಕ್ಕಾಗಿ ಸುಧಾರಿತ ಚಿಕಿತ್ಸಾ ವಿಧಾನಗಳು.",
+    "treatments.learn_more": "ಹೆಚ್ಚಿನ ಮಾಹಿತಿ",
+    // Treatments Back-Face Kannada
+    "treatments.overview": "ಚಿಕಿತ್ಸಾ ವಿವರಗಳು",
+    "treatments.back": "ಹಿಂದಕ್ಕೆ",
+    "treatments.book_btn": "ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಬುಕ್ ಮಾಡಿ",
+    "treatments.lbl_duration": "ಅವಧಿ",
+    "treatments.lbl_comfort": "ಆರೈಕೆ",
+    "treatments.val_painless": "ಸಂಪೂರ್ಣ ನೋವುರಹಿತ",
+    "treatments.val_natural": "ನೈಸರ್ಗಿಕ ನೋಟ",
+    "treatments.val_instant": "ತಕ್ಷಣದ ಫಲಿತಾಂಶ",
+    "treatments.t1_p1": "ಡಿಜಿಟಲ್ ರೋಗನಿರ್ಣಯ ಪರೀಕ್ಷೆ ಮತ್ತು ಕಡಿಮೆ ವಿಕಿರಣ ಎಕ್ಸ್-ರೇ",
+    "treatments.t1_p2": "ಅಲ್ಟ್ರಾಸಾನಿಕ್ ಕ್ಲೀನಿಂಗ್ ಮತ್ತು ಹಲ್ಲಿನ ಬಣ್ಣದ ಫಿಲ್ಲಿಂಗ್ಸ್",
+    "treatments.t1_p3": "ಫ್ಲೋರೈಡ್ ಆರೈಕೆ ಮತ್ತು ಸಂಪೂರ್ಣ ಕುಟುಂಬ ದಂತ ರಕ್ಷಣೆ",
+    "treatments.t1_dur": "30–45 ನಿಮಿಷ",
+    "treatments.t2_p1": "ಕಸ್ಟಮ್ ಪಿಂಗಾಣಿ ವಿನೀರ್ಸ್ ಮತ್ತು ಕಾಸ್ಮೆಟಿಕ್ ಬಾಂಡಿಂಗ್",
+    "treatments.t2_p2": "ಹಲ್ಲುಗಳ ನಡುವಿನ ಅಂತರ (diastema) ಸರಿಪಡಿಸುವಿಕೆ",
+    "treatments.t2_p3": "ನಿಮ್ಮ ಮುಖದ ಆಕರ್ಷಣೆಗೆ ತಕ್ಕಂತೆ ಡಿಜಿಟಲ್ ಸ್ಮೈಲ್ ಮೇಕೋವರ್",
+    "treatments.t2_dur": "1–2 ಭೇಟಿಗಳು",
+    "treatments.t3_p1": "ಕಾಣಿಸದ ಅದೃಶ್ಯ ಅಲೈನರ್ಸ್ (ಅನುಕೂಲಕರ & ತೆಗೆಯಬಹುದಾದ)",
+    "treatments.t3_p2": "ಸೆರಾಮಿಕ್ ಮತ್ತು ಮೆಟಲ್ ಬ್ರೇಸ್‌ಗಳ ಮೂಲಕ ಹಲ್ಲುಗಳ ಜೋಡಣೆ",
+    "treatments.t3_p3": "ಹಲ್ಲುಗಳ ವಕ್ರತೆ ತಿದ್ದುವಿಕೆ & ಡೆಂಟೊಫೇಶಿಯಲ್ ಆರ್ಥೋಪೆಡಿಕ್ಸ್",
+    "treatments.t3_dur": "6–18 ತಿಂಗಳು",
+    "treatments.t4_p1": "ಕಳೆದುಹೋದ ಹಲ್ಲಿಗೆ ಟೈಟಾನಿಯಂ ಇಂಪ್ಲಾಂಟ್ ಬದಲಿ",
+    "treatments.t4_p2": "ತಕ್ಷಣದ ಇಂಪ್ಲಾಂಟ್ ಮತ್ತು ಪೂರ್ಣ ದವಡೆ ಹಲ್ಲುಗಳ ಜೋಡಣೆ",
+    "treatments.t4_p3": "ದವಡೆ ಮೂಳೆಯ ರಕ್ಷಣೆ ಮತ್ತು 100% ನೈಸರ್ಗಿಕ ಅಗಿಯುವ ಸಾಮರ್ಥ್ಯ",
+    "treatments.t4_dur": "ಶಾಶ್ವತ ಪರಿಹಾರ",
+    "treatments.t5_p1": "ಸುಧಾರಿತ ಎಲ್ಇಡಿ ಲೇಸರ್ ಕೋಲ್ಡ್-ಲೈಟ್ ವೈಟ್ನಿಂಗ್ ತಂತ್ರಜ್ಞಾನ",
+    "treatments.t5_p2": "ಚಹಾ, ಕಾಫಿ ಮತ್ತು ತಂಬಾಕಿನ ಕಲೆಗಳ ಸಂಪೂರ್ಣ ನಿವಾರಣೆ",
+    "treatments.t5_p3": "ಹಲ್ಲಿನ ಎನಾಮಲ್‌ಗೆ ಹಾನಿಯಾಗದಂತೆ 6–8 ಶೇಡ್ಸ್ ಹೊಳಪು",
+    "treatments.t5_dur": "45 ನಿಮಿಷ ಭೇಟಿ",
+    "treatments.t6_p1": "ಸುಧಾರಿತ ರೋಟರಿ ಎಂಡೋಡಾಂಟಿಕ್ಸ್ ಮತ್ತು 3D ಅಪೆಕ್ಸ್ ಲೊಕೇಟರ್",
+    "treatments.t6_p2": "ಸಂಪೂರ್ಣ ಸೋಂಕು ನಿವಾರಣೆ & ಬಯೋಸೆರಾಮಿಕ್ ರೂಟ್ ಸೀಲಿಂಗ್",
+    "treatments.t6_p3": "ನೈಸರ್ಗಿಕ ಹಲ್ಲನ್ನು ಜೀವಿತಾವಧಿವರೆಗೆ ಕಾಪಾಡುವ ಕ್ಯಾಪ್/ಕ್ರೌನ್",
+    "treatments.t6_dur": "45–60 ನಿಮಿಷ",
+    "treatments.t7_p1": "ಮಕ್ಕಳಿಗಾಗಿ ಪ್ರೀತಿಯಿಂದ ಕೂಡಿದ ಸೌಮ್ಯ ದಂತ ತಪಾಸಣೆ",
+    "treatments.t7_p2": "ನೋವುರಹಿತ ಕ್ಯಾವಿಟಿ ಫಿಲ್ಲಿಂಗ್ಸ್ & ಫಿಶರ್ ಸೀಲಾಂಟ್ಸ್",
+    "treatments.t7_p3": "ಮಕ್ಕಳಲ್ಲಿ ದಂತ ಚಿಕಿತ್ಸೆಯ ಭಯ ನಿವಾರಿಸುವ ಸ್ನೇಹಿ ವಾತಾವರಣ",
+    "treatments.t7_dur": "20–30 ನಿಮಿಷ",
+    "treatments.t8_p1": "ವಸಡು ಕಾಯಿಲೆಗಳಿಗೆ ಡೀಪ್ ಸ್ಕೇಲಿಂಗ್ ಮತ್ತು ರೂಟ್ ಪ್ಲಾನಿಂಗ್",
+    "treatments.t8_p2": "ರಕ್ತಸ್ರಾವ ತಡೆಯಲು ಲೇಸರ್ ಪಿರಿಯೊಡಾಂಟಲ್ ಚಿಕಿತ್ಸೆ",
+    "treatments.t8_p3": "ವಸಡು ಮರುಸ್ಥಾಪನೆ ಮತ್ತು ಹಲ್ಲುಗಳ ಬೇರು ಬಲಪಡಿಸುವ ವಿಧಾನ",
+    "treatments.t8_dur": "1–2 ಭೇಟಿಗಳು",
+
+    "treatments.t1_title": "ಜನರಲ್ ಡೆಂಟಿಸ್ಟ್ರಿ",
+    "treatments.t1_sub": "ಆರೋಗ್ಯಕರ ನಗುವಿನ ಅಡಿಪಾಯ",
+    "treatments.t1_desc": "ಇಡೀ ಕುಟುಂಬಕ್ಕೆ ಸಮಗ್ರ ರೋಗನಿರೋಧಕ ಮತ್ತು ಪುನಶ್ಚೇತನ ದಂತ ಆರೈಕೆ.",
+    "treatments.t2_title": "ಕಾಸ್ಮೆಟಿಕ್ ಡೆಂಟಿಸ್ಟ್ರಿ",
+    "treatments.t2_sub": "ನಿಮ್ಮ ನಗುವನ್ನು ಸುಂದರಗೊಳಿಸಿ",
+    "treatments.t2_desc": "ವಿನೀರ್ಸ್, ಬಾಂಡಿಂಗ್, ಕಾಂಟೂರಿಂಗ್ ಮತ್ತು ಸುಂದರ ಸ್ಮೈಲ್ ಮೇಕೋವರ್ ಚಿಕಿತ್ಸೆಗಳು.",
+    "treatments.t3_title": "ಆರ್ಥೊಡಾಂಟಿಕ್ಸ್ & ಅಲೈನರ್ಸ್",
+    "treatments.t3_sub": "ಯಾವುದೇ ವಯಸ್ಸಿನಲ್ಲಿ ನೇರವಾದ ಹಲ್ಲುಗಳು",
+    "treatments.t3_desc": "ಆಧುನಿಕ ಬ್ರೇಸ್‌ಗಳು ಮತ್ತು ಅದೃಶ್ಯ ಅಲೈನರ್‌ಗಳ ಮೂಲಕ ಆತ್ಮವಿಶ್ವಾಸದ ನಗು.",
+    "treatments.t4_title": "ಡೆಂಟಲ್ ಇಂಪ್ಲಾಂಟ್ಸ್",
+    "treatments.t4_sub": "ಶಾಶ್ವತ, ನೈಸರ್ಗಿಕ ಹಲ್ಲಿನ ಬದಲಿ",
+    "treatments.t4_desc": "ನೈಸರ್ಗಿಕ ಹಲ್ಲಿನಂತೆಯೇ ಕಾಣುವ ಮತ್ತು ಕಾರ್ಯನಿರ್ವಹಿಸುವ ಸುಧಾರಿತ ಇಂಪ್ಲಾಂಟ್ ಚಿಕಿತ್ಸೆ.",
+    "treatments.t5_title": "ಹಲ್ಲುಗಳ ಬಿಳಿಮಾಡುವಿಕೆ (Whitening)",
+    "treatments.t5_sub": "ಒಂದೇ ಭೇಟಿಯಲ್ಲಿ ಉಜ್ವಲ ನಗು",
+    "treatments.t5_desc": "ಸುರಕ್ಷಿತ, ತ್ವರಿತ ಮತ್ತು ವೃತ್ತಿಪರ ಹಲ್ಲುಗಳ ಬಿಳಿಮಾಡುವಿಕೆ ಚಿಕಿತ್ಸೆ.",
+    "treatments.t6_title": "ರೂಟ್ ಕೆನಾಲ್ (Root Canal)",
+    "treatments.t6_sub": "ನೋವು ರಹಿತ ಮತ್ತು ಸೌಮ್ಯ ಚಿಕಿತ್ಸೆ",
+    "treatments.t6_desc": "ಸುಧಾರಿತ ರೋಟರಿ ತಂತ್ರಜ್ಞಾನದೊಂದಿಗೆ ನಿಮ್ಮ ನೈಸರ್ಗಿಕ ಹಲ್ಲನ್ನು ಸಂರಕ್ಷಿಸುವ ವಿಧಾನ.",
+    "treatments.t7_title": "ಮಕ್ಕಳ ದಂತ ಚಿಕಿತ್ಸೆ (Paediatric)",
+    "treatments.t7_sub": "ಪುಟ್ಟ ಮಕ್ಕಳ ಮುದ್ದಾದ ನಗುವಿಗೆ ಆರೈಕೆ",
+    "treatments.t7_desc": "ಬೆಳೆಯುತ್ತಿರುವ ಮಕ್ಕಳಿಗಾಗಿ ಪ್ರೀತಿ ಮತ್ತು ಸೌಮ್ಯತೆಯಿಂದ ಕೂಡಿದ ವಿಶೇಷ ದಂತ ಚಿಕಿತ್ಸೆ.",
+    "treatments.t8_title": "ಪಿರಿಯೊಡಾಂಟಿಕ್ಸ್ & ವಸಡು ಆರೈಕೆ",
+    "treatments.t8_sub": "ಆಜೀವ ಕಾಲ ಹಲ್ಲುಗಳಿಗೆ ಬಲವಾದ ಅಡಿಪಾಯ",
+    "treatments.t8_desc": "ವಸಡು ಕಾಯಿಲೆಗಳ ಚಿಕಿತ್ಸೆ, ರಕ್ತಸ್ರಾವ ತಡೆಗಟ್ಟುವಿಕೆ ಮತ್ತು ಲೇಸರ್ ವಸಡು ಆರೈಕೆ.",
 
     // Specialities Section
     "spec.tag": "ಚಿಕಿತ್ಸಾ ವಿಭಾಗಗಳು",
@@ -385,11 +534,11 @@ const translations = {
     "app.plan_title": "ನಿಮ್ಮ ಭೇಟಿಯನ್ನು ಯೋಜಿಸಿ",
     "app.plan_desc": "ನಿಮ್ಮ ಅಪೇಕ್ಷಿತ ದಿನಾಂಕ ಮತ್ತು ದಂತ ಸಮಸ್ಯೆಯನ್ನು ನಮೂದಿಸಿ ಫಾರ್ಮ್ ಭರ್ತಿ ಮಾಡಿ.",
     "app.benefit1": "ಡಾ. ಮಹೇಶ್ ಹೆಚ್.ವಿ. (MDS) ಅಥವಾ ಡಾ. ರಮ್ಯಾ ಕೆ.ಎಸ್. (MDS) ಅವರೊಂದಿಗೆ ಸಮಾಲೋಚನೆ",
-    "app.benefit2": "ಬೆಳಗಿನ ಅವಧಿ (10:00 AM – 01:00 PM)",
+    "app.benefit2": "ಬೆಳಗಿನ ಅವಧಿ (10:30 AM – 01:00 PM)",
     "app.benefit3": "ಸಂಜೆಯ ಅವಧಿ (05:00 PM – 09:00 PM)",
     "app.benefit4": "ಬಸ್ ನಿಲ್ದಾಣದ ಹತ್ತಿರ ಸುಲಭವಾಗಿ ತಲುಪಬಹುದಾದ ಸ್ಥಳ, ಸರಸ್ವತಿಪುರಂ, ಮೈಸೂರು",
     "app.timings_heading": "ಕ್ಲಿನಿಕ್ ಸಮಯ",
-    "app.timings_schedule": "ಸೋಮವಾರ – ಶನಿವಾರ:<br>ಬೆಳಿಗ್ಗೆ 10:00 – ಮಧ್ಯಾಹ್ನ 01:00<br>ಸಂಜೆ 05:00 – ರಾತ್ರಿ 09:00",
+    "app.timings_schedule": "ಸೋಮವಾರ – ಶನಿವಾರ:<br>ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:00<br>ಸಂಜೆ 05:00 – ರಾತ್ರಿ 09:00<br><br>ಭಾನುವಾರ:<br>ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:00",
     "app.label_name": "ರೋಗಿಯ ಹೆಸರು",
     "app.ph_name": "ರೋಗಿಯ ಪೂರ್ಣ ಹೆಸರು",
     "app.label_mobile": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
@@ -397,7 +546,7 @@ const translations = {
     "app.label_date": "ಅಪೇಕ್ಷಿತ ದಿನಾಂಕ",
     "app.label_time": "ಅಪೇಕ್ಷಿತ ಸಮಯ",
     "app.opt_time_select": "ಅಪೇಕ್ಷಿತ ಅವಧಿಯನ್ನು ಆರಿಸಿ...",
-    "app.opt_time_morning": "ಬೆಳಿಗ್ಗೆ 10:00 – ಮಧ್ಯಾಹ್ನ 01:00 (ಬೆಳಗಿನ ಅವಧಿ)",
+    "app.opt_time_morning": "ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:00 (ಬೆಳಗಿನ ಅವಧಿ)",
     "app.opt_time_evening": "ಸಂಜೆ 05:00 – ರಾತ್ರಿ 09:00 (ಸಂಜೆಯ ಅವಧಿ)",
     "app.label_reason": "ಭೇಟಿಯ ಉದ್ದೇಶ / ಚಿಕಿತ್ಸೆ",
     "app.opt_reason_select": "ವಿಶೇಷತೆ ಅಥವಾ ಸಮಸ್ಯೆಯನ್ನು ಆರಿಸಿ...",
@@ -422,7 +571,9 @@ const translations = {
     "loc.full_address": "388, 5ನೇ ಕ್ರಾಸ್, 14ನೇ ಮುಖ್ಯರಸ್ತೆ,<br>ಬಸ್ ನಿಲ್ದಾಣದ ಹತ್ತಿರ,<br>ಸರಸ್ವತಿಪುರಂ, ಸರಸ್ವತೀಪುರಂ.,<br>ಮೈಸೂರು",
     "loc.timings_title": "ಕ್ಲಿನಿಕ್ ಸಮಯ",
     "loc.days": "ಸೋಮವಾರ – ಶನಿವಾರ",
-    "loc.hours": "ಬೆಳಿಗ್ಗೆ 10:00 – ಮಧ್ಯಾಹ್ನ 01:00<br>ಸಂಜೆ 05:00 – ರಾತ್ರಿ 09:00",
+    "loc.hours": "ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:00<br>ಸಂಜೆ 05:00 – ರಾತ್ರಿ 09:00",
+    "loc.sunday_label": "ಭಾನುವಾರ",
+    "loc.sunday_hours": "ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:00",
     "loc.landmark": "ಬಸ್ ನಿಲ್ದಾಣದ ಹತ್ತಿರ, ಸರಸ್ವತಿಪುರಂ, ಮೈಸೂರು",
     "loc.btn_directions": "ದಾರಿ ನಕ್ಷೆ ನೋಡಿ",
 
@@ -431,13 +582,15 @@ const translations = {
     "contact.title": "ಸಂಪರ್ಕ",
     "contact.subtitle": "ಪ್ರಭು ಡೆಂಟಲ್ ಕ್ಲಿನಿಕ್, ಸರಸ್ವತಿಪುರಂ, ಮೈಸೂರು.",
     "contact.details_title": "ಸಂಪರ್ಕ ವಿವರಗಳು",
-    "contact.phone_label": "ದೂರವಾಣಿ:",
+    "contact.phone_label": "ಸಂಪರ್ಕ ಸಂಖ್ಯೆ:",
+    "contact.emergency_label": "ತುರ್ತು ಸಂಪರ್ಕ:",
+    "contact.whatsapp_label": "ವಾಟ್ಸಾಪ್ (WhatsApp):",
     "contact.email_label": "ಇಮೇಲ್:",
-    "contact.to_be_provided": "[ಗ್ರಾಹಕರಿಂದ ಒದಗಿಸಬೇಕಾಗಿದೆ]",
+    "contact.working_hours_title": "ಕೆಲಸದ ಸಮಯ",
 
     // Footer
     "footer.nav_title": "ಪುಟಗಳು",
-    "footer.address_timings": "ಕ್ಲಿನಿಕ್ ವಿಳಾಸ ಮತ್ತು ಸಮಯ",
+    "footer.address_timings": "ಕ್ಲಿನಿಕ್ ವಿಳಾಸ, ಸಮಯ &amp; ಸಂಪರ್ಕ",
     "footer.rights": "ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
     "footer.draft": "ಸ್ಥಳೀಯ ಪ್ರಸ್ತುತಿ ಮಾದರಿ",
 
@@ -457,6 +610,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightbox();
   initDateConstraints();
   initScrollReveal();
+  initAboutCardsSlide();
+  initSpecialitiesCircularOrbit();
+  initTeamCardsSparkle();
+  initLegacyTimelineScrollHighlight();
+  initContactCardsHighlight();
+  initTreatmentsCarousel();
   initMouseParallax();
   initTimelineProgress();
 });
@@ -496,6 +655,14 @@ function setLanguage(lang) {
     const isActive = btn.getAttribute('data-lang') === lang;
     btn.classList.toggle('active', isActive);
     btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+  });
+
+  // Trigger tactile spring switch animation on language container
+  document.querySelectorAll('.lang-switch').forEach(sw => {
+    sw.classList.remove('is-switching');
+    void sw.offsetWidth; // trigger reflow
+    sw.classList.add('is-switching');
+    setTimeout(() => sw.classList.remove('is-switching'), 500);
   });
 
   // Translate all [data-i18n] text or HTML content
@@ -538,20 +705,32 @@ function initLiveClinicStatus() {
     const minutes = now.getMinutes();
     const currentTimeInMinutes = hours * 60 + minutes;
 
-    const mMorningStart = 10 * 60; // 10:00 AM -> 600
-    const mMorningEnd = 13 * 60;   // 01:00 PM -> 780
-    const mEveningStart = 17 * 60; // 05:00 PM -> 1020
-    const mEveningEnd = 21 * 60;   // 09:00 PM -> 1260
+    const mMorningStart = 10 * 60 + 30; // 10:30 AM -> 630
+    const mMorningEnd = 13 * 60;        // 01:00 PM -> 780
+    const mEveningStart = 17 * 60;      // 05:00 PM -> 1020
+    const mEveningEnd = 21 * 60;        // 09:00 PM -> 1260
 
     let statusText = '';
     let badgeClass = 'closed';
 
     if (day === 0) {
-      // Sunday
-      badgeClass = 'closed';
-      statusText = currentLang === 'kn'
-        ? 'ಇಂದು ಮುಚ್ಚಿದೆ (ಭಾನುವಾರ) • ಸೋಮವಾರ ಬೆಳಿಗ್ಗೆ 10:00 ಕ್ಕೆ ತೆರೆಯುತ್ತದೆ'
-        : 'Closed Today (Sunday) • Opens Mon 10:00 AM';
+      // Sunday: 10:30 AM - 1:00 PM
+      if (currentTimeInMinutes >= mMorningStart && currentTimeInMinutes < mMorningEnd) {
+        badgeClass = 'open';
+        statusText = currentLang === 'kn'
+          ? 'ತೆರೆದಿದೆ • ಭಾನುವಾರದ ಬೆಳಗಿನ ಅವಧಿ ಮಧ್ಯಾಹ್ನ 1:00 ರವರೆಗೆ'
+          : 'Open Now • Sunday Morning Session until 1:00 PM';
+      } else if (currentTimeInMinutes < mMorningStart) {
+        badgeClass = 'closed';
+        statusText = currentLang === 'kn'
+          ? 'ಈಗ ಮುಚ್ಚಿದೆ • ಇಂದು ಭಾನುವಾರ ಬೆಳಿಗ್ಗೆ 10:30 ಕ್ಕೆ ತೆರೆಯುತ್ತದೆ'
+          : 'Closed Now • Opens Today (Sunday) at 10:30 AM';
+      } else {
+        badgeClass = 'closed';
+        statusText = currentLang === 'kn'
+          ? 'ಇಂದಿನ ಸೇವೆ ಮುಕ್ತಾಯ • ಸೋಮವಾರ ಬೆಳಿಗ್ಗೆ 10:30 ಕ್ಕೆ ತೆರೆಯುತ್ತದೆ'
+          : 'Closed for the Day • Opens Monday at 10:30 AM';
+      }
     } else {
       // Monday to Saturday
       if (currentTimeInMinutes >= mMorningStart && currentTimeInMinutes < mMorningEnd) {
@@ -567,8 +746,8 @@ function initLiveClinicStatus() {
       } else if (currentTimeInMinutes < mMorningStart) {
         badgeClass = 'closed';
         statusText = currentLang === 'kn'
-          ? 'ಈಗ ಮುಚ್ಚಿದೆ • ಇಂದು ಬೆಳಿಗ್ಗೆ 10:00 ಕ್ಕೆ ತೆರೆಯುತ್ತದೆ'
-          : 'Closed Now • Opens Today at 10:00 AM';
+          ? 'ಈಗ ಮುಚ್ಚಿದೆ • ಇಂದು ಬೆಳಿಗ್ಗೆ 10:30 ಕ್ಕೆ ತೆರೆಯುತ್ತದೆ'
+          : 'Closed Now • Opens Today at 10:30 AM';
       } else if (currentTimeInMinutes >= mMorningEnd && currentTimeInMinutes < mEveningStart) {
         badgeClass = 'closed';
         statusText = currentLang === 'kn'
@@ -578,12 +757,12 @@ function initLiveClinicStatus() {
         badgeClass = 'closed';
         if (day === 6) {
           statusText = currentLang === 'kn'
-            ? 'ಇಂದಿನ ಸೇವೆ ಮುಕ್ತಾಯ • ಸೋಮವಾರ ಬೆಳಿಗ್ಗೆ 10:00 ಕ್ಕೆ ತೆರೆಯುತ್ತದೆ'
-            : 'Closed for the Day • Opens Monday at 10:00 AM';
+            ? 'ಇಂದಿನ ಸೇವೆ ಮುಕ್ತಾಯ • ನಾಳೆ ಭಾನುವಾರ ಬೆಳಿಗ್ಗೆ 10:30 ಕ್ಕೆ ತೆರೆಯುತ್ತದೆ'
+            : 'Closed for the Day • Opens Tomorrow (Sun) at 10:30 AM';
         } else {
           statusText = currentLang === 'kn'
-            ? 'ಇಂದಿನ ಸೇವೆ ಮುಕ್ತಾಯ • ನಾಳೆ ಬೆಳಿಗ್ಗೆ 10:00 ಕ್ಕೆ ತೆರೆಯುತ್ತದೆ'
-            : 'Closed for the Day • Opens Tomorrow at 10:00 AM';
+            ? 'ಇಂದಿನ ಸೇವೆ ಮುಕ್ತಾಯ • ನಾಳೆ ಬೆಳಿಗ್ಗೆ 10:30 ಕ್ಕೆ ತೆರೆಯುತ್ತದೆ'
+            : 'Closed for the Day • Opens Tomorrow at 10:30 AM';
         }
       }
     }
@@ -1214,3 +1393,740 @@ function initTimelineProgress() {
   updateFill();
 }
 
+
+
+/**
+ * 11. About Section Cards Interactive Slide Right & Standby Engine
+ * When clicked: smoothly slides to the right, stands by, and returns to original place.
+ * Also toggles standby state if clicked.
+ */
+function initAboutCardsSlide() {
+  const cards = document.querySelectorAll('.about-pillar-item, .legacy-node-card');
+  if (!cards.length) return;
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      // If already in standby, toggle off and return
+      if (card.classList.contains('is-standby-right')) {
+        card.classList.remove('is-standby-right');
+        card.classList.remove('card-slide-standby');
+        return;
+      }
+
+      // Remove active standby from other cards in the same grid
+      const parent = card.closest('.about-pillars-grid, .legacy-flow-nodes');
+      if (parent) {
+        parent.querySelectorAll('.is-standby-right').forEach(c => c.classList.remove('is-standby-right'));
+      }
+
+      // Trigger the slide-right-standby animation that slides right and returns
+      card.classList.remove('card-slide-standby');
+      void card.offsetWidth; // Force reflow
+      card.classList.add('card-slide-standby');
+
+      // Create click burst particle at click location
+      const rect = card.getBoundingClientRect();
+      const spark = document.createElement('span');
+      spark.className = 'dental-cursor-sparkle';
+      spark.textContent = '✨';
+      spark.style.left = (rect.right - 20) + 'px';
+      spark.style.top = (rect.top + rect.height / 2) + 'px';
+      spark.style.setProperty('--dx', '25px');
+      spark.style.setProperty('--dy', '-20px');
+      document.body.appendChild(spark);
+      setTimeout(() => spark.remove(), 900);
+
+      // After slide completes, clean up class so it stays interactive
+      setTimeout(() => {
+        card.classList.remove('card-slide-standby');
+      }, 1300);
+    });
+  });
+}
+
+
+/**
+ * 12. Specialities Section: Interactive Rotating and Sliding Circle Shapes
+ * Clicking any speciality card triggers an energetic 360-degree rotation and slide.
+ */
+function initSpecialityCircleAnimation() {
+  const cards = document.querySelectorAll('.speciality-card');
+  if (!cards.length) return;
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.remove('is-circle-spinning');
+      void card.offsetWidth; // Force reflow
+      card.classList.add('is-circle-spinning');
+
+      // Sparkle stars burst from the circle shape
+      const iconBox = card.querySelector('.speciality-icon-box');
+      if (iconBox) {
+        const rect = iconBox.getBoundingClientRect();
+        const spark = document.createElement('span');
+        spark.className = 'dental-cursor-sparkle';
+        spark.textContent = '✨';
+        spark.style.left = (rect.left + rect.width / 2) + 'px';
+        spark.style.top = (rect.top + rect.height / 2) + 'px';
+        spark.style.setProperty('--dx', '20px');
+        spark.style.setProperty('--dy', '-22px');
+        document.body.appendChild(spark);
+        setTimeout(() => spark.remove(), 900);
+      }
+
+      setTimeout(() => {
+        card.classList.remove('is-circle-spinning');
+      }, 1000);
+    });
+  });
+}
+
+
+/**
+ * 12. Specialities Continuous Circular / Spiral Card Orbit Engine
+ * - Arranges the 6 complete speciality cards along an elliptical circular path
+ * - Cards move one after another clockwise around the center point
+ * - Depth scaling: front card is larger and crisp, back cards are slightly smaller
+ * - Hover pauses or slows the continuous motion
+ * - Clicking any card rotates that card smoothly to the front center
+ * - Previous & Next buttons rotate the carousel clockwise or counter-clockwise
+ */
+function initSpecialitiesCircularOrbit() {
+  const stage = document.getElementById('specialitiesOrbitStage');
+  const track = document.getElementById('specialitiesOrbitTrack');
+  if (!stage || !track) return;
+
+  const cards = track.querySelectorAll('.speciality-card');
+  if (!cards.length) return;
+
+  const totalCards = cards.length; // 6 cards
+  const angleStep = (2 * Math.PI) / totalCards; // 60 degrees
+
+  let baseAngle = 0; // Current base angle in radians
+  let targetAngle = 0; // Target angle for smooth interpolation
+  const normalSpeed = 0.0028; // Slow, premium, elegant speed
+  let currentSpeed = normalSpeed;
+  let isHovered = false;
+  let hoveredCard = null;
+  let lastTime = performance.now();
+
+  // Hover detection on individual cards
+  cards.forEach((card, idx) => {
+    card.addEventListener('mouseenter', () => {
+      isHovered = true;
+      hoveredCard = card;
+    });
+    card.addEventListener('mouseleave', () => {
+      isHovered = false;
+      hoveredCard = null;
+    });
+
+    // Clicking a card smoothly rotates it to the front center (90 degrees = Math.PI / 2)
+    card.addEventListener('click', (e) => {
+      // Calculate card's current angle relative to circular path
+      const cardCurrentAngle = (baseAngle + idx * angleStep) % (2 * Math.PI);
+      let diff = (Math.PI / 2) - cardCurrentAngle;
+      // Normalize diff to [-PI, PI] for shortest rotation
+      while (diff > Math.PI) diff -= 2 * Math.PI;
+      while (diff < -Math.PI) diff += 2 * Math.PI;
+      targetAngle = baseAngle + diff;
+    });
+  });
+
+  // Stage hover to slow or pause
+  stage.addEventListener('mouseenter', () => { isHovered = true; });
+  stage.addEventListener('mouseleave', () => { isHovered = false; hoveredCard = null; });
+
+  // Navigation Buttons
+  const btnPrev = document.getElementById('btnOrbitPrev');
+  const btnNext = document.getElementById('btnOrbitNext');
+  if (btnPrev) {
+    btnPrev.addEventListener('click', () => {
+      targetAngle -= angleStep; // counter-clockwise
+    });
+  }
+  if (btnNext) {
+    btnNext.addEventListener('click', () => {
+      targetAngle += angleStep; // clockwise
+    });
+  }
+
+  // Calculate dynamic X and Y radii based on stage dimensions
+  function getRadii() {
+    const stageWidth = stage.offsetWidth;
+    const stageHeight = stage.offsetHeight;
+    if (stageWidth > 1024) {
+      return { rx: Math.min(390, stageWidth * 0.38), ry: 200 };
+    } else if (stageWidth > 768) {
+      return { rx: Math.min(290, stageWidth * 0.36), ry: 165 };
+    } else if (stageWidth > 480) {
+      return { rx: Math.min(190, stageWidth * 0.34), ry: 145 };
+    } else {
+      // Mobile screens: compact ellipse keeping cards fully within view
+      return { rx: Math.min(130, stageWidth * 0.32), ry: 175 };
+    }
+  }
+
+  function render(time) {
+    const dt = Math.min(32, time - lastTime);
+    lastTime = time;
+
+    // Smoothly decelerate when hovered or accelerate when free
+    if (isHovered) {
+      currentSpeed = currentSpeed * 0.88; // gently pause
+    } else {
+      currentSpeed += (normalSpeed - currentSpeed) * 0.08;
+    }
+
+    targetAngle += currentSpeed * (dt / 16.67);
+    // Smooth interpolation to targetAngle (prevents jumps, provides silky spring)
+    baseAngle += (targetAngle - baseAngle) * 0.08;
+
+    const { rx, ry } = getRadii();
+    const isMobile = window.innerWidth <= 600;
+
+    cards.forEach((card, i) => {
+      // Clockwise angle: baseAngle + i * angleStep
+      const theta = baseAngle + i * angleStep;
+      const x = Math.cos(theta) * rx;
+      const y = Math.sin(theta) * ry;
+
+      // Depth factor from y: -ry (back) to +ry (front)
+      const depth = (y + ry) / (2 * ry); // 0 (back) to 1 (front)
+
+      let scale = isMobile ? (0.80 + depth * 0.24) : (0.82 + depth * 0.25);
+      let opacity = isMobile ? (0.70 + depth * 0.30) : (0.75 + depth * 0.25);
+      let zIndex = Math.round(10 + depth * 40);
+
+      // If this specific card is hovered, slightly lift it and keep it on top
+      if (card === hoveredCard) {
+        scale *= 1.05;
+        opacity = 1.0;
+        zIndex = 70;
+      }
+
+      // Subtle bank tilt along the curve
+      const bankTilt = Math.sin(theta) * -3;
+
+      card.style.zIndex = zIndex;
+      card.style.opacity = opacity.toFixed(2);
+      card.style.transform = `translate(-50%, -50%) translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) scale(${scale.toFixed(3)}) rotate(${bankTilt.toFixed(1)}deg)`;
+    });
+
+    requestAnimationFrame(render);
+  }
+
+  requestAnimationFrame(render);
+}
+
+
+/**
+ * 13. Our Team Section: Interactive Spark Cards Click Sparkle Shower
+ * Clicking any team card triggers a sparkling light pop and bursts dancing star particles.
+ */
+function initTeamCardsSparkle() {
+  const cards = document.querySelectorAll('#team .spark-card');
+  if (!cards.length) return;
+
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      card.classList.remove('is-spark-popping');
+      void card.offsetWidth; // Force reflow
+      card.classList.add('is-spark-popping');
+
+      // Spawn multi-directional golden & red sparkle stars from click point
+      const rect = card.getBoundingClientRect();
+      const clickX = e.clientX || (rect.left + rect.width / 2);
+      const clickY = e.clientY || (rect.top + 30);
+
+      const sparks = ['✨', '✦', '⭐', '✨'];
+      sparks.forEach((symbol, i) => {
+        const spark = document.createElement('span');
+        spark.className = 'dental-cursor-sparkle';
+        spark.textContent = symbol;
+        spark.style.left = clickX + 'px';
+        spark.style.top = clickY + 'px';
+        spark.style.color = (i % 2 === 0) ? '#F59E0B' : '#C82333';
+        
+        const angle = (i * (Math.PI / 2)) + (Math.random() * 0.4 - 0.2);
+        const dist = 35 + Math.random() * 25;
+        const dx = Math.cos(angle) * dist;
+        const dy = Math.sin(angle) * dist;
+        
+        spark.style.setProperty('--dx', dx + 'px');
+        spark.style.setProperty('--dy', dy + 'px');
+        document.body.appendChild(spark);
+        setTimeout(() => spark.remove(), 900);
+      });
+
+      setTimeout(() => {
+        card.classList.remove('is-spark-popping');
+      }, 700);
+    });
+  });
+}
+
+
+/**
+ * 14. Clinic Legacy Timeline: Active Scroll Tracking Highlight Engine
+ * As the user scrolls down, each card highlights in its distinct vibrant clinic color,
+ * and when you scroll past, it returns to resting state while the next card highlights!
+ */
+function initLegacyTimelineScrollHighlight() {
+  const steps = document.querySelectorAll('#legacy .timeline-step');
+  if (!steps.length) return;
+
+  function onScroll() {
+    const viewportHeight = window.innerHeight;
+    const focusZone = viewportHeight * 0.48; // center reading focus line
+
+    let closestStep = null;
+    let closestDistance = Infinity;
+
+    steps.forEach(step => {
+      const rect = step.getBoundingClientRect();
+      const cardCenter = rect.top + rect.height / 2;
+      const dist = Math.abs(cardCenter - focusZone);
+
+      if (dist < closestDistance && rect.top < viewportHeight * 0.85 && rect.bottom > viewportHeight * 0.15) {
+        closestDistance = dist;
+        closestStep = step;
+      }
+    });
+
+    steps.forEach(step => {
+      if (step === closestStep) {
+        step.classList.add('is-scroll-active');
+      } else {
+        step.classList.remove('is-scroll-active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  onScroll(); // initial check
+
+  // Click on card also sets it as active
+  steps.forEach(step => {
+    step.addEventListener('click', () => {
+      steps.forEach(s => s.classList.remove('is-scroll-active'));
+      step.classList.add('is-scroll-active');
+    });
+  });
+}
+
+/**
+ * 15. Contact Cards: Dynamic Cursor Movement & Click-to-Highlight Engine
+ * The highlight seamlessly MOVES from card to card as the cursor moves over them.
+ * No card is statically stuck. Supports smooth hover tracking and tactile click.
+ */
+function initContactCardsHighlight() {
+  const grid = document.querySelector('#contact .contact-cards-grid');
+  const cards = document.querySelectorAll('#contact .contact-card-box');
+  if (!cards.length) return;
+
+  function activateCard(targetCard, triggerSparkles = false) {
+    cards.forEach(card => {
+      if (card === targetCard) {
+        card.classList.add('is-card-highlighted');
+        card.setAttribute('aria-pressed', 'true');
+      } else {
+        card.classList.remove('is-card-highlighted');
+        card.setAttribute('aria-pressed', 'false');
+      }
+    });
+
+    if (triggerSparkles) {
+      const icon = targetCard.querySelector('.contact-card-icon');
+      if (icon) {
+        const rect = icon.getBoundingClientRect();
+        const originX = rect.left + rect.width / 2;
+        const originY = rect.top + rect.height / 2;
+
+        for (let i = 0; i < 6; i++) {
+          const star = document.createElement('span');
+          star.className = 'dental-cursor-sparkle';
+          star.textContent = ['✦', '✨', '⭐'][i % 3];
+          const angle = (i / 6) * Math.PI * 2;
+          const dist = 32 + Math.random() * 24;
+          const tx = Math.cos(angle) * dist;
+          const ty = Math.sin(angle) * dist;
+
+          star.style.left = originX + 'px';
+          star.style.top = originY + 'px';
+          star.style.color = i % 2 === 0 ? '#C82333' : '#F59E0B';
+          star.style.fontSize = (12 + Math.random() * 8) + 'px';
+          star.style.setProperty('--sparkle-tx', `${tx}px`);
+          star.style.setProperty('--sparkle-ty', `${ty}px`);
+          document.body.appendChild(star);
+
+          setTimeout(() => {
+            if (star.parentNode) star.parentNode.removeChild(star);
+          }, 900);
+        }
+      }
+    }
+  }
+
+  // Dynamic Cursor Move: Moving cursor over any card immediately moves the highlight to it!
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      activateCard(card, false);
+    });
+
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a') && !e.target.closest('.contact-card-icon')) {
+        activateCard(card, true);
+        return;
+      }
+      activateCard(card, true);
+    });
+
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        activateCard(card, true);
+      }
+    });
+  });
+
+  // When cursor leaves the contact cards area, smoothly de-highlight so no card stays statically stuck
+  if (grid) {
+    grid.addEventListener('mouseleave', () => {
+      cards.forEach(card => {
+        card.classList.remove('is-card-highlighted');
+        card.setAttribute('aria-pressed', 'false');
+      });
+    });
+  }
+}
+
+
+/**
+ * 16. Treatments Sequential Moving Cards Carousel & 3D Flip Engine
+ * Seamless 1-8 infinite slider + interactive 3D flip card with clinical details,
+ * dynamic cursor hover highlight, and flicker-free direct appointment booking.
+ */
+function initTreatmentsCarousel() {
+  const track = document.getElementById('treatmentsTrack');
+  const viewport = document.getElementById('treatmentsViewport');
+  const prevBtn = document.querySelector('.js-treat-prev');
+  const nextBtn = document.querySelector('.js-treat-next');
+  const pagination = document.getElementById('treatmentsPagination');
+  const counterEl = document.getElementById('treatmentsCounter');
+  if (!track || !viewport) return;
+
+  // Query only ORIGINAL cards (not clones)
+  const originalCards = Array.from(track.querySelectorAll('.treatment-card-item:not(.is-clone)'));
+  const totalCards = originalCards.length; // 8 cards
+  if (!totalCards) return;
+
+  // Append clone cards at the end to make all 8 slides visible and loop seamlessly
+  track.querySelectorAll('.is-clone').forEach(el => el.remove());
+  const cloneCount = 3;
+  for (let i = 0; i < cloneCount; i++) {
+    const clone = originalCards[i].cloneNode(true);
+    clone.classList.add('is-clone');
+    clone.classList.remove('is-active-spotlight');
+    clone.classList.remove('is-flipped');
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  }
+
+  let currentIndex = 0; // 0 to 7
+  let autoTimer = null;
+  const autoInterval = 3500; // 3.5s auto advance
+  let isHovered = false;
+  let isAnyCardFlipped = false;
+  let isTransitioning = false;
+  let hoveredCard = null;
+
+  // Build pagination dots for all 8 cards
+  if (pagination) {
+    pagination.innerHTML = '';
+    originalCards.forEach((_, idx) => {
+      const dot = document.createElement('button');
+      dot.className = `treatment-dot ${idx === 0 ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Go to treatment card ${idx + 1}`);
+      dot.addEventListener('click', () => {
+        unflipAllCards();
+        goToCard(idx);
+        restartAutoPlay();
+      });
+      pagination.appendChild(dot);
+    });
+  }
+
+  function getCardStepSize() {
+    const firstCard = track.querySelector('.treatment-card-item');
+    if (!firstCard) return 380;
+    const rect = firstCard.getBoundingClientRect();
+    const gap = 28; // CSS flex gap
+    return rect.width + gap;
+  }
+
+  function updateCarousel(instant = false) {
+    const stepSize = getCardStepSize();
+    const offset = currentIndex * stepSize;
+
+    if (instant) {
+      track.style.transition = 'none';
+    } else {
+      track.style.transition = 'transform 0.65s cubic-bezier(0.16, 1, 0.3, 1)';
+    }
+
+    track.style.transform = `translateX(-${offset}px)`;
+
+    // Calculate normalized active index (0 to 7)
+    const normalizedIdx = currentIndex % totalCards;
+
+    // Update active spotlight: if cursor is hovering a card, let the hovered card take spotlight
+    const allCards = track.querySelectorAll('.treatment-card-item');
+    allCards.forEach((card, idx) => {
+      const cardNorm = idx % totalCards;
+      if (hoveredCard) {
+        card.classList.toggle('is-active-spotlight', card === hoveredCard);
+      } else {
+        if (cardNorm === normalizedIdx && !card.classList.contains('is-clone')) {
+          card.classList.add('is-active-spotlight');
+        } else {
+          card.classList.remove('is-active-spotlight');
+        }
+      }
+    });
+
+    // Update pagination dots (all 8 dots)
+    if (pagination) {
+      const dots = pagination.querySelectorAll('.treatment-dot');
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === normalizedIdx);
+      });
+    }
+
+    // Update live step counter (1 / 8 all the way to 8 / 8!)
+    if (counterEl) {
+      counterEl.textContent = `${normalizedIdx + 1} / ${totalCards}`;
+    }
+  }
+
+  function goToCard(idx) {
+    currentIndex = idx;
+    updateCarousel();
+  }
+
+  function nextCard() {
+    if (isTransitioning) return;
+    currentIndex++;
+    isTransitioning = true;
+    updateCarousel(false);
+
+    // If we advanced to index 8 (the clone matching card 1)
+    if (currentIndex === totalCards) {
+      // Counter immediately displays 1 / 8 and first dot active
+      if (counterEl) counterEl.textContent = `1 / ${totalCards}`;
+      if (pagination) {
+        const dots = pagination.querySelectorAll('.treatment-dot');
+        dots.forEach((d, i) => d.classList.toggle('active', i === 0));
+      }
+      setTimeout(() => {
+        currentIndex = 0;
+        updateCarousel(true); // Snap back to 0 with transition: none
+        void track.offsetWidth; // Force reflow
+        track.style.transition = 'transform 0.65s cubic-bezier(0.16, 1, 0.3, 1)';
+        isTransitioning = false;
+      }, 650);
+    } else {
+      setTimeout(() => { isTransitioning = false; }, 650);
+    }
+  }
+
+  function prevCard() {
+    if (isTransitioning) return;
+    if (currentIndex <= 0) {
+      currentIndex = totalCards;
+      updateCarousel(true);
+      void track.offsetWidth;
+      currentIndex = totalCards - 1;
+      isTransitioning = true;
+      updateCarousel(false);
+      setTimeout(() => { isTransitioning = false; }, 650);
+    } else {
+      currentIndex--;
+      isTransitioning = true;
+      updateCarousel(false);
+      setTimeout(() => { isTransitioning = false; }, 650);
+    }
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      unflipAllCards();
+      nextCard();
+      restartAutoPlay();
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      unflipAllCards();
+      prevCard();
+      restartAutoPlay();
+    });
+  }
+
+  // Dynamic Cursor Move Highlight:
+  // When cursor moves into ANY card, THAT card highlights immediately!
+  track.querySelectorAll('.treatment-card-item').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      hoveredCard = card;
+      track.querySelectorAll('.treatment-card-item').forEach(c => {
+        c.classList.toggle('is-active-spotlight', c === card);
+      });
+    });
+  });
+
+  viewport.addEventListener('mouseleave', () => {
+    hoveredCard = null;
+    isHovered = false;
+    // Re-sync spotlight with current index
+    const normalizedIdx = currentIndex % totalCards;
+    track.querySelectorAll('.treatment-card-item').forEach((c, i) => {
+      c.classList.toggle('is-active-spotlight', (i % totalCards) === normalizedIdx && !c.classList.contains('is-clone'));
+    });
+  });
+
+  // Flip Card Logic
+  function unflipAllCards() {
+    track.querySelectorAll('.treatment-card-item.is-flipped').forEach(card => {
+      card.classList.remove('is-flipped');
+    });
+    isAnyCardFlipped = false;
+  }
+
+  // Delegated click handling on track for flip buttons & book appointment buttons
+  track.addEventListener('click', (e) => {
+    // 1. Flip to back ("Learn more")
+    const flipBtn = e.target.closest('.js-flip-card');
+    if (flipBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const card = flipBtn.closest('.treatment-card-item');
+      if (card) {
+        // Unflip other cards first
+        track.querySelectorAll('.treatment-card-item.is-flipped').forEach(c => {
+          if (c !== card) c.classList.remove('is-flipped');
+        });
+        card.classList.toggle('is-flipped');
+        isAnyCardFlipped = card.classList.contains('is-flipped');
+      }
+      return;
+    }
+
+    // 2. Unflip to front ("Back")
+    const unflipBtn = e.target.closest('.js-unflip-card');
+    if (unflipBtn) {
+      e.preventDefault();
+      e.stopPropagation();
+      const card = unflipBtn.closest('.treatment-card-item');
+      if (card) {
+        card.classList.remove('is-flipped');
+        isAnyCardFlipped = !!track.querySelector('.treatment-card-item.is-flipped');
+      }
+      return;
+    }
+
+    // 3. Book Appointment Button from back face
+    const bookBtn = e.target.closest('.js-book-treatment');
+    if (bookBtn) {
+      e.preventDefault();
+      const treatmentName = bookBtn.getAttribute('data-treatment') || '';
+      const reasonSelect = document.getElementById('reasonForVisit');
+      if (reasonSelect && treatmentName) {
+        for (let opt of reasonSelect.options) {
+          if (opt.text.toLowerCase().includes(treatmentName.toLowerCase()) || 
+              treatmentName.toLowerCase().includes(opt.text.toLowerCase())) {
+            reasonSelect.value = opt.value;
+            break;
+          }
+        }
+      }
+
+      // Smooth scroll to appointment form
+      const appSection = document.getElementById('appointment');
+      if (appSection) {
+        appSection.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => {
+          if (reasonSelect) {
+            reasonSelect.focus();
+            reasonSelect.style.borderColor = 'var(--primary)';
+            reasonSelect.style.boxShadow = '0 0 0 4px rgba(200, 35, 51, 0.25)';
+            setTimeout(() => {
+              reasonSelect.style.borderColor = '';
+              reasonSelect.style.boxShadow = '';
+            }, 1800);
+          }
+        }, 600);
+      }
+
+      // Flip card back after slight delay
+      setTimeout(() => { unflipAllCards(); }, 800);
+      return;
+    }
+  });
+
+  // Auto-play timer
+  function startAutoPlay() {
+    stopAutoPlay();
+    autoTimer = setInterval(() => {
+      // Only auto-advance if not hovered, and no card is flipped
+      if (!isHovered && !isAnyCardFlipped) {
+        nextCard();
+      }
+    }, autoInterval);
+  }
+
+  function stopAutoPlay() {
+    if (autoTimer) {
+      clearInterval(autoTimer);
+      autoTimer = null;
+    }
+  }
+
+  function restartAutoPlay() {
+    stopAutoPlay();
+    startAutoPlay();
+  }
+
+  viewport.addEventListener('mouseenter', () => { isHovered = true; });
+
+  // Touch Swipe Support
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  viewport.addEventListener('touchstart', (e) => {
+    isHovered = true;
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
+
+  viewport.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 40) {
+      unflipAllCards();
+      if (diff > 0) {
+        nextCard();
+      } else {
+        prevCard();
+      }
+      restartAutoPlay();
+    }
+    setTimeout(() => { isHovered = false; }, 1000);
+  }, { passive: true });
+
+  window.addEventListener('resize', () => { updateCarousel(true); }, { passive: true });
+
+  // Initial render
+  updateCarousel(true);
+  startAutoPlay();
+}

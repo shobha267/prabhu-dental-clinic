@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@500;600;700&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=19.0">
 
   <!-- Structured Data / JSON-LD for Local Medical Clinic -->
   <script type="application/ld+json">
@@ -45,11 +45,13 @@
       "latitude": 12.302484,
       "longitude": 76.627998
     },
+    "telephone": "+91-821-2541701",
+    "email": "sony2420@yahoo.com",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "10:00",
+        "opens": "10:30",
         "closes": "13:00"
       },
       {
@@ -57,6 +59,12 @@
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
         "opens": "17:00",
         "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "10:30",
+        "closes": "13:00"
       }
     ],
     "medicalSpecialty": [
@@ -101,10 +109,22 @@
         <span data-i18n="topbar.address">388, 5th Cross, 14th Main, Near Bus Stop, Saraswathipuram, Mysore</span>
       </div>
 
+      <div class="top-bar-item top-bar-contact-info" style="display: flex; align-items: center; gap: 14px;">
+        <a href="tel:08212541701" style="display: inline-flex; align-items: center; gap: 5px; color: inherit; text-decoration: none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 13px; height: 13px; color: var(--primary);">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>0821-2541701</span>
+        </a>
+        <a href="https://wa.me/919448984480" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 5px; color: #10B981; text-decoration: none; font-weight: 600;">
+          <span>WhatsApp: 9448984480</span>
+        </a>
+      </div>
+
       <div class="top-bar-item">
         <div class="status-badge open js-live-status">
           <span class="status-dot"></span>
-          <span>Mon – Sat: 10:00 AM – 1:00 PM &bull; 5:00 PM – 9:00 PM</span>
+          <span>Mon – Sat: 10:30 AM – 1:00 PM &bull; 5:00 PM – 9:00 PM | Sun: 10:30 AM – 1:00 PM</span>
         </div>
       </div>
     </div>
@@ -139,10 +159,10 @@
         <a href="#home" class="nav-link active" data-i18n="nav.home">Home</a>
         <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
         <a href="#doctors" class="nav-link" data-i18n="nav.doctors">Our Doctors</a>
+        <a href="#treatments" class="nav-link" data-i18n="nav.treatments">Treatments</a>
         <a href="#specialities" class="nav-link" data-i18n="nav.specialities">Specialities</a>
         <a href="#team" class="nav-link" data-i18n="nav.team">Our Team</a>
         <a href="#legacy" class="nav-link" data-i18n="nav.legacy">Clinic Legacy</a>
-        <a href="#gallery" class="nav-link" data-i18n="nav.gallery">Gallery</a>
         <a href="#appointment" class="nav-link nav-link-appointment" data-i18n="nav.appointment">Appointment</a>
         <a href="#location" class="nav-link" data-i18n="nav.location">Location</a>
         <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
@@ -178,44 +198,24 @@
          1. HOMEPAGE / HERO SECTION
          ======================================================================= -->
     <section class="hero-section" id="home">
-
-      <!-- Dental Floating Ambient Decor: no circles, light opacity, random scattered positions -->
-      <!-- 3D Dental Mascot Floating Decor: Big animated cutouts (No circle, No square orb) -->
-      <!-- Intentional Dental Framing Decor: Left & Right Outer Edges only, Center 100% Clean -->
-      <div class="section-dental-decor" aria-hidden="true">
-        <!-- Top subtle accent -->
-        <span class="dental-edge-sparkle pos-edge-top-center">&#10022;</span>
-
-        <!-- Left Outer Edge (2 individual elements framing the left side) -->
-        <div class="dental-float-item js-dental-float pos-edge-top-left" data-depth="0.08" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-1" title="Prabhu Dental Care Mascot">
-            <img src="assets/images/mascot-tooth-star.png" alt="Waving Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
-
-        <div class="dental-float-item js-dental-float pos-edge-bottom-left" data-depth="-0.08" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-3" title="Prabhu Dental Care Mascot">
-            <img src="assets/images/mascot-tooth-doctor.png" alt="Doctor Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
-
-        <!-- Right Outer Edge (2 individual elements framing the right side) -->
-        <div class="dental-float-item js-dental-float pos-edge-top-right" data-depth="-0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-2" title="Prabhu Dental Care Mascot">
-            <img src="assets/images/mascot-tooth-brush.png" alt="Tooth Mascot with Brush" class="dental-mascot-img" />
-          </div>
-        </div>
-
-        <div class="dental-float-item js-dental-float pos-edge-bottom-right" data-depth="0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-4" title="Prabhu Dental Care Mascot">
-            <img src="assets/images/mascot-tooth-shield.png" alt="Tooth with Enamel Shield" class="dental-mascot-img" />
-          </div>
-        </div>
-
-        <!-- Bottom subtle accent -->
-        <span class="dental-edge-sparkle pos-edge-bottom-center">&#10022;</span>
+      <!-- Elegant Dental Watermark Emblem (Matches Clinic Logo) -->
+      <div class="section-watermark-wrap" aria-hidden="true">
+        <svg class="section-watermark-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 35 C82 16 50 20 40 46 C28 76 50 110 65 130 C78 148 92 165 100 176 C108 165 122 148 135 130 C150 110 172 76 160 46 C150 20 118 16 100 35 Z" stroke="#C82333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="100" cy="82" r="26" stroke="#C82333" stroke-width="1.5" stroke-dasharray="3 4" />
+          <path d="M100 68 V96 M86 82 H114" stroke="#C82333" stroke-width="2" stroke-linecap="round" />
+          <path d="M100 22 L102.5 28 L108 29 L104 33 L105 38.5 L100 36 L95 38.5 L96 33 L92 29 L97.5 28 Z" fill="#C82333" />
+        </svg>
       </div>
 
+
+      
+
+
+        <!-- Right Outer Edge (2 individual elements framing the right side) -->
+
+
+        <!-- Bottom subtle accent -->
       <div class="container hero-grid">
         <!-- Hero Text Column -->
         <div class="hero-content" data-reveal="fade-right">
@@ -332,8 +332,8 @@
                 </svg>
               </div>
               <div class="floating-badge-content">
-                <h4 data-i18n="hero.badge_timing_title">Monday – Saturday</h4>
-                <p data-i18n="hero.badge_timing_sub">10 AM–1 PM &bull; 5 PM–9 PM</p>
+                <h4 data-i18n="hero.badge_timing_title">Monday – Saturday &amp; Sunday</h4>
+                <p data-i18n="hero.badge_timing_sub">10:30 AM–1 PM, 5–9 PM &bull; Sun: 10:30 AM–1 PM</p>
               </div>
             </div>
           </div>
@@ -345,24 +345,46 @@
          2. ABOUT US SECTION
          ======================================================================= -->
     <section class="section-padding bg-sand" id="about">
-
-      <!-- Dental Floating Ambient Decor: no circles, light opacity, random scattered positions -->
-      <!-- 3D Dental Mascot Floating Decor: Big animated cutouts (No circle, No square orb) -->
-      <!-- Intentional Dental Framing: 1-2 elements at outer edges, Center 100% Clean -->
-      <div class="section-dental-decor" aria-hidden="true">
-        <div class="dental-float-item js-dental-float pos-edge-top-left" data-depth="0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-2" title="Prabhu Dental Care Mascot">
-            <img src="assets/images/mascot-tooth-brush.png" alt="Tooth Mascot with Brush" class="dental-mascot-img" />
-          </div>
-        </div>
-
-        <div class="dental-float-item js-dental-float pos-edge-bottom-right" data-depth="-0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-1" title="Prabhu Dental Care Mascot">
-            <img src="assets/images/mascot-tooth-star.png" alt="Star Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
+      <!-- Elegant Dental Watermark Emblem (Matches Clinic Logo) -->
+      <div class="section-watermark-wrap" aria-hidden="true">
+        <svg class="section-watermark-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 35 C82 16 50 20 40 46 C28 76 50 110 65 130 C78 148 92 165 100 176 C108 165 122 148 135 130 C150 110 172 76 160 46 C150 20 118 16 100 35 Z" stroke="#C82333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="100" cy="82" r="26" stroke="#C82333" stroke-width="1.5" stroke-dasharray="3 4" />
+          <path d="M100 68 V96 M86 82 H114" stroke="#C82333" stroke-width="2" stroke-linecap="round" />
+          <path d="M100 22 L102.5 28 L108 29 L104 33 L105 38.5 L100 36 L95 38.5 L96 33 L92 29 L97.5 28 Z" fill="#C82333" />
+        </svg>
       </div>
 
+      <!-- Running Clinic Stream Background Engine (Continuous Luminous Medical Waves & Pulses) -->
+      <div class="about-running-bg" aria-hidden="true">
+        <!-- Running Stream 1: Medical Vital Rhythm Wave Track (Continuous Running ECG Heartbeat Stream) -->
+        <div class="running-track running-ecg-track">
+          <svg class="running-ecg-svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,60 L180,60 L200,60 L215,15 L225,105 L235,40 L245,75 L255,60 L480,60 L500,60 L515,15 L525,105 L535,40 L545,75 L555,60 L780,60 L800,60 L815,15 L825,105 L835,40 L845,75 L855,60 L1080,60 L1100,60 L1115,15 L1125,105 L1135,40 L1145,75 L1155,60 L1200,60" fill="none" stroke="rgba(200, 35, 51, 0.28)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg class="running-ecg-svg running-ecg-svg-clone" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,60 L180,60 L200,60 L215,15 L225,105 L235,40 L245,75 L255,60 L480,60 L500,60 L515,15 L525,105 L535,40 L545,75 L555,60 L780,60 L800,60 L815,15 L825,105 L835,40 L845,75 L855,60 L1080,60 L1100,60 L1115,15 L1125,105 L1135,40 L1145,75 L1155,60 L1200,60" fill="none" stroke="rgba(200, 35, 51, 0.28)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Running Stream 2: Luminous Medical Aurora Gradient Stream -->
+        <div class="running-track running-aurora-track">
+          <div class="running-aurora-ribbon running-aurora-1"></div>
+          <div class="running-aurora-ribbon running-aurora-2"></div>
+        </div>
+
+        <!-- Running Stream 3: Floating Micro-Bubbles & Sparkles Stream -->
+        <div class="running-bubbles-stream">
+          <span class="stream-bubble b1"></span>
+          <span class="stream-bubble b2"></span>
+          <span class="stream-bubble b3"></span>
+          <span class="stream-bubble b4"></span>
+          <span class="stream-bubble b5"></span>
+          <span class="stream-bubble b6"></span>
+          <span class="stream-bubble b7"></span>
+          <span class="stream-bubble b8"></span>
+        </div>
+      </div>
       <div class="container">
         <div class="section-header" data-reveal="fade-up">
           <span class="section-tag" data-i18n="about.tag">About Prabhu Dental Clinic</span>
@@ -503,24 +525,15 @@
          3. OUR DOCTORS SECTION
          ======================================================================= -->
     <section class="section-padding bg-white" id="doctors">
-
-      <!-- Dental Floating Ambient Decor: no circles, light opacity, random scattered positions -->
-      <!-- 3D Dental Mascot Floating Decor: Big animated cutouts (No circle, No square orb) -->
-      <!-- Intentional Dental Framing: Subtle corner decorations, Doctor cards 100% Clean -->
-      <div class="section-dental-decor" aria-hidden="true">
-        <div class="dental-float-item js-dental-float pos-edge-top-right" data-depth="0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-3" title="Doctor Tooth Mascot">
-            <img src="assets/images/mascot-tooth-doctor.png" alt="Doctor Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
-
-        <div class="dental-float-item js-dental-float pos-edge-bottom-left" data-depth="-0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-4" title="Enamel Shield Mascot">
-            <img src="assets/images/mascot-tooth-shield.png" alt="Shield Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
+      <!-- Elegant Dental Watermark Emblem (Matches Clinic Logo) -->
+      <div class="section-watermark-wrap" aria-hidden="true">
+        <svg class="section-watermark-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 35 C82 16 50 20 40 46 C28 76 50 110 65 130 C78 148 92 165 100 176 C108 165 122 148 135 130 C150 110 172 76 160 46 C150 20 118 16 100 35 Z" stroke="#C82333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="100" cy="82" r="26" stroke="#C82333" stroke-width="1.5" stroke-dasharray="3 4" />
+          <path d="M100 68 V96 M86 82 H114" stroke="#C82333" stroke-width="2" stroke-linecap="round" />
+          <path d="M100 22 L102.5 28 L108 29 L104 33 L105 38.5 L100 36 L95 38.5 L96 33 L92 29 L97.5 28 Z" fill="#C82333" />
+        </svg>
       </div>
-
       <div class="container">
         <div class="section-header" data-reveal="fade-up">
           <span class="section-tag" data-i18n="doctors.tag">Specialist Clinicians</span>
@@ -554,7 +567,7 @@
               <div class="doctor-card-footer">
                 <div class="doctor-timing-snippet">
                   <span data-i18n="doctors.consult_label">Consultations:</span>
-                  <strong data-i18n="doctors.consult_days">Monday – Saturday</strong>
+                  <strong data-i18n="doctors.consult_days">Mon – Sat &amp; Sun (Morning)</strong>
                 </div>
                 <a href="#appointment" class="btn btn-outline-primary btn-sm">
                   <span data-i18n="doctors.btn_consult">Request Consult</span>
@@ -586,7 +599,7 @@
               <div class="doctor-card-footer">
                 <div class="doctor-timing-snippet">
                   <span data-i18n="doctors.consult_label">Consultations:</span>
-                  <strong data-i18n="doctors.consult_days">Monday – Saturday</strong>
+                  <strong data-i18n="doctors.consult_days">Mon – Sat &amp; Sun (Morning)</strong>
                 </div>
                 <a href="#appointment" class="btn btn-outline-primary btn-sm">
                   <span data-i18n="doctors.btn_consult">Request Consult</span>
@@ -598,28 +611,702 @@
       </div>
     </section>
 
+            <!-- =======================================================================
+         4. TREATMENTS SECTION (SEQUENTIAL MOVING 3D FLIP CARDS WITH CLINICAL IMAGES)
+         ======================================================================= -->
+    <section class="section-padding bg-sand" id="treatments">
+      <!-- Elegant Dental Watermark Emblem (Matches Clinic Logo) -->
+      <div class="section-watermark-wrap" aria-hidden="true">
+        <svg class="section-watermark-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 35 C82 16 50 20 40 46 C28 76 50 110 65 130 C78 148 92 165 100 176 C108 165 122 148 135 130 C150 110 172 76 160 46 C150 20 118 16 100 35 Z" stroke="#C82333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="100" cy="82" r="26" stroke="#C82333" stroke-width="1.5" stroke-dasharray="3 4" />
+          <path d="M100 68 V96 M86 82 H114" stroke="#C82333" stroke-width="2" stroke-linecap="round" />
+          <path d="M100 22 L102.5 28 L108 29 L104 33 L105 38.5 L100 36 L95 38.5 L96 33 L92 29 L97.5 28 Z" fill="#C82333" />
+        </svg>
+      </div>
+
+      <div class="container">
+        <div class="section-header" data-reveal="fade-up">
+          <span class="section-tag" data-i18n="treatments.tag">Clinical Treatments</span>
+          <h2 class="section-title" data-i18n="treatments.title">Treatments</h2>
+          <p class="section-subtitle" data-i18n="treatments.subtitle">
+            Comprehensive restorative, cosmetic, and advanced dental procedures tailored to your smile.
+          </p>
+        </div>
+
+        <div class="treatments-carousel-wrap" data-reveal="fade-up" data-reveal-delay="100">
+          <!-- Header Bar with Live Step Counter (1 / 8 to 8 / 8) & Navigation Arrows -->
+          <div class="treatments-header-bar">
+            <span class="treatments-counter-badge">
+              <span style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--primary);"></span>
+              <span id="treatmentsCounter">1 / 8</span>
+            </span>
+
+            <div class="treatments-nav-arrows">
+              <button type="button" class="treatment-nav-btn js-treat-prev" aria-label="Previous Treatment Card" title="Previous Treatment">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button type="button" class="treatment-nav-btn js-treat-next" aria-label="Next Treatment Card" title="Next Treatment">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 20px; height: 20px;">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Carousel Viewport & Moving Track -->
+          <div class="treatments-carousel-viewport" id="treatmentsViewport">
+            <div class="treatments-carousel-track" id="treatmentsTrack">
+
+              <!-- Card 1: General Dentistry -->
+              <article class="treatment-card-item" data-card-idx="0" tabindex="0">
+                <div class="treatment-card-inner">
+                  <!-- Front Face with Treatment Image & Floating Icon -->
+                  <div class="treatment-card-front">
+                    <div class="treatment-card-thumb-wrap">
+                      <img src="assets/images/treatments/t1-general-dentistry.jpg" alt="General Dentistry Examination" class="treatment-card-thumb" loading="lazy" />
+                      <div class="treatment-thumb-icon-badge" title="General Dentistry">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                          <polyline points="9 12 11 14 15 10"></polyline>
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 class="treatment-card-title" data-i18n="treatments.t1_title">General Dentistry</h3>
+                    <div class="treatment-card-subtitle" data-i18n="treatments.t1_sub">The foundation of a healthy smile</div>
+                    <p class="treatment-card-desc" data-i18n="treatments.t1_desc">
+                      Comprehensive preventive and restorative care for the whole family.
+                    </p>
+                    <div class="treatment-card-footer">
+                      <button type="button" class="treatment-learn-btn js-flip-card" aria-label="Learn more about General Dentistry">
+                        <span data-i18n="treatments.learn_more">Learn more</span>
+                        <span class="arrow">&rsaquo;</span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Back Face (Flipped Info) -->
+                  <div class="treatment-card-back">
+                    <div class="treatment-back-header">
+                      <span class="treatment-back-badge" data-i18n="treatments.overview">Procedure Details</span>
+                      <button type="button" class="treatment-back-close js-unflip-card" aria-label="Back to overview" title="Back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+                          <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        <span data-i18n="treatments.back">Back</span>
+                      </button>
+                    </div>
+                    <h4 class="treatment-back-title" data-i18n="treatments.t1_title">General Dentistry</h4>
+                    <ul class="treatment-back-points">
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t1_p1">Digital diagnostic checkup &amp; low-radiation X-rays</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t1_p2">Ultrasonic scaling &amp; enamel-safe cavity fillings</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t1_p3">Preventive fluoride care &amp; routine dental wellness</span>
+                      </li>
+                    </ul>
+                    <div class="treatment-back-meta">
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_duration">Duration</span>
+                        <strong class="treatment-meta-val" data-i18n="treatments.t1_dur">30–45 Mins</strong>
+                      </div>
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_comfort">Comfort</span>
+                        <strong class="treatment-meta-val" data-i18n="treatments.val_painless">100% Gentle</strong>
+                      </div>
+                    </div>
+                    <div class="treatment-back-action">
+                      <button type="button" class="treatment-card-book-btn js-book-treatment" data-treatment="General Dentistry">
+                        <span data-i18n="treatments.book_btn">Book Appointment</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 15px; height: 15px;">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 2: Cosmetic Dentistry -->
+              <article class="treatment-card-item" data-card-idx="1" tabindex="0">
+                <div class="treatment-card-inner">
+                  <!-- Front Face with Treatment Image & Floating Icon -->
+                  <div class="treatment-card-front">
+                    <div class="treatment-card-thumb-wrap">
+                      <img src="assets/images/treatments/t2-cosmetic-dentistry.jpg" alt="Cosmetic Dentistry Smile Makeover" class="treatment-card-thumb" loading="lazy" />
+                      <div class="treatment-thumb-icon-badge" title="Cosmetic Dentistry">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M12 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 class="treatment-card-title" data-i18n="treatments.t2_title">Cosmetic Dentistry</h3>
+                    <div class="treatment-card-subtitle" data-i18n="treatments.t2_sub">Perfect the smile you have</div>
+                    <p class="treatment-card-desc" data-i18n="treatments.t2_desc">
+                      Veneers, bonding, contouring, and smile makeovers designed around you.
+                    </p>
+                    <div class="treatment-card-footer">
+                      <button type="button" class="treatment-learn-btn js-flip-card" aria-label="Learn more about Cosmetic Dentistry">
+                        <span data-i18n="treatments.learn_more">Learn more</span>
+                        <span class="arrow">&rsaquo;</span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Back Face (Flipped Info) -->
+                  <div class="treatment-card-back">
+                    <div class="treatment-back-header">
+                      <span class="treatment-back-badge" data-i18n="treatments.overview">Procedure Details</span>
+                      <button type="button" class="treatment-back-close js-unflip-card" aria-label="Back to overview" title="Back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+                          <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        <span data-i18n="treatments.back">Back</span>
+                      </button>
+                    </div>
+                    <h4 class="treatment-back-title" data-i18n="treatments.t2_title">Cosmetic Dentistry</h4>
+                    <ul class="treatment-back-points">
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t2_p1">Custom porcelain veneers &amp; aesthetic composite bonding</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t2_p2">Diastema (gap) closure &amp; precision tooth contouring</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t2_p3">Digital smile makeover tailored to facial aesthetics</span>
+                      </li>
+                    </ul>
+                    <div class="treatment-back-meta">
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_duration">Duration</span>
+                        <strong class="treatment-meta-val" data-i18n="treatments.t2_dur">1–2 Visits</strong>
+                      </div>
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_comfort">Comfort</span>
+                        <strong class="treatment-meta-val" data-i18n="treatments.val_natural">Natural Aesthetic</strong>
+                      </div>
+                    </div>
+                    <div class="treatment-back-action">
+                      <button type="button" class="treatment-card-book-btn js-book-treatment" data-treatment="Cosmetic Dentistry">
+                        <span data-i18n="treatments.book_btn">Book Appointment</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 15px; height: 15px;">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 3: Orthodontics & Aligners -->
+              <article class="treatment-card-item" data-card-idx="2" tabindex="0">
+                <div class="treatment-card-inner">
+                  <!-- Front Face with Treatment Image & Floating Icon -->
+                  <div class="treatment-card-front">
+                    <div class="treatment-card-thumb-wrap">
+                      <img src="assets/images/treatments/t3-orthodontics.jpg" alt="Clear Invisible Aligners" class="treatment-card-thumb" loading="lazy" />
+                      <div class="treatment-thumb-icon-badge" title="Orthodontics & Aligners">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <path d="M8 12h8"></path>
+                          <path d="M12 8v8"></path>
+                          <circle cx="8" cy="12" r="1.5" fill="currentColor"></circle>
+                          <circle cx="16" cy="12" r="1.5" fill="currentColor"></circle>
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 class="treatment-card-title" data-i18n="treatments.t3_title">Orthodontics &amp; Aligners</h3>
+                    <div class="treatment-card-subtitle" data-i18n="treatments.t3_sub">Straighter teeth at any age</div>
+                    <p class="treatment-card-desc" data-i18n="treatments.t3_desc">
+                      Invisible aligners and modern braces for a healthier, more confident smile.
+                    </p>
+                    <div class="treatment-card-footer">
+                      <button type="button" class="treatment-learn-btn js-flip-card" aria-label="Learn more about Orthodontics & Aligners">
+                        <span data-i18n="treatments.learn_more">Learn more</span>
+                        <span class="arrow">&rsaquo;</span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Back Face (Flipped Info) -->
+                  <div class="treatment-card-back">
+                    <div class="treatment-back-header">
+                      <span class="treatment-back-badge" data-i18n="treatments.overview">Procedure Details</span>
+                      <button type="button" class="treatment-back-close js-unflip-card" aria-label="Back to overview" title="Back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+                          <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        <span data-i18n="treatments.back">Back</span>
+                      </button>
+                    </div>
+                    <h4 class="treatment-back-title" data-i18n="treatments.t3_title">Orthodontics &amp; Aligners</h4>
+                    <ul class="treatment-back-points">
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t3_p1">Clear invisible aligners (discreet, removable &amp; custom)</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t3_p2">Modern ceramic &amp; metallic braces for teens and adults</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t3_p3">Malocclusion correction &amp; dentofacial orthopaedics</span>
+                      </li>
+                    </ul>
+                    <div class="treatment-back-meta">
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_duration">Duration</span>
+                        <strong class="treatment-meta-val" data-i18n="treatments.t3_dur">6–18 Mos Plan</strong>
+                      </div>
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_comfort">Comfort</span>
+                        <strong class="treatment-meta-val">Dr. Ramya K.S.</strong>
+                      </div>
+                    </div>
+                    <div class="treatment-back-action">
+                      <button type="button" class="treatment-card-book-btn js-book-treatment" data-treatment="Orthodontics & Aligners">
+                        <span data-i18n="treatments.book_btn">Book Appointment</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 15px; height: 15px;">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 4: Dental Implants -->
+              <article class="treatment-card-item" data-card-idx="3" tabindex="0">
+                <div class="treatment-card-inner">
+                  <!-- Front Face with Treatment Image & Floating Icon -->
+                  <div class="treatment-card-front">
+                    <div class="treatment-card-thumb-wrap">
+                      <img src="assets/images/treatments/t4-dental-implants.jpg" alt="Dental Implant Precision Model" class="treatment-card-thumb" loading="lazy" />
+                      <div class="treatment-thumb-icon-badge" title="Dental Implants">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="5" r="3"></circle>
+                          <line x1="12" y1="8" x2="12" y2="21"></line>
+                          <path d="M5 12h14"></path>
+                          <path d="M7 16h10"></path>
+                          <path d="M9 20h6"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 class="treatment-card-title" data-i18n="treatments.t4_title">Dental Implants</h3>
+                    <div class="treatment-card-subtitle" data-i18n="treatments.t4_sub">Permanent, natural-looking replacements</div>
+                    <p class="treatment-card-desc" data-i18n="treatments.t4_desc">
+                      State-of-the-art implants that look, feel, and function like your natural teeth.
+                    </p>
+                    <div class="treatment-card-footer">
+                      <button type="button" class="treatment-learn-btn js-flip-card" aria-label="Learn more about Dental Implants">
+                        <span data-i18n="treatments.learn_more">Learn more</span>
+                        <span class="arrow">&rsaquo;</span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Back Face (Flipped Info) -->
+                  <div class="treatment-card-back">
+                    <div class="treatment-back-header">
+                      <span class="treatment-back-badge" data-i18n="treatments.overview">Procedure Details</span>
+                      <button type="button" class="treatment-back-close js-unflip-card" aria-label="Back to overview" title="Back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+                          <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        <span data-i18n="treatments.back">Back</span>
+                      </button>
+                    </div>
+                    <h4 class="treatment-back-title" data-i18n="treatments.t4_title">Dental Implants</h4>
+                    <ul class="treatment-back-points">
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t4_p1">Biocompatible titanium screw implants for missing teeth</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t4_p2">Immediate loading implants &amp; full-arch fixed bridges</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t4_p3">Preserves bone density and restores 100% bite strength</span>
+                      </li>
+                    </ul>
+                    <div class="treatment-back-meta">
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_duration">Duration</span>
+                        <strong class="treatment-meta-val" data-i18n="treatments.t4_dur">Permanent Fix</strong>
+                      </div>
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_comfort">Comfort</span>
+                        <strong class="treatment-meta-val">Dr. Mahesh H.V.</strong>
+                      </div>
+                    </div>
+                    <div class="treatment-back-action">
+                      <button type="button" class="treatment-card-book-btn js-book-treatment" data-treatment="Dental Implants">
+                        <span data-i18n="treatments.book_btn">Book Appointment</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 15px; height: 15px;">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 5: Teeth Whitening -->
+              <article class="treatment-card-item" data-card-idx="4" tabindex="0">
+                <div class="treatment-card-inner">
+                  <!-- Front Face with Treatment Image & Floating Icon -->
+                  <div class="treatment-card-front">
+                    <div class="treatment-card-thumb-wrap">
+                      <img src="assets/images/treatments/t5-teeth-whitening.jpg" alt="Professional LED Teeth Whitening" class="treatment-card-thumb" loading="lazy" />
+                      <div class="treatment-thumb-icon-badge" title="Teeth Whitening">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <circle cx="12" cy="12" r="5"></circle>
+                          <line x1="12" y1="1" x2="12" y2="3"></line>
+                          <line x1="12" y1="21" x2="12" y2="23"></line>
+                          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                          <line x1="1" y1="12" x2="3" y2="12"></line>
+                          <line x1="21" y1="12" x2="23" y2="12"></line>
+                          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 class="treatment-card-title" data-i18n="treatments.t5_title">Teeth Whitening</h3>
+                    <div class="treatment-card-subtitle" data-i18n="treatments.t5_sub">A brighter smile in one visit</div>
+                    <p class="treatment-card-desc" data-i18n="treatments.t5_desc">
+                      Professional-grade whitening for dramatically whiter teeth, safely and quickly.
+                    </p>
+                    <div class="treatment-card-footer">
+                      <button type="button" class="treatment-learn-btn js-flip-card" aria-label="Learn more about Teeth Whitening">
+                        <span data-i18n="treatments.learn_more">Learn more</span>
+                        <span class="arrow">&rsaquo;</span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Back Face (Flipped Info) -->
+                  <div class="treatment-card-back">
+                    <div class="treatment-back-header">
+                      <span class="treatment-back-badge" data-i18n="treatments.overview">Procedure Details</span>
+                      <button type="button" class="treatment-back-close js-unflip-card" aria-label="Back to overview" title="Back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+                          <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        <span data-i18n="treatments.back">Back</span>
+                      </button>
+                    </div>
+                    <h4 class="treatment-back-title" data-i18n="treatments.t5_title">Teeth Whitening</h4>
+                    <ul class="treatment-back-points">
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t5_p1">In-office laser LED cold-light whitening technology</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t5_p2">Removes stubborn stains from tea, coffee &amp; tobacco</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t5_p3">Safely lightens teeth up to 6–8 shades in a single sitting</span>
+                      </li>
+                    </ul>
+                    <div class="treatment-back-meta">
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_duration">Duration</span>
+                        <strong class="treatment-meta-val" data-i18n="treatments.t5_dur">45 Mins Visit</strong>
+                      </div>
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_comfort">Comfort</span>
+                        <strong class="treatment-meta-val" data-i18n="treatments.val_instant">Instant Result</strong>
+                      </div>
+                    </div>
+                    <div class="treatment-back-action">
+                      <button type="button" class="treatment-card-book-btn js-book-treatment" data-treatment="Teeth Whitening">
+                        <span data-i18n="treatments.book_btn">Book Appointment</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 15px; height: 15px;">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 6: Root Canal -->
+              <article class="treatment-card-item" data-card-idx="5" tabindex="0">
+                <div class="treatment-card-inner">
+                  <!-- Front Face with Treatment Image & Floating Icon -->
+                  <div class="treatment-card-front">
+                    <div class="treatment-card-thumb-wrap">
+                      <img src="assets/images/treatments/t6-root-canal.jpg" alt="Gentle Rotary Endodontics" class="treatment-card-thumb" loading="lazy" />
+                      <div class="treatment-thumb-icon-badge" title="Root Canal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 class="treatment-card-title" data-i18n="treatments.t6_title">Root Canal</h3>
+                    <div class="treatment-card-subtitle" data-i18n="treatments.t6_sub">Gentle, pain-free treatment</div>
+                    <p class="treatment-card-desc" data-i18n="treatments.t6_desc">
+                      Advanced rotary techniques to save your tooth comfortably and efficiently.
+                    </p>
+                    <div class="treatment-card-footer">
+                      <button type="button" class="treatment-learn-btn js-flip-card" aria-label="Learn more about Root Canal">
+                        <span data-i18n="treatments.learn_more">Learn more</span>
+                        <span class="arrow">&rsaquo;</span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Back Face (Flipped Info) -->
+                  <div class="treatment-card-back">
+                    <div class="treatment-back-header">
+                      <span class="treatment-back-badge" data-i18n="treatments.overview">Procedure Details</span>
+                      <button type="button" class="treatment-back-close js-unflip-card" aria-label="Back to overview" title="Back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+                          <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        <span data-i18n="treatments.back">Back</span>
+                      </button>
+                    </div>
+                    <h4 class="treatment-back-title" data-i18n="treatments.t6_title">Root Canal</h4>
+                    <ul class="treatment-back-points">
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t6_p1">Single-sitting rotary endodontics with 3D apex locator</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t6_p2">Painless infection removal &amp; bioceramic root sealing</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t6_p3">Crown restoration to save your natural tooth for life</span>
+                      </li>
+                    </ul>
+                    <div class="treatment-back-meta">
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_duration">Duration</span>
+                        <strong class="treatment-meta-val" data-i18n="treatments.t6_dur">45–60 Mins</strong>
+                      </div>
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_comfort">Comfort</span>
+                        <strong class="treatment-meta-val" data-i18n="treatments.val_painless">100% Gentle</strong>
+                      </div>
+                    </div>
+                    <div class="treatment-back-action">
+                      <button type="button" class="treatment-card-book-btn js-book-treatment" data-treatment="Root Canal">
+                        <span data-i18n="treatments.book_btn">Book Appointment</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 15px; height: 15px;">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 7: Paediatric Dentistry -->
+              <article class="treatment-card-item" data-card-idx="6" tabindex="0">
+                <div class="treatment-card-inner">
+                  <!-- Front Face with Treatment Image & Floating Icon -->
+                  <div class="treatment-card-front">
+                    <div class="treatment-card-thumb-wrap">
+                      <img src="assets/images/treatments/t7-paediatric-dentistry.jpg" alt="Friendly Pediatric Dental Care" class="treatment-card-thumb" loading="lazy" />
+                      <div class="treatment-thumb-icon-badge" title="Paediatric Dentistry">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 class="treatment-card-title" data-i18n="treatments.t7_title">Paediatric Dentistry</h3>
+                    <div class="treatment-card-subtitle" data-i18n="treatments.t7_sub">Gentle care for little smiles</div>
+                    <p class="treatment-card-desc" data-i18n="treatments.t7_desc">
+                      Gentle preventive and restorative treatments designed with patience for growing children.
+                    </p>
+                    <div class="treatment-card-footer">
+                      <button type="button" class="treatment-learn-btn js-flip-card" aria-label="Learn more about Paediatric Dentistry">
+                        <span data-i18n="treatments.learn_more">Learn more</span>
+                        <span class="arrow">&rsaquo;</span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Back Face (Flipped Info) -->
+                  <div class="treatment-card-back">
+                    <div class="treatment-back-header">
+                      <span class="treatment-back-badge" data-i18n="treatments.overview">Procedure Details</span>
+                      <button type="button" class="treatment-back-close js-unflip-card" aria-label="Back to overview" title="Back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+                          <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        <span data-i18n="treatments.back">Back</span>
+                      </button>
+                    </div>
+                    <h4 class="treatment-back-title" data-i18n="treatments.t7_title">Paediatric Dentistry</h4>
+                    <ul class="treatment-back-points">
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t7_p1">Gentle checkups, habit-breaking &amp; caries prevention for kids</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t7_p2">Painless cavity fillings &amp; tooth-protecting pit sealants</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t7_p3">Friendly, patient environment designed to eliminate dental fear</span>
+                      </li>
+                    </ul>
+                    <div class="treatment-back-meta">
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_duration">Duration</span>
+                        <strong class="treatment-meta-val" data-i18n="treatments.t7_dur">20–30 Mins</strong>
+                      </div>
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_comfort">Comfort</span>
+                        <strong class="treatment-meta-val" data-i18n="treatments.val_painless">Kid-Friendly</strong>
+                      </div>
+                    </div>
+                    <div class="treatment-back-action">
+                      <button type="button" class="treatment-card-book-btn js-book-treatment" data-treatment="Paediatric Dentistry">
+                        <span data-i18n="treatments.book_btn">Book Appointment</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 15px; height: 15px;">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Card 8: Periodontics & Gum Care -->
+              <article class="treatment-card-item" data-card-idx="7" tabindex="0">
+                <div class="treatment-card-inner">
+                  <!-- Front Face with Treatment Image & Floating Icon -->
+                  <div class="treatment-card-front">
+                    <div class="treatment-card-thumb-wrap">
+                      <img src="assets/images/treatments/t8-periodontics-gum.jpg" alt="Periodontal Gum Care and Scaling" class="treatment-card-thumb" loading="lazy" />
+                      <div class="treatment-thumb-icon-badge" title="Periodontics & Gum Care">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <h3 class="treatment-card-title" data-i18n="treatments.t8_title">Periodontics &amp; Gum Care</h3>
+                    <div class="treatment-card-subtitle" data-i18n="treatments.t8_sub">Healthy gums for lifelong teeth</div>
+                    <p class="treatment-card-desc" data-i18n="treatments.t8_desc">
+                      Specialised periodontal treatments for gum health, bleeding prevention, and laser care.
+                    </p>
+                    <div class="treatment-card-footer">
+                      <button type="button" class="treatment-learn-btn js-flip-card" aria-label="Learn more about Periodontics & Gum Care">
+                        <span data-i18n="treatments.learn_more">Learn more</span>
+                        <span class="arrow">&rsaquo;</span>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Back Face (Flipped Info) -->
+                  <div class="treatment-card-back">
+                    <div class="treatment-back-header">
+                      <span class="treatment-back-badge" data-i18n="treatments.overview">Procedure Details</span>
+                      <button type="button" class="treatment-back-close js-unflip-card" aria-label="Back to overview" title="Back">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+                          <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                        <span data-i18n="treatments.back">Back</span>
+                      </button>
+                    </div>
+                    <h4 class="treatment-back-title" data-i18n="treatments.t8_title">Periodontics &amp; Gum Care</h4>
+                    <ul class="treatment-back-points">
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t8_p1">Deep subgingival scaling &amp; root planing for gum disease</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t8_p2">Laser periodontal therapy for bleeding gums &amp; gingivitis</span>
+                      </li>
+                      <li>
+                        <span class="back-bullet-icon">✓</span>
+                        <span data-i18n="treatments.t8_p3">Gum grafting, pocket reduction &amp; regenerative treatments</span>
+                      </li>
+                    </ul>
+                    <div class="treatment-back-meta">
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_duration">Duration</span>
+                        <strong class="treatment-meta-val" data-i18n="treatments.t8_dur">1–2 Sessions</strong>
+                      </div>
+                      <div class="treatment-meta-box">
+                        <span class="treatment-meta-lbl" data-i18n="treatments.lbl_comfort">Comfort</span>
+                        <strong class="treatment-meta-val">Dr. Mahesh H.V.</strong>
+                      </div>
+                    </div>
+                    <div class="treatment-back-action">
+                      <button type="button" class="treatment-card-book-btn js-book-treatment" data-treatment="Periodontics & Gum Care">
+                        <span data-i18n="treatments.book_btn">Book Appointment</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 15px; height: 15px;">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Pagination Dots Indicators (8 dots for all 8 cards) -->
+          <div class="treatments-pagination" id="treatmentsPagination"></div>
+        </div>
+      </div>
+    </section>
+
     <!-- =======================================================================
          4. SPECIALITIES SECTION
          ======================================================================= -->
     <section class="section-padding bg-sand" id="specialities">
-
-      <!-- Dental Floating Ambient Decor: no circles, light opacity, random scattered positions -->
-      <!-- 3D Dental Mascot Floating Decor: Big animated cutouts (No circle, No square orb) -->
-      <!-- Intentional Dental Framing: Minimal outer edge decoration, Cards 100% Clean -->
-      <div class="section-dental-decor" aria-hidden="true">
-        <div class="dental-float-item js-dental-float pos-edge-top-left" data-depth="0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-1" title="Enamel Protection Shield">
-            <img src="assets/images/mascot-tooth-shield.png" alt="Shield Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
-
-        <div class="dental-float-item js-dental-float pos-edge-bottom-right" data-depth="-0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-2" title="Tooth with Brush & Mirror">
-            <img src="assets/images/mascot-tooth-brush.png" alt="Tooth Mascot with Brush" class="dental-mascot-img" />
-          </div>
-        </div>
+      <!-- Elegant Dental Watermark Emblem (Matches Clinic Logo) -->
+      <div class="section-watermark-wrap" aria-hidden="true">
+        <svg class="section-watermark-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 35 C82 16 50 20 40 46 C28 76 50 110 65 130 C78 148 92 165 100 176 C108 165 122 148 135 130 C150 110 172 76 160 46 C150 20 118 16 100 35 Z" stroke="#C82333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="100" cy="82" r="26" stroke="#C82333" stroke-width="1.5" stroke-dasharray="3 4" />
+          <path d="M100 68 V96 M86 82 H114" stroke="#C82333" stroke-width="2" stroke-linecap="round" />
+          <path d="M100 22 L102.5 28 L108 29 L104 33 L105 38.5 L100 36 L95 38.5 L96 33 L92 29 L97.5 28 Z" fill="#C82333" />
+        </svg>
       </div>
 
+      <!-- Running Bubble Circles Background Engine (Replaces Zigzag Lines) -->
+      <div class="specialities-bubbles-bg" aria-hidden="true">
+        <div class="bubble-orb bubble-orb-1"></div>
+        <div class="bubble-orb bubble-orb-2"></div>
+        <div class="bubble-orb bubble-orb-3"></div>
+        <div class="bubble-orb bubble-orb-4"></div>
+        <div class="bubble-orb bubble-orb-5"></div>
+        <div class="bubble-orb bubble-orb-6"></div>
+        <div class="bubble-orb bubble-orb-7"></div>
+        <div class="bubble-orb bubble-orb-8"></div>
+        <div class="bubble-orb bubble-orb-9"></div>
+        <div class="bubble-orb bubble-orb-10"></div>
+        <div class="bubble-orb bubble-orb-11"></div>
+        <div class="bubble-orb bubble-orb-12"></div>
+      </div>
       <div class="container">
         <div class="section-header" data-reveal="fade-up">
           <span class="section-tag" data-i18n="spec.tag">Clinical Scope</span>
@@ -629,8 +1316,22 @@
           </p>
         </div>
 
-        <div class="specialities-grid">
-          <!-- 1. Orthodontics -->
+        <div class="specialities-orbit-wrapper">
+          <div class="specialities-orbit-stage" id="specialitiesOrbitStage">
+            <!-- Center Clinic Core Hub -->
+            <div class="orbit-center-hub" aria-hidden="true">
+              <div class="hub-pulse-ring"></div>
+              <div class="hub-pulse-ring hub-pulse-ring-2"></div>
+              <div class="hub-inner-core">
+                <img src="assets/images/prabhu-clinic-logo.png" alt="Prabhu Clinic Emblem" class="hub-logo-img">
+                <span class="hub-title" data-i18n="brand.clinic_name">Prabhu Dental</span>
+                <span class="hub-sub">Specialities Orbit</span>
+              </div>
+            </div>
+
+            <!-- Orbit Track holding the 6 Speciality Cards -->
+            <div class="specialities-orbit-track" id="specialitiesOrbitTrack">
+              <!-- 1. Orthodontics -->
           <article class="speciality-card" data-reveal="fade-up" data-reveal-delay="100">
             <div class="speciality-icon-box" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -722,6 +1423,22 @@
             </p>
             <span class="specialist-lead-badge" data-i18n="spec.specialist_support">Specialist Support</span>
           </article>
+            </div>
+          </div>
+
+          <!-- Interactive Orbit Navigation Controls -->
+          <div class="orbit-controls-bar">
+            <button type="button" class="orbit-nav-btn prev-btn" id="btnOrbitPrev" aria-label="Rotate previous speciality">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="orbit-status-pill">
+              <span class="orbit-status-dot"></span>
+              <span class="orbit-status-text">Continuous Clockwise Orbit (Hover or Click Card to Focus)</span>
+            </div>
+            <button type="button" class="orbit-nav-btn next-btn" id="btnOrbitNext" aria-label="Rotate next speciality">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -730,24 +1447,34 @@
          5. OUR TEAM SECTION
          ======================================================================= -->
     <section class="section-padding bg-white" id="team">
-
-      <!-- Dental Floating Ambient Decor: no circles, light opacity, random scattered positions -->
-      <!-- 3D Dental Mascot Floating Decor: Big animated cutouts (No circle, No square orb) -->
-      <!-- Intentional Dental Framing: Minimal edge decoration, Team cards 100% Clean -->
-      <div class="section-dental-decor" aria-hidden="true">
-        <div class="dental-float-item js-dental-float pos-edge-top-right" data-depth="0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-4" title="Star Tooth Mascot">
-            <img src="assets/images/mascot-tooth-star.png" alt="Star Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
-
-        <div class="dental-float-item js-dental-float pos-edge-bottom-left" data-depth="-0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-1" title="Doctor Tooth Mascot">
-            <img src="assets/images/mascot-tooth-doctor.png" alt="Doctor Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
+      <!-- Elegant Dental Watermark Emblem (Matches Clinic Logo) -->
+      <div class="section-watermark-wrap" aria-hidden="true">
+        <svg class="section-watermark-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 35 C82 16 50 20 40 46 C28 76 50 110 65 130 C78 148 92 165 100 176 C108 165 122 148 135 130 C150 110 172 76 160 46 C150 20 118 16 100 35 Z" stroke="#C82333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="100" cy="82" r="26" stroke="#C82333" stroke-width="1.5" stroke-dasharray="3 4" />
+          <path d="M100 68 V96 M86 82 H114" stroke="#C82333" stroke-width="2" stroke-linecap="round" />
+          <path d="M100 22 L102.5 28 L108 29 L104 33 L105 38.5 L100 36 L95 38.5 L96 33 L92 29 L97.5 28 Z" fill="#C82333" />
+        </svg>
       </div>
 
+      <!-- Running Glowing Spark Ambient Background Engine -->
+      <div class="team-spark-running-bg" aria-hidden="true">
+        <!-- Glowing Ambient Spark Light Aurora -->
+        <div class="spark-ambient-aurora aurora-1"></div>
+        <div class="spark-ambient-aurora aurora-2"></div>
+
+        <!-- Running Sparkling Starlight Dust Stream -->
+        <div class="spark-dust-stream">
+          <span class="spark-dust d1">✦</span>
+          <span class="spark-dust d2">✨</span>
+          <span class="spark-dust d3">✦</span>
+          <span class="spark-dust d4">⭐</span>
+          <span class="spark-dust d5">✦</span>
+          <span class="spark-dust d6">✨</span>
+          <span class="spark-dust d7">✦</span>
+          <span class="spark-dust d8">⭐</span>
+        </div>
+      </div>
       <div class="container">
         <div class="section-header" data-reveal="fade-up">
           <span class="section-tag" data-i18n="team.tag">Clinical Team</span>
@@ -759,7 +1486,9 @@
 
         <div class="team-grid-container">
           <!-- Associate Dental Surgeon Card -->
-          <article class="associate-card" data-reveal="fade-right">
+          <article class="associate-card spark-card" data-reveal="fade-right">
+            <span class="card-sparkle-star star-top-right" aria-hidden="true">✦</span>
+            <span class="card-sparkle-star star-bottom-left" aria-hidden="true">✦</span>
             <div class="associate-avatar-block">
               <div class="associate-avatar" aria-hidden="true">
                 <img src="assets/images/doctor-vindhya.jpg" alt="Dr. Vindhya S. B.D.S. Associate Dental Surgeon">
@@ -788,7 +1517,8 @@
 
             <div class="specialist-cards-grid">
               <!-- Oral Surgery -->
-              <div class="specialist-card-item">
+              <div class="specialist-card-item spark-card">
+                <span class="card-sparkle-star star-top-right" aria-hidden="true">✦</span>
                 <div class="icon-circle">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
@@ -801,7 +1531,8 @@
               </div>
 
               <!-- Prosthodontics -->
-              <div class="specialist-card-item">
+              <div class="specialist-card-item spark-card">
+                <span class="card-sparkle-star star-top-right" aria-hidden="true">✦</span>
                 <div class="icon-circle">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
@@ -814,7 +1545,8 @@
               </div>
 
               <!-- Pediatric Dentistry -->
-              <div class="specialist-card-item">
+              <div class="specialist-card-item spark-card">
+                <span class="card-sparkle-star star-top-right" aria-hidden="true">✦</span>
                 <div class="icon-circle">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"></path>
@@ -829,7 +1561,8 @@
             </div>
 
             <!-- Emergency Support Callout -->
-            <div class="emergency-care-banner">
+            <div class="emergency-care-banner spark-card">
+              <span class="card-sparkle-star star-top-right" aria-hidden="true">✦</span>
               <div class="emergency-banner-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
@@ -851,24 +1584,56 @@
          6. CLINIC LEGACY SECTION (TIMELINE)
          ======================================================================= -->
     <section class="section-padding bg-sand" id="legacy">
-
-      <!-- Dental Floating Ambient Decor: no circles, light opacity, random scattered positions -->
-      <!-- 3D Dental Mascot Floating Decor: Big animated cutouts (No circle, No square orb) -->
-      <!-- Intentional Dental Framing: Edge decoration near timeline, Content 100% Clean -->
-      <div class="section-dental-decor" aria-hidden="true">
-        <div class="dental-float-item js-dental-float pos-edge-top-left" data-depth="0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-2" title="Doctor Tooth Mascot">
-            <img src="assets/images/mascot-tooth-doctor.png" alt="Doctor Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
-
-        <div class="dental-float-item js-dental-float pos-edge-bottom-right" data-depth="-0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-3" title="Tooth with Brush & Mirror">
-            <img src="assets/images/mascot-tooth-brush.png" alt="Tooth Mascot with Brush" class="dental-mascot-img" />
-          </div>
-        </div>
+      <!-- Elegant Dental Watermark Emblem (Matches Clinic Logo) -->
+      <div class="section-watermark-wrap" aria-hidden="true">
+        <svg class="section-watermark-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 35 C82 16 50 20 40 46 C28 76 50 110 65 130 C78 148 92 165 100 176 C108 165 122 148 135 130 C150 110 172 76 160 46 C150 20 118 16 100 35 Z" stroke="#C82333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="100" cy="82" r="26" stroke="#C82333" stroke-width="1.5" stroke-dasharray="3 4" />
+          <path d="M100 68 V96 M86 82 H114" stroke="#C82333" stroke-width="2" stroke-linecap="round" />
+          <path d="M100 22 L102.5 28 L108 29 L104 33 L105 38.5 L100 36 L95 38.5 L96 33 L92 29 L97.5 28 Z" fill="#C82333" />
+        </svg>
       </div>
 
+      <!-- Heritage Lineage Tree Background Engine (Tree-Shaped Lineage Branches) -->
+      <div class="legacy-tree-bg" aria-hidden="true">
+        <svg class="legacy-tree-svg" viewBox="0 0 1200 1100" preserveAspectRatio="none">
+          <!-- Central Heritage Tree Trunk Growing along Timeline -->
+          <path class="tree-trunk-line" d="M600,1100 C600,900 596,700 600,550 C604,400 600,200 600,0" fill="none" stroke="rgba(200, 35, 51, 0.22)" stroke-width="6" stroke-linecap="round"/>
+          
+          <!-- Branch 1: Curves out to Step 1 (Right) -->
+          <path class="tree-branch-line branch-1" d="M600,160 Q720,130 840,160" fill="none" stroke="rgba(200, 35, 51, 0.3)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="840" cy="160" r="9" fill="rgba(200, 35, 51, 0.45)"/>
+          <path d="M840,160 C855,145 870,160 855,175 Z" fill="rgba(248, 113, 113, 0.45)"/>
+          <path d="M760,140 C775,130 785,142 775,152 Z" fill="rgba(245, 158, 11, 0.38)"/>
+
+          <!-- Branch 2: Curves out to Step 2 (Left) -->
+          <path class="tree-branch-line branch-2" d="M600,360 Q480,320 360,360" fill="none" stroke="rgba(225, 29, 72, 0.3)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="360" cy="360" r="9" fill="rgba(225, 29, 72, 0.45)"/>
+          <path d="M360,360 C345,345 330,360 345,375 Z" fill="rgba(248, 113, 113, 0.45)"/>
+          <path d="M430,335 C415,325 405,337 415,347 Z" fill="rgba(245, 158, 11, 0.38)"/>
+
+          <!-- Branch 3: Curves out to Step 3 (Right) -->
+          <path class="tree-branch-line branch-3" d="M600,560 Q720,520 840,560" fill="none" stroke="rgba(245, 158, 11, 0.34)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="840" cy="560" r="9" fill="rgba(245, 158, 11, 0.55)"/>
+          <path d="M840,560 C855,545 870,560 855,575 Z" fill="rgba(245, 158, 11, 0.45)"/>
+          <path d="M750,535 C765,525 775,537 765,547 Z" fill="rgba(200, 35, 51, 0.38)"/>
+
+          <!-- Branch 4: Curves out to Step 4 (Left) -->
+          <path class="tree-branch-line branch-4" d="M600,760 Q480,720 360,760" fill="none" stroke="rgba(153, 27, 27, 0.3)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="360" cy="760" r="9" fill="rgba(153, 27, 27, 0.45)"/>
+          <path d="M360,760 C345,745 330,760 345,775 Z" fill="rgba(248, 113, 113, 0.45)"/>
+          <path d="M440,735 C425,725 415,737 425,747 Z" fill="rgba(245, 158, 11, 0.38)"/>
+
+          <!-- Branch 5: Curves out to Step 5 (Right) -->
+          <path class="tree-branch-line branch-5" d="M600,960 Q720,920 840,960" fill="none" stroke="rgba(16, 185, 129, 0.3)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="840" cy="960" r="9" fill="rgba(16, 185, 129, 0.5)"/>
+          <path d="M840,960 C855,945 870,960 855,975 Z" fill="rgba(16, 185, 129, 0.45)"/>
+          <path d="M760,935 C775,925 785,937 775,947 Z" fill="rgba(245, 158, 11, 0.38)"/>
+
+          <!-- Botanical Roots at base -->
+          <path class="tree-root-line" d="M600,1080 Q510,1130 440,1160 M600,1080 Q690,1130 760,1160" fill="none" stroke="rgba(200, 35, 51, 0.24)" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
       <div class="container">
         <div class="section-header" data-reveal="fade-up">
           <span class="section-tag" data-i18n="legacy.tag">Historical Lineage</span>
@@ -959,210 +1724,21 @@
       </div>
     </section>
 
-    <!-- =======================================================================
-         7. GALLERY SECTION
-         ======================================================================= -->
-    <section class="section-padding bg-white" id="gallery">
-
-      <!-- Dental Floating Ambient Decor: no circles, light opacity, random scattered positions -->
-      <!-- 3D Dental Mascot Floating Decor: Big animated cutouts (No circle, No square orb) -->
-      <!-- Intentional Dental Framing: Minimal decoration around edges, Photos 100% Clean -->
-      <div class="section-dental-decor" aria-hidden="true">
-        <div class="dental-float-item js-dental-float pos-edge-top-right" data-depth="0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-3" title="Shield Tooth Mascot">
-            <img src="assets/images/mascot-tooth-shield.png" alt="Shield Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
-
-        <div class="dental-float-item js-dental-float pos-edge-bottom-left" data-depth="-0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-2" title="Star Tooth Mascot">
-            <img src="assets/images/mascot-tooth-star.png" alt="Star Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="section-header" data-reveal="fade-up">
-          <span class="section-tag" data-i18n="gallery.tag">Visual Overview</span>
-          <h2 class="section-title" data-i18n="gallery.title">Gallery</h2>
-          <p class="section-subtitle" data-i18n="gallery.subtitle">
-            Featuring the actual clinic exterior photograph and clearly designated placeholders for upcoming client-provided clinic images.
-          </p>
-        </div>
-
-        <div class="gallery-grid">
-          <!-- Item 1: Clinic Exterior (Real Photo) -->
-          <div class="gallery-card" data-reveal="zoom-in" data-reveal-delay="100">
-            <div class="gallery-image-box">
-              <img src="assets/images/clinic-exterior.jpg" alt="Prabhu Dental Clinic Exterior Building and Signboard in Saraswathipuram, Mysore" loading="lazy">
-              <button type="button" class="btn btn-sm btn-primary js-open-lightbox" style="position: absolute; bottom: 12px; right: 12px; font-size: 12px; padding: 6px 12px;" aria-label="View clinic exterior image in full size">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <polyline points="9 21 3 21 3 15"></polyline>
-                  <line x1="21" y1="3" x2="14" y2="10"></line>
-                  <line x1="3" y1="21" x2="10" y2="14"></line>
-                </svg>
-                <span data-i18n="gallery.btn_view">View Full Size</span>
-              </button>
-            </div>
-            <div class="gallery-content">
-              <span class="gallery-item-tag" data-i18n="gallery.item1_tag">Real Photo</span>
-              <h3 class="gallery-item-title" data-i18n="gallery.item1_title">Clinic Exterior</h3>
-              <p class="gallery-item-desc" data-i18n="gallery.item1_desc">Actual exterior view of Prabhu Dental Clinic premises and signboard at 388, 5th Cross, 14th Main, Saraswathipuram, Mysore.</p>
-            </div>
-          </div>
-
-          <!-- Item 2: Clinic Interior -->
-          <div class="gallery-card" data-reveal="zoom-in" data-reveal-delay="150">
-            <div class="gallery-image-box">
-              <img src="assets/images/gallery-interior.jpg" alt="Prabhu Dental Clinic Interior Corridor and Consultation Rooms" loading="lazy">
-              <button type="button" class="btn btn-sm btn-primary js-open-lightbox" style="position: absolute; bottom: 12px; right: 12px; font-size: 12px; padding: 6px 12px;" aria-label="View clinic interior image in full size">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <polyline points="9 21 3 21 3 15"></polyline>
-                  <line x1="21" y1="3" x2="14" y2="10"></line>
-                  <line x1="3" y1="21" x2="10" y2="14"></line>
-                </svg>
-                <span data-i18n="gallery.btn_view">View Full Size</span>
-              </button>
-            </div>
-            <div class="gallery-content">
-              <span class="gallery-item-tag" data-i18n="gallery.item2_tag">Facility</span>
-              <h3 class="gallery-item-title" data-i18n="gallery.item2_title">Clinic Interior</h3>
-              <p class="gallery-item-desc" data-i18n="gallery.item2_desc">Spotless interior corridor, welcoming consultation pathways, and modern clinic architecture.</p>
-            </div>
-          </div>
-
-          <!-- Item 3: Reception -->
-          <div class="gallery-card" data-reveal="zoom-in" data-reveal-delay="200">
-            <div class="gallery-image-box">
-              <img src="assets/images/gallery-reception.jpg" alt="Prabhu Dental Clinic Reception Desk and Patient Waiting Lounge" loading="lazy">
-              <button type="button" class="btn btn-sm btn-primary js-open-lightbox" style="position: absolute; bottom: 12px; right: 12px; font-size: 12px; padding: 6px 12px;" aria-label="View reception image in full size">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <polyline points="9 21 3 21 3 15"></polyline>
-                  <line x1="21" y1="3" x2="14" y2="10"></line>
-                  <line x1="3" y1="21" x2="10" y2="14"></line>
-                </svg>
-                <span data-i18n="gallery.btn_view">View Full Size</span>
-              </button>
-            </div>
-            <div class="gallery-content">
-              <span class="gallery-item-tag" data-i18n="gallery.item3_tag">Front Desk</span>
-              <h3 class="gallery-item-title" data-i18n="gallery.item3_title">Reception</h3>
-              <p class="gallery-item-desc" data-i18n="gallery.item3_desc">Patient greeting desk and comfortable consultation waiting lounge.</p>
-            </div>
-          </div>
-
-          <!-- Item 4: Treatment Room -->
-          <div class="gallery-card" data-reveal="zoom-in" data-reveal-delay="250">
-            <div class="gallery-image-box">
-              <img src="assets/images/gallery-treatment.jpg" alt="Prabhu Dental Clinic Dental Treatment Room and Operatory" loading="lazy">
-              <button type="button" class="btn btn-sm btn-primary js-open-lightbox" style="position: absolute; bottom: 12px; right: 12px; font-size: 12px; padding: 6px 12px;" aria-label="View treatment room image in full size">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <polyline points="9 21 3 21 3 15"></polyline>
-                  <line x1="21" y1="3" x2="14" y2="10"></line>
-                  <line x1="3" y1="21" x2="10" y2="14"></line>
-                </svg>
-                <span data-i18n="gallery.btn_view">View Full Size</span>
-              </button>
-            </div>
-            <div class="gallery-content">
-              <span class="gallery-item-tag" data-i18n="gallery.item4_tag">Clinical Area</span>
-              <h3 class="gallery-item-title" data-i18n="gallery.item4_title">Treatment Room</h3>
-              <p class="gallery-item-desc" data-i18n="gallery.item4_desc">Ergonomic dental operatory suite equipped for orthodontic and periodontal clinical procedures.</p>
-            </div>
-          </div>
-
-          <!-- Item 5: Doctors -->
-          <div class="gallery-card" data-reveal="zoom-in" data-reveal-delay="300">
-            <div class="gallery-image-box">
-              <img src="assets/images/gallery-doctors.jpg" alt="Prabhu Dental Clinic Doctor Consultation Room" loading="lazy">
-              <button type="button" class="btn btn-sm btn-primary js-open-lightbox" style="position: absolute; bottom: 12px; right: 12px; font-size: 12px; padding: 6px 12px;" aria-label="View consultation room image in full size">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <polyline points="9 21 3 21 3 15"></polyline>
-                  <line x1="21" y1="3" x2="14" y2="10"></line>
-                  <line x1="3" y1="21" x2="10" y2="14"></line>
-                </svg>
-                <span data-i18n="gallery.btn_view">View Full Size</span>
-              </button>
-            </div>
-            <div class="gallery-content">
-              <span class="gallery-item-tag" data-i18n="gallery.item5_tag">Clinicians</span>
-              <h3 class="gallery-item-title" data-i18n="gallery.item5_title">Doctors</h3>
-              <p class="gallery-item-desc" data-i18n="gallery.item5_desc">Doctor consultation desk and clinical discussion environment for patient evaluations.</p>
-            </div>
-          </div>
-
-          <!-- Item 6: Team -->
-          <div class="gallery-card" data-reveal="zoom-in" data-reveal-delay="350">
-            <div class="gallery-image-box">
-              <img src="assets/images/gallery-team.jpg" alt="Prabhu Dental Clinic Dental Surgeons and Team Staff" loading="lazy">
-              <button type="button" class="btn btn-sm btn-primary js-open-lightbox" style="position: absolute; bottom: 12px; right: 12px; font-size: 12px; padding: 6px 12px;" aria-label="View dental team image in full size">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <polyline points="9 21 3 21 3 15"></polyline>
-                  <line x1="21" y1="3" x2="14" y2="10"></line>
-                  <line x1="3" y1="21" x2="10" y2="14"></line>
-                </svg>
-                <span data-i18n="gallery.btn_view">View Full Size</span>
-              </button>
-            </div>
-            <div class="gallery-content">
-              <span class="gallery-item-tag" data-i18n="gallery.item6_tag">Staff</span>
-              <h3 class="gallery-item-title" data-i18n="gallery.item6_title">Team</h3>
-              <p class="gallery-item-desc" data-i18n="gallery.item6_desc">Cohesive dental team and clinical specialists assisting with care.</p>
-            </div>
-          </div>
-
-          <!-- Item 7: Equipment -->
-          <div class="gallery-card" data-reveal="zoom-in" data-reveal-delay="400">
-            <div class="gallery-image-box">
-              <img src="assets/images/gallery-equipment.jpg" alt="Prabhu Dental Clinic Clinical Instruments and Sterilization Equipment" loading="lazy">
-              <button type="button" class="btn btn-sm btn-primary js-open-lightbox" style="position: absolute; bottom: 12px; right: 12px; font-size: 12px; padding: 6px 12px;" aria-label="View equipment image in full size">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <polyline points="9 21 3 21 3 15"></polyline>
-                  <line x1="21" y1="3" x2="14" y2="10"></line>
-                  <line x1="3" y1="21" x2="10" y2="14"></line>
-                </svg>
-                <span data-i18n="gallery.btn_view">View Full Size</span>
-              </button>
-            </div>
-            <div class="gallery-content">
-              <span class="gallery-item-tag" data-i18n="gallery.item7_tag">Technology</span>
-              <h3 class="gallery-item-title" data-i18n="gallery.item7_title">Equipment</h3>
-              <p class="gallery-item-desc" data-i18n="gallery.item7_desc">Sterilized instrumentation and modern dental equipment supporting patient treatments.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <!-- =======================================================================
          8. APPOINTMENT SECTION
          ======================================================================= -->
     <section class="section-padding bg-sand" id="appointment">
-
-      <!-- Dental Floating Ambient Decor: no circles, light opacity, random scattered positions -->
-      <!-- 3D Dental Mascot Floating Decor: Big animated cutouts (No circle, No square orb) -->
-      <!-- Intentional Dental Framing: 1-2 subtle corner elements, Form 100% Clean -->
-      <div class="section-dental-decor" aria-hidden="true">
-        <div class="dental-float-item js-dental-float pos-edge-top-left" data-depth="0.08" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-1" title="Doctor Tooth Mascot">
-            <img src="assets/images/mascot-tooth-doctor.png" alt="Doctor Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
-
-        <div class="dental-float-item js-dental-float pos-edge-bottom-right" data-depth="-0.08" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-4" title="Star Tooth Mascot">
-            <img src="assets/images/mascot-tooth-star.png" alt="Star Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
+      <!-- Elegant Dental Watermark Emblem (Matches Clinic Logo) -->
+      <div class="section-watermark-wrap" aria-hidden="true">
+        <svg class="section-watermark-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 35 C82 16 50 20 40 46 C28 76 50 110 65 130 C78 148 92 165 100 176 C108 165 122 148 135 130 C150 110 172 76 160 46 C150 20 118 16 100 35 Z" stroke="#C82333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="100" cy="82" r="26" stroke="#C82333" stroke-width="1.5" stroke-dasharray="3 4" />
+          <path d="M100 68 V96 M86 82 H114" stroke="#C82333" stroke-width="2" stroke-linecap="round" />
+          <path d="M100 22 L102.5 28 L108 29 L104 33 L105 38.5 L100 36 L95 38.5 L96 33 L92 29 L97.5 28 Z" fill="#C82333" />
+        </svg>
       </div>
-
       <div class="container">
         <div class="section-header" data-reveal="fade-up">
           <span class="section-tag" data-i18n="app.tag">Consultation Request</span>
@@ -1213,8 +1789,10 @@
                 <strong style="color: var(--primary-dark); font-size: 14px; display: block; margin-bottom: 6px;" data-i18n="app.timings_heading">Clinic Timings</strong>
                 <span style="font-size: 13.5px; color: var(--neutral-800); font-weight: 600;" data-i18n="app.timings_schedule">
                   Monday – Saturday:<br>
-                  10:00 AM – 01:00 PM<br>
-                  05:00 PM – 09:00 PM
+                  10:30 AM – 01:00 PM<br>
+                  05:00 PM – 09:00 PM<br><br>
+                  Sunday:<br>
+                  10:30 AM – 01:00 PM
                 </span>
               </div>
             </div>
@@ -1242,7 +1820,7 @@
                     <label for="preferredTime"><span data-i18n="app.label_time">Preferred Time</span> <span class="required">*</span></label>
                     <select id="preferredTime" name="preferredTime" class="form-control" required>
                       <option value="" data-i18n="app.opt_time_select">Select preferred session...</option>
-                      <option value="10:00 AM - 01:00 PM (Morning Session)" data-i18n="app.opt_time_morning">10:00 AM - 01:00 PM (Morning Session)</option>
+                      <option value="10:30 AM - 01:00 PM (Morning Session)" data-i18n="app.opt_time_morning">10:30 AM - 01:00 PM (Morning Session)</option>
                       <option value="05:00 PM - 09:00 PM (Evening Session)" data-i18n="app.opt_time_evening">05:00 PM - 09:00 PM (Evening Session)</option>
                     </select>
                   </div>
@@ -1252,12 +1830,14 @@
                   <label for="reasonForVisit"><span data-i18n="app.label_reason">Reason for Visit</span> <span class="required">*</span></label>
                   <select id="reasonForVisit" name="reasonForVisit" class="form-control" required>
                     <option value="" data-i18n="app.opt_reason_select">Select specialty or reason...</option>
-                    <option value="Orthodontics" data-i18n="spec.ortho_title">Orthodontics</option>
-                    <option value="Periodontistry" data-i18n="spec.perio_title">Periodontistry</option>
-                    <option value="Implantology" data-i18n="spec.implant_title">Implantology</option>
-                    <option value="Oral Surgery" data-i18n="spec.surg_title">Oral Surgery</option>
-                    <option value="Prosthodontics" data-i18n="spec.prostho_title">Prosthodontics</option>
-                    <option value="Pediatric Dentistry" data-i18n="spec.pedia_title">Pediatric Dentistry</option>
+                    <option value="General Dentistry" data-i18n="treatments.t1_title">General Dentistry</option>
+                    <option value="Cosmetic Dentistry" data-i18n="treatments.t2_title">Cosmetic Dentistry</option>
+                    <option value="Orthodontics & Aligners" data-i18n="treatments.t3_title">Orthodontics & Aligners</option>
+                    <option value="Dental Implants" data-i18n="treatments.t4_title">Dental Implants</option>
+                    <option value="Teeth Whitening" data-i18n="treatments.t5_title">Teeth Whitening</option>
+                    <option value="Root Canal" data-i18n="treatments.t6_title">Root Canal</option>
+                    <option value="Paediatric Dentistry" data-i18n="treatments.t7_title">Paediatric Dentistry</option>
+                    <option value="Periodontics & Gum Care" data-i18n="treatments.t8_title">Periodontics & Gum Care</option>
                     <option value="General Dental Consultation" data-i18n="app.opt_general">General Dental Consultation</option>
                   </select>
                 </div>
@@ -1309,24 +1889,45 @@
          9. LOCATION & TIMINGS SECTION
          ======================================================================= -->
     <section class="section-padding bg-white" id="location">
-
-      <!-- Dental Floating Ambient Decor: no circles, light opacity, random scattered positions -->
-      <!-- 3D Dental Mascot Floating Decor: Big animated cutouts (No circle, No square orb) -->
-      <!-- Intentional Dental Framing: Minimal decoration, Map & Address 100% Clean -->
-      <div class="section-dental-decor" aria-hidden="true">
-        <div class="dental-float-item js-dental-float pos-edge-top-right" data-depth="0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-2" title="Star Tooth Mascot">
-            <img src="assets/images/mascot-tooth-star.png" alt="Star Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
-
-        <div class="dental-float-item js-dental-float pos-edge-bottom-left" data-depth="-0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-1" title="Shield Tooth Mascot">
-            <img src="assets/images/mascot-tooth-shield.png" alt="Shield Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
+      <!-- Elegant Dental Watermark Emblem (Matches Clinic Logo) -->
+      <div class="section-watermark-wrap" aria-hidden="true">
+        <svg class="section-watermark-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 35 C82 16 50 20 40 46 C28 76 50 110 65 130 C78 148 92 165 100 176 C108 165 122 148 135 130 C150 110 172 76 160 46 C150 20 118 16 100 35 Z" stroke="#C82333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="100" cy="82" r="26" stroke="#C82333" stroke-width="1.5" stroke-dasharray="3 4" />
+          <path d="M100 68 V96 M86 82 H114" stroke="#C82333" stroke-width="2" stroke-linecap="round" />
+          <path d="M100 22 L102.5 28 L108 29 L104 33 L105 38.5 L100 36 L95 38.5 L96 33 L92 29 L97.5 28 Z" fill="#C82333" />
+        </svg>
       </div>
 
+
+      <!-- Location Simple Navigational Radar & Coordinate Grid Background Engine -->
+      <div class="location-simple-bg" aria-hidden="true">
+        <svg class="location-grid-svg" viewBox="0 0 1440 600" preserveAspectRatio="none">
+          <defs>
+            <pattern id="locCoordGrid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(200, 35, 51, 0.06)" stroke-width="1"/>
+              <circle cx="60" cy="60" r="1.5" fill="rgba(200, 35, 51, 0.14)"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#locCoordGrid)" />
+          
+          <!-- Concentric Navigational Radar Sonar Rings centered around Mysore clinic coordinate marker -->
+          <circle class="loc-radar-ring ring-1" cx="300" cy="300" r="90" fill="none" stroke="rgba(200, 35, 51, 0.20)" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <circle class="loc-radar-ring ring-2" cx="300" cy="300" r="170" fill="none" stroke="rgba(200, 35, 51, 0.15)" stroke-width="1.5"/>
+          <circle class="loc-radar-ring ring-3" cx="300" cy="300" r="250" fill="none" stroke="rgba(248, 113, 113, 0.12)" stroke-width="1" stroke-dasharray="8 6"/>
+          <circle class="loc-radar-ring ring-4" cx="300" cy="300" r="330" fill="none" stroke="rgba(200, 35, 51, 0.08)" stroke-width="1"/>
+
+          <!-- Navigational Crosshairs intersecting at clinic coordinates -->
+          <line x1="80" y1="300" x2="520" y2="300" stroke="rgba(200, 35, 51, 0.16)" stroke-width="1" stroke-dasharray="6 4" />
+          <line x1="300" y1="80" x2="300" y2="520" stroke="rgba(200, 35, 51, 0.16)" stroke-width="1" stroke-dasharray="6 4" />
+
+          <!-- Coordinate watermark text -->
+          <text x="315" y="290" fill="rgba(200, 35, 51, 0.28)" font-size="11" font-family="monospace" letter-spacing="1.5">12.3025° N, 76.6280° E</text>
+        </svg>
+
+        <div class="loc-sonar-pulse pulse-1"></div>
+        <div class="loc-sonar-pulse pulse-2"></div>
+      </div>
       <div class="container">
         <div class="section-header" data-reveal="fade-up">
           <span class="section-tag" data-i18n="loc.tag">Find Prabhu Dental Clinic</span>
@@ -1362,9 +1963,15 @@
               <div style="font-size: 14.5px; color: var(--neutral-900); font-weight: 700;" data-i18n="loc.days">
                 MONDAY – SATURDAY
               </div>
-              <div style="font-size: 14px; color: var(--neutral-700); margin-top: 4px;" data-i18n="loc.hours">
-                10:00 AM – 01:00 PM<br>
+              <div style="font-size: 14px; color: var(--neutral-700); margin-top: 2px;" data-i18n="loc.hours">
+                10:30 AM – 01:00 PM<br>
                 05:00 PM – 09:00 PM
+              </div>
+              <div style="font-size: 14.5px; color: var(--neutral-900); font-weight: 700; margin-top: 8px;" data-i18n="loc.sunday_label">
+                SUNDAY
+              </div>
+              <div style="font-size: 14px; color: var(--neutral-700); margin-top: 2px;" data-i18n="loc.sunday_hours">
+                10:30 AM – 01:00 PM
               </div>
             </div>
 
@@ -1416,24 +2023,40 @@
          10. CONTACT SECTION
          ======================================================================= -->
     <section class="section-padding bg-sand" id="contact">
-
-      <!-- Dental Floating Ambient Decor: no circles, light opacity, random scattered positions -->
-      <!-- 3D Dental Mascot Floating Decor: Big animated cutouts (No circle, No square orb) -->
-      <!-- Intentional Dental Framing: Very subtle edge decoration, Hours & Contacts 100% Clean -->
-      <div class="section-dental-decor" aria-hidden="true">
-        <div class="dental-float-item js-dental-float pos-edge-top-left" data-depth="0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-3" title="Doctor Tooth Mascot">
-            <img src="assets/images/mascot-tooth-doctor.png" alt="Doctor Tooth Mascot" class="dental-mascot-img" />
-          </div>
-        </div>
-
-        <div class="dental-float-item js-dental-float pos-edge-bottom-right" data-depth="-0.07" data-scroll="0.02">
-          <div class="dental-floating-character anim-frame-4" title="Tooth with Brush & Mirror">
-            <img src="assets/images/mascot-tooth-brush.png" alt="Tooth Mascot with Brush" class="dental-mascot-img" />
-          </div>
-        </div>
+      <!-- Elegant Dental Watermark Emblem (Matches Clinic Logo) -->
+      <div class="section-watermark-wrap" aria-hidden="true">
+        <svg class="section-watermark-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 35 C82 16 50 20 40 46 C28 76 50 110 65 130 C78 148 92 165 100 176 C108 165 122 148 135 130 C150 110 172 76 160 46 C150 20 118 16 100 35 Z" stroke="#C82333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <circle cx="100" cy="82" r="26" stroke="#C82333" stroke-width="1.5" stroke-dasharray="3 4" />
+          <path d="M100 68 V96 M86 82 H114" stroke="#C82333" stroke-width="2" stroke-linecap="round" />
+          <path d="M100 22 L102.5 28 L108 29 L104 33 L105 38.5 L100 36 L95 38.5 L96 33 L92 29 L97.5 28 Z" fill="#C82333" />
+        </svg>
       </div>
 
+
+      <!-- Contact Simple Communication Ripple & Wave Background Engine -->
+      <div class="contact-simple-bg" aria-hidden="true">
+        <svg class="contact-waves-svg" viewBox="0 0 1440 600" preserveAspectRatio="none">
+          <defs>
+            <pattern id="contactDotGrid" width="48" height="48" patternUnits="userSpaceOnUse">
+              <circle cx="24" cy="24" r="1.2" fill="rgba(200, 35, 51, 0.08)"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#contactDotGrid)"/>
+
+          <!-- Communication Waves expanding behind contact cards -->
+          <circle class="contact-comm-ring c-ring-1" cx="240" cy="320" r="110" fill="none" stroke="rgba(200, 35, 51, 0.18)" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <circle class="contact-comm-ring c-ring-2" cx="720" cy="320" r="150" fill="none" stroke="rgba(248, 113, 113, 0.15)" stroke-width="1.5"/>
+          <circle class="contact-comm-ring c-ring-3" cx="1200" cy="320" r="110" fill="none" stroke="rgba(200, 35, 51, 0.18)" stroke-width="1.5" stroke-dasharray="6 4"/>
+          
+          <!-- Gentle Connecting Wave Arc uniting the contact cards -->
+          <path class="contact-wave-arc" d="M240,320 Q480,220 720,320 T1200,320" fill="none" stroke="rgba(200, 35, 51, 0.14)" stroke-width="2" stroke-dasharray="6 6"/>
+        </svg>
+
+        <div class="contact-ambient-glow glow-left"></div>
+        <div class="contact-ambient-glow glow-center"></div>
+        <div class="contact-ambient-glow glow-right"></div>
+      </div>
       <div class="container">
         <div class="section-header" data-reveal="fade-up">
           <span class="section-tag" data-i18n="contact.tag">Direct Information</span>
@@ -1445,7 +2068,7 @@
 
         <div class="contact-cards-grid">
           <!-- Card 1: Address -->
-          <div class="contact-card-box" data-reveal="fade-up" data-reveal-delay="100">
+          <div class="contact-card-box" role="button" tabindex="0" aria-pressed="false" title="Click to highlight card" data-reveal="fade-up" data-reveal-delay="100">
             <div class="contact-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
@@ -1465,7 +2088,7 @@
           </div>
 
           <!-- Card 2: Timings -->
-          <div class="contact-card-box" data-reveal="fade-up" data-reveal-delay="200">
+          <div class="contact-card-box" role="button" tabindex="0" aria-pressed="false" title="Click to highlight card" data-reveal="fade-up" data-reveal-delay="200">
             <div class="contact-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
@@ -1475,26 +2098,93 @@
             <h4 data-i18n="loc.timings_title">Timings</h4>
             <p>
               <strong data-i18n="loc.days">Monday – Saturday:</strong><br>
-              <span data-i18n="loc.hours">10:00 AM – 01:00 PM<br>05:00 PM – 09:00 PM</span>
+              <span data-i18n="loc.hours">10:30 AM – 01:00 PM<br>05:00 PM – 09:00 PM</span><br>
+              <strong style="display: inline-block; margin-top: 6px;" data-i18n="loc.sunday_label">Sunday:</strong><br>
+              <span data-i18n="loc.sunday_hours">10:30 AM – 01:00 PM</span>
             </p>
             <span class="contact-placeholder-pill" data-i18n="hero.specialty">Orthodontics &amp; Periodontistry Clinic</span>
           </div>
 
-          <!-- Card 3: Contact Channels Placeholder -->
-          <div class="contact-card-box" data-reveal="fade-up" data-reveal-delay="300">
+          <!-- Card 3: Contact Channels & Direct Connect -->
+          <div class="contact-card-box" role="button" tabindex="0" aria-pressed="false" title="Click to highlight card" data-reveal="fade-up" data-reveal-delay="300">
             <div class="contact-card-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
               </svg>
             </div>
             <h4 data-i18n="contact.details_title">Contact Details</h4>
-            <div style="font-size: 14px; color: var(--neutral-600); line-height: 1.8; margin-bottom: 14px;">
-              <div><strong data-i18n="contact.phone_label">Phone:</strong> <span style="color: var(--neutral-500); font-style: italic;" data-i18n="contact.to_be_provided">[To be provided by client]</span></div>
-              <div><strong data-i18n="contact.email_label">Email:</strong> <span style="color: var(--neutral-500); font-style: italic;" data-i18n="contact.to_be_provided">[To be provided by client]</span></div>
+            <div style="font-size: 14px; color: var(--neutral-700); line-height: 1.8; margin-bottom: 16px;">
+              <!-- Contact Number with Phone Icon -->
+              <div class="contact-channel-row">
+                <span class="contact-channel-icon" style="color: var(--primary);">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 17px; height: 17px;">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </span>
+                <div>
+                  <strong data-i18n="contact.phone_label">Contact Number:</strong><br>
+                  <a href="tel:08212541701" style="color: var(--primary); text-decoration: none; font-weight: 600;">0821-2541701</a> &bull; 
+                  <a href="tel:9900804697" style="color: var(--primary); text-decoration: none; font-weight: 600;">9900804697</a>
+                </div>
+              </div>
+
+              <!-- Emergency with Medical Alert Cross Icon -->
+              <div class="contact-channel-row">
+                <span class="contact-channel-icon" style="color: #DC2626;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 17px; height: 17px;">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                  </svg>
+                </span>
+                <div>
+                  <strong data-i18n="contact.emergency_label" style="color: #DC2626;">Emergency:</strong><br>
+                  <a href="tel:9448984486" style="color: #DC2626; text-decoration: none; font-weight: 600;">9448984486</a>, 
+                  <a href="tel:9945637164" style="color: #DC2626; text-decoration: none; font-weight: 600;">9945637164</a>
+                </div>
+              </div>
+
+              <!-- WhatsApp with Official WhatsApp Icon -->
+              <div class="contact-channel-row">
+                <span class="contact-channel-icon" style="color: #059669;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 17px; height: 17px;">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                  </svg>
+                </span>
+                <div>
+                  <strong data-i18n="contact.whatsapp_label" style="color: #059669;">WhatsApp:</strong><br>
+                  <a href="https://wa.me/919448984480" target="_blank" rel="noopener noreferrer" style="color: #059669; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 4px;">
+                    <span>9448984480</span>
+                    <span style="font-size: 11px; background: #D1FAE5; color: #065F46; padding: 1px 6px; border-radius: 10px;">Quick Chat</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Email with Envelope Icon -->
+              <div class="contact-channel-row">
+                <span class="contact-channel-icon" style="color: var(--primary);">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 17px; height: 17px;">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </span>
+                <div>
+                  <strong data-i18n="contact.email_label">Email:</strong><br>
+                  <a href="mailto:sony2420@yahoo.com" style="color: var(--primary); text-decoration: none; font-weight: 600;">sony2420@yahoo.com</a>
+                </div>
+              </div>
             </div>
-            <a href="#appointment" class="btn btn-primary btn-sm" style="align-self: flex-start;">
-              <span data-i18n="nav.book_cta">BOOK AN APPOINTMENT</span>
-            </a>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a href="#appointment" class="btn btn-primary btn-sm">
+                <span data-i18n="nav.book_cta">BOOK AN APPOINTMENT</span>
+              </a>
+              <a href="https://wa.me/919448984480" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background-color: #25D366; color: #FFFFFF; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+                WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -1536,28 +2226,117 @@
             <a href="#home" data-i18n="nav.home">Home</a>
             <a href="#about" data-i18n="nav.about">About</a>
             <a href="#doctors" data-i18n="nav.doctors">Our Doctors</a>
+            <a href="#treatments" data-i18n="nav.treatments">Treatments</a>
             <a href="#specialities" data-i18n="nav.specialities">Specialities</a>
             <a href="#team" data-i18n="nav.team">Our Team</a>
             <a href="#legacy" data-i18n="nav.legacy">Clinic Legacy</a>
-            <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
             <a href="#appointment" data-i18n="nav.appointment">Appointment</a>
             <a href="#location" data-i18n="nav.location">Location</a>
             <a href="#contact" data-i18n="nav.contact">Contact</a>
           </div>
         </div>
 
-        <!-- Col 3: Address & Timings -->
+        <!-- Col 3: Address, Timings & Contact with Specific Icons -->
         <div class="footer-col" style="grid-column: span 2;">
-          <h4 data-i18n="footer.address_timings">Clinic Address &amp; Timings</h4>
-          <div style="font-size: 14px; line-height: 1.6; color: #CBD5E1; margin-bottom: 16px;">
-            <strong style="color: #FFFFFF; display: block; margin-bottom: 2px;" data-i18n="loc.label_address">Address:</strong>
-            <span data-i18n="topbar.address">388, 5th Cross, 14th Main, Near Bus Stop, Saraswathipuram, Saraswatipuram., Mysore</span>
-          </div>
+          <h4 data-i18n="footer.address_timings">Clinic Address, Timings &amp; Contact</h4>
 
-          <div style="font-size: 14px; line-height: 1.6; color: #CBD5E1;">
-            <strong style="color: #FFFFFF; display: block; margin-bottom: 2px;" data-i18n="loc.timings_title">Timings:</strong>
-            <span data-i18n="loc.days">Monday – Saturday</span><br>
-            <span data-i18n="loc.hours">10:00 AM – 01:00 PM<br>05:00 PM – 09:00 PM</span>
+          <div class="footer-info-block">
+            <!-- 1. Address with Location Map Pin Icon -->
+            <div class="footer-info-row">
+              <span class="footer-info-icon" style="color: #F87171;" title="Clinic Address Location">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </span>
+              <div class="footer-info-content">
+                <strong class="footer-info-title" data-i18n="loc.label_address">Address:</strong>
+                <span data-i18n="topbar.address">388, 5th Cross, 14th Main, Near Bus Stop, Saraswathipuram, Mysore</span>
+              </div>
+            </div>
+
+            <!-- 2. Clinic Timings with Clock Icon -->
+            <div class="footer-info-row">
+              <span class="footer-info-icon" style="color: #FBBF24;" title="Clinic Working Hours">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 18px; height: 18px;">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </span>
+              <div class="footer-info-content">
+                <strong class="footer-info-title" data-i18n="loc.timings_title">Clinic Timings</strong>
+                <div>
+                  <span data-i18n="loc.days">MONDAY – SATURDAY</span>: 10:30 AM – 01:00 PM &bull; 05:00 PM – 09:00 PM<br>
+                  <span data-i18n="loc.sunday_label">SUNDAY</span>: 10:30 AM – 01:00 PM
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Contact Details with Individual Specific Icons -->
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 14px; margin-top: 2px;">
+              <strong class="footer-info-title" style="margin-bottom: 12px;" data-i18n="contact.details_title">Contact Details</strong>
+
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <!-- Phone with Phone Receiver Icon -->
+                <div class="footer-info-row" style="margin-bottom: 0;">
+                  <span class="footer-info-icon" style="color: #FCA5A5;" title="Phone Contact">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </span>
+                  <div class="footer-info-content">
+                    <strong style="color: #CBD5E1;" data-i18n="contact.phone_label">Phone:</strong>
+                    <a href="tel:08212541701" style="color: #FCA5A5; text-decoration: none; font-weight: 600;">0821-2541701</a>, 
+                    <a href="tel:9900804697" style="color: #FCA5A5; text-decoration: none; font-weight: 600;">9900804697</a>
+                  </div>
+                </div>
+
+                <!-- Emergency with Medical Siren/Cross Icon -->
+                <div class="footer-info-row" style="margin-bottom: 0;">
+                  <span class="footer-info-icon" style="color: #EF4444;" title="Emergency Support">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="16"></line>
+                      <line x1="8" y1="12" x2="16" y2="12"></line>
+                    </svg>
+                  </span>
+                  <div class="footer-info-content">
+                    <strong style="color: #EF4444;" data-i18n="contact.emergency_label">Emergency:</strong>
+                    <a href="tel:9448984486" style="color: #F87171; text-decoration: none; font-weight: 600;">9448984486</a>, 
+                    <a href="tel:9945637164" style="color: #F87171; text-decoration: none; font-weight: 600;">9945637164</a>
+                  </div>
+                </div>
+
+                <!-- WhatsApp with Official WhatsApp Icon -->
+                <div class="footer-info-row" style="margin-bottom: 0;">
+                  <span class="footer-info-icon" style="color: #10B981;" title="WhatsApp Quick Chat">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                  </span>
+                  <div class="footer-info-content" style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap;">
+                    <div>
+                      <strong style="color: #10B981;" data-i18n="contact.whatsapp_label">WhatsApp:</strong>
+                      <a href="https://wa.me/919448984480" target="_blank" rel="noopener noreferrer" style="color: #34D399; text-decoration: none; font-weight: 600;">9448984480</a>
+                    </div>
+
+                    <!-- Email with Envelope Icon inline -->
+                    <div style="display: inline-flex; align-items: center; gap: 6px;">
+                      <span class="footer-info-icon" style="color: #60A5FA; width: 15px; height: 15px; min-width: 15px;" title="Email Address">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 15px; height: 15px;">
+                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                          <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                      </span>
+                      <div>
+                        <strong style="color: #93C5FD;" data-i18n="contact.email_label">Email:</strong>
+                        <a href="mailto:sony2420@yahoo.com" style="color: #93C5FD; text-decoration: none; font-weight: 500;">sony2420@yahoo.com</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -1647,7 +2426,7 @@
   </div>
 
   <!-- Main JavaScript Logic -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=19.0"></script>
   <script>
     // Update copyright year
     document.getElementById('yearSpan').textContent = new Date().getFullYear();

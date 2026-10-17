@@ -5,14 +5,40 @@
    ========================================================================== */
 
 :root {
-  /* Brand Signboard Colors */
+  /* Clinic Identity Palette: Signboard Crimson Red on Elegant Light Pink */
   --primary: #C82333;           /* Signboard crimson red */
   --primary-hover: #A71D2A;
   --primary-dark: #7F141F;
-  --primary-light: #FFF5F5;     /* Ultra soft red wash */
-  --primary-soft: #FDE8E9;      /* Subtle pink/red container */
-  --primary-border: #F8B4B8;    /* Muted red border */
+  --primary-light: #FFF0F3;     /* Elegant light pink whisper */
+  --primary-soft: #FDE8EC;      /* Soft rose petal container */
+  --primary-border: #F8B4BF;    /* Delicate pink border */
   --primary-glow: rgba(200, 35, 51, 0.12);
+
+  /* Classy, Elegant Light Pink Porcelain Theme */
+  --theme-pink-bg: #FFF8F9;      /* Ultra soft porcelain light pink */
+  --theme-pink-surface: #FFF1F4; /* Creamy light pink blush */
+  --theme-pink-card: #FFFFFF;    /* Pure white card on pink canvas */
+  --theme-pink-border: rgba(200, 35, 51, 0.12);
+  --theme-pink-gradient: linear-gradient(180deg, #FFFFFF 0%, #FFF5F7 60%, #FFF0F3 100%);
+
+  /* Replaced yellowish sand palette with luxurious light pink blush */
+  --sand-50: #FFF5F7;           /* Delicate soft pink */
+  --sand-100: #FFF0F3;          /* Light petal pink */
+  --sand-200: #FCE8EC;          /* Soft rose-pink */
+  --sand-300: #F8D5DC;
+
+  /* Clean Neutrals with Soft Warmth */
+  --neutral-white: #FFFFFF;
+  --neutral-50: #FFF9FA;        /* Softest pink porcelain */
+  --neutral-100: #FDF2F4;       /* Soft pink tint */
+  --neutral-200: #F5E6E8;
+  --neutral-300: #EAD2D6;
+  --neutral-400: #9E8B8F;
+  --neutral-500: #736468;
+  --neutral-600: #4F4346;
+  --neutral-700: #382E31;
+  --neutral-800: #231C1E;
+  --neutral-900: #140E10;;
 
   /* Warm Sandstone & Exterior Accents (reflecting the real clinic facade) */
   --sand-50: #FCFBF9;
@@ -92,7 +118,7 @@ body {
   font-size: 16px;
   line-height: 1.65;
   color: var(--neutral-700);
-  background-color: var(--neutral-50);
+  background-color: var(--theme-pink-bg);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -195,11 +221,15 @@ ul, ol {
 }
 
 .bg-sand {
-  background-color: var(--sand-50);
+  background-color: #FFF2F5; /* Classy light pink blush */
+}
+
+.bg-pink-soft {
+  background-color: #FFF6F8;
 }
 
 .bg-soft {
-  background-color: var(--neutral-50);
+  background-color: var(--theme-pink-bg);
 }
 
 /* ==========================================================================
@@ -243,7 +273,7 @@ ul, ol {
 }
 
 .btn-secondary:hover {
-  background-color: var(--neutral-50);
+  background-color: var(--theme-pink-bg);
   border-color: var(--primary);
   color: var(--primary);
   transform: translateY(-2px);
@@ -512,7 +542,7 @@ ul, ol {
   box-shadow: 0 2px 8px rgba(200, 35, 51, 0.25);
 }
 
-/* Bilingual Language Switcher Component */
+/* Bilingual Language Switcher Component with Interactive Animations */
 .lang-switch {
   display: inline-flex;
   align-items: center;
@@ -521,25 +551,43 @@ ul, ol {
   border-radius: var(--radius-full);
   padding: 3px;
   gap: 2px;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(200, 35, 51, 0.06);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lang-switch:hover {
+  border-color: rgba(200, 35, 51, 0.35);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 14px rgba(200, 35, 51, 0.14);
+}
+
+.lang-switch.is-switching {
+  animation: langSwitchSpring 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes langSwitchSpring {
+  0%   { transform: scale(0.95); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 .lang-pill {
   border: none;
   background: transparent;
-  padding: 5px 12px;
+  padding: 5px 13px;
   border-radius: var(--radius-full);
   font-family: var(--font-sans);
   font-size: 12.5px;
   font-weight: 700;
   color: var(--neutral-600);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   line-height: 1.2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   user-select: none;
+  position: relative;
 }
 
 .lang-pill[data-lang="kn"] {
@@ -548,15 +596,26 @@ ul, ol {
   font-weight: 700;
 }
 
-.lang-pill:hover {
+.lang-pill:hover:not(.active) {
   color: var(--primary);
   background-color: rgba(200, 35, 51, 0.08);
+  transform: translateY(-1px);
 }
 
 .lang-pill.active {
-  background-color: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, #A81B28 100%);
   color: #FFFFFF !important;
-  box-shadow: 0 2px 6px rgba(200, 35, 51, 0.3);
+  box-shadow: 0 3px 10px rgba(200, 35, 51, 0.35);
+  animation: langActiveGlow 3s ease-in-out infinite;
+}
+
+@keyframes langActiveGlow {
+  0%, 100% {
+    box-shadow: 0 3px 10px rgba(200, 35, 51, 0.35);
+  }
+  50% {
+    box-shadow: 0 4px 14px rgba(200, 35, 51, 0.55), 0 0 6px rgba(248, 113, 113, 0.4);
+  }
 }
 
 /* Mobile language switcher wrapper inside drawer */
@@ -728,7 +787,7 @@ html[lang="kn"] .nav-link {
 
 .hero-section {
   position: relative;
-  background: linear-gradient(180deg, #FFFFFF 0%, #FFF8F8 50%, #FAF8F5 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF5F7 50%, #FFF0F3 100%);
   padding-top: 32px;
   padding-bottom: 40px;
   overflow: hidden;
@@ -1093,7 +1152,7 @@ html[lang="kn"] .nav-link {
   align-items: flex-start;
   gap: 14px;
   padding: 20px;
-  background-color: var(--neutral-50);
+  background-color: var(--theme-pink-bg);
   border-radius: var(--radius-md);
   border: 1px solid var(--neutral-200);
 }
@@ -2198,7 +2257,7 @@ html[lang="kn"] .nav-link {
   padding: 12px 16px;
   border-radius: var(--radius-md);
   border: 1.5px solid var(--neutral-300);
-  background-color: var(--neutral-50);
+  background-color: var(--theme-pink-bg);
   color: var(--neutral-900);
   font-size: 14.5px;
   transition: all var(--transition-fast);
@@ -2933,79 +2992,45 @@ textarea.form-control {
   z-index: 1; /* Sits below container cards (which have z-index: 2) */
 }
 
-/* Individual floating item wrapper */
-.dental-float-item {
+/* ==========================================================================
+   CLASSY DENTAL WATERMARK MOTIF (Matches Clinic Logo Emblem)
+   Subtle, non-corner watermark motif integrated gracefully across the website
+   ========================================================================== */
+.section-watermark-wrap {
   position: absolute;
-  pointer-events: auto;
-  will-change: transform;
-  z-index: 1;
-  touch-action: manipulation;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
 }
 
-/* 3D Dental Mascot Character — A little bit lighter (soft, gentle, atmospheric), pure cutout */
-.dental-floating-character {
-  display: inline-block;
-  position: relative;
-  background: transparent !important;
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
-  cursor: pointer;
-  opacity: 0.65; /* Lighter as requested by user */
-  filter: drop-shadow(0 8px 16px rgba(200, 35, 51, 0.12)) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.04));
-  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.35s ease;
-  user-select: none;
+.section-watermark-svg {
+  width: clamp(300px, 34vw, 480px);
+  height: clamp(300px, 34vw, 480px);
+  pointer-events: none;
+  opacity: 0.042; /* Elegant, faint watermark visibility */
+  transform: rotate(-6deg);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  filter: drop-shadow(0 4px 12px rgba(200, 35, 51, 0.08));
 }
 
-.dental-floating-character::before,
-.dental-floating-character::after {
-  display: none !important;
-  content: none !important;
+.section-padding:hover .section-watermark-svg {
+  transform: rotate(-3deg) scale(1.02);
 }
 
-/* The mascot image inside */
-.dental-mascot-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  pointer-events: auto;
-  user-select: none;
-  -webkit-user-drag: none;
-  transition: transform 0.35s ease;
-}
-
-/* Sizing: Elegantly sized to fit perfectly within the outer gutter with zero overlap */
-.hero-section .dental-floating-character {
-  width: clamp(50px, 4vw, 66px);
-  height: clamp(50px, 4vw, 66px);
-}
-
-.section-padding .dental-floating-character {
-  width: clamp(46px, 3.6vw, 60px);
-  height: clamp(46px, 3.6vw, 60px);
-}
-
-/* Subtle Hover Effect: brightens on hover or cursor proximity */
-.dental-float-item:hover .dental-floating-character,
-.dental-float-item.is-cursor-near .dental-floating-character {
-  opacity: 0.95; /* Brightens gently when hovered */
-  transform: scale(1.08) translateY(-4px);
-  filter: drop-shadow(0 14px 24px rgba(200, 35, 51, 0.22)) drop-shadow(0 5px 10px rgba(0, 0, 0, 0.08));
-}
-
-/* Click Jelly Bounce */
-@keyframes toothJellyBounce {
-  0%   { transform: scale(1); }
-  25%  { transform: scale(1.15, 0.88) rotate(-2deg); }
-  50%  { transform: scale(0.92, 1.1) rotate(2deg); }
-  75%  { transform: scale(1.05, 0.96) rotate(-1deg); }
-  100% { transform: scale(1) rotate(0deg); }
-}
-
-.tooth-jelly-active {
-  animation: toothJellyBounce 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) !important;
+/* Subtle continuous watermark pattern overlay */
+.dental-watermark-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cpath d='M80 32 C68 18 44 20 36 38 C28 60 44 84 54 98 C62 110 72 124 80 132 C88 124 98 110 106 98 C116 84 132 60 124 38 C116 20 92 18 80 32 Z' fill='none' stroke='%23C82333' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' opacity='0.035'/%3E%3Cpath d='M80 50 L80 66 M72 58 L88 58' stroke='%23C82333' stroke-width='1.5' stroke-linecap='round' opacity='0.035'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 160px 160px;
 }
 
 /* ==========================================================================
@@ -3071,40 +3096,434 @@ textarea.form-control {
 }
 
 /* ==========================================================================
-   INDEPENDENT SLOW FLOATING ANIMATIONS (4 DISTINCT VARIATIONS)
+   HIGH-VISIBILITY, DYNAMIC DENTAL CLINIC ANIMATIONS (EACH SECTION 100% DISTINCT!)
+   Speed tuned to 2.4s - 3.4s so the animations are IMMEDIATELY LIVELY & VISIBLE!
    ========================================================================== */
-@keyframes frameFloatA {
-  0%   { transform: translateY(0px) rotate(0deg) scale(1); }
-  35%  { transform: translateY(-6px) rotate(1.8deg) scale(1.015); }
-  70%  { transform: translateY(-2px) rotate(-1deg) scale(0.99); }
-  100% { transform: translateY(0px) rotate(0deg) scale(1); }
+
+/* 1. HOME / HERO SECTION: Joyful Waving Star Tooth (Friendly Greeting) */
+@keyframes heroToothWavingA {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+    filter: drop-shadow(0 8px 18px rgba(200, 35, 51, 0.18));
+  }
+  20% {
+    transform: translateY(-14px) rotate(8deg) scale(1.06);
+    filter: drop-shadow(0 14px 26px rgba(200, 35, 51, 0.28)) brightness(1.05);
+  }
+  40% {
+    transform: translateY(-8px) rotate(-6deg) scale(1.03);
+  }
+  60% {
+    transform: translateY(-16px) rotate(10deg) scale(1.07);
+    filter: drop-shadow(0 16px 28px rgba(200, 35, 51, 0.3)) brightness(1.08);
+  }
+  80% {
+    transform: translateY(-4px) rotate(-3deg) scale(1.01);
+  }
 }
 
-@keyframes frameFloatB {
-  0%   { transform: translateY(0px) rotate(0deg) scale(1); }
-  30%  { transform: translateY(-4px) rotate(-1.5deg) scale(0.99); }
-  65%  { transform: translateY(-7px) rotate(1deg) scale(1.01); }
-  100% { transform: translateY(0px) rotate(0deg) scale(1); }
+@keyframes heroToothWavingB {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+    filter: drop-shadow(0 8px 18px rgba(200, 35, 51, 0.18));
+  }
+  25% {
+    transform: translateY(-12px) rotate(-8deg) scale(1.05);
+  }
+  50% {
+    transform: translateY(-4px) rotate(0deg) scale(1.02);
+  }
+  75% {
+    transform: translateY(-15px) rotate(8deg) scale(1.06);
+    filter: drop-shadow(0 16px 28px rgba(200, 35, 51, 0.28)) brightness(1.07);
+  }
 }
 
-@keyframes frameFloatC {
-  0%   { transform: translateY(0px) rotate(0deg) scale(1); }
-  40%  { transform: translateY(-7px) rotate(1.2deg) scale(1.015); }
-  75%  { transform: translateY(-2px) rotate(-1.2deg) scale(0.995); }
-  100% { transform: translateY(0px) rotate(0deg) scale(1); }
+.anim-home-1 { animation: heroToothWavingA 2.8s ease-in-out infinite; }
+.anim-home-2 { animation: heroToothWavingB 3.2s ease-in-out infinite; animation-delay: -1.2s; }
+.anim-home-3 { animation: heroToothWavingA 3.0s ease-in-out infinite; animation-delay: -1.8s; }
+.anim-home-4 { animation: heroToothWavingB 3.4s ease-in-out infinite; animation-delay: -0.8s; }
+
+/* 2. ABOUT SECTION: Active Toothbrush Scrub Motion (Dental Cleaning Sweep) */
+@keyframes aboutBrushScrubA {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+  }
+  20% {
+    transform: translateX(-14px) translateY(-6px) rotate(-8deg);
+  }
+  40% {
+    transform: translateX(14px) translateY(-10px) rotate(8deg);
+  }
+  60% {
+    transform: translateX(-12px) translateY(-4px) rotate(-6deg);
+  }
+  80% {
+    transform: translateX(10px) translateY(-8px) rotate(6deg);
+  }
 }
 
-@keyframes frameFloatD {
-  0%   { transform: translateY(0px) rotate(0deg) scale(1); }
-  25%  { transform: translateY(-3px) rotate(-1.6deg) scale(1.01); }
-  60%  { transform: translateY(-6px) rotate(1deg) scale(0.99); }
-  100% { transform: translateY(0px) rotate(0deg) scale(1); }
+@keyframes aboutBrushScrubB {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateX(14px) translateY(-8px) rotate(8deg);
+  }
+  50% {
+    transform: translateX(-12px) translateY(-5px) rotate(-6deg);
+  }
+  75% {
+    transform: translateX(10px) translateY(-10px) rotate(6deg);
+  }
 }
 
-.anim-frame-1 { animation: frameFloatA 8.5s ease-in-out infinite; }
-.anim-frame-2 { animation: frameFloatB 11s ease-in-out infinite; animation-delay: -3.5s; }
-.anim-frame-3 { animation: frameFloatC 9.8s ease-in-out infinite; animation-delay: -6.2s; }
-.anim-frame-4 { animation: frameFloatD 12.5s ease-in-out infinite; animation-delay: -8.8s; }
+.anim-about-1 { animation: aboutBrushScrubA 2.6s ease-in-out infinite; }
+.anim-about-2 { animation: aboutBrushScrubB 2.9s ease-in-out infinite; animation-delay: -1.3s; }
+
+/* 3. OUR DOCTORS SECTION: Stethoscope Heartbeat Pulse (Pronounced Cardiac Thump & Medical Red Glow) */
+@keyframes doctorHeartbeatThumpA {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 6px 14px rgba(200, 35, 51, 0.15));
+  }
+  14% {
+    transform: scale(1.18) translateY(-6px);
+    filter: drop-shadow(0 0 16px rgba(200, 35, 51, 0.65)) brightness(1.1);
+  }
+  24% {
+    transform: scale(1.04) translateY(-2px);
+    filter: drop-shadow(0 6px 14px rgba(200, 35, 51, 0.2));
+  }
+  38% {
+    transform: scale(1.22) translateY(-8px);
+    filter: drop-shadow(0 0 20px rgba(200, 35, 51, 0.75)) brightness(1.14);
+  }
+  54% {
+    transform: scale(1) translateY(0);
+    filter: drop-shadow(0 6px 14px rgba(200, 35, 51, 0.15));
+  }
+  78% {
+    transform: scale(1.05) translateY(-4px);
+  }
+}
+
+@keyframes doctorHeartbeatThumpB {
+  0%, 100% {
+    transform: scale(1) translateY(0) rotate(0deg);
+    filter: drop-shadow(0 6px 14px rgba(200, 35, 51, 0.15));
+  }
+  16% {
+    transform: scale(1.17) translateY(-5px) rotate(-4deg);
+    filter: drop-shadow(0 0 16px rgba(200, 35, 51, 0.65)) brightness(1.1);
+  }
+  26% {
+    transform: scale(1.03) translateY(-1px) rotate(0deg);
+  }
+  40% {
+    transform: scale(1.23) translateY(-9px) rotate(4deg);
+    filter: drop-shadow(0 0 22px rgba(200, 35, 51, 0.75)) brightness(1.14);
+  }
+  56% {
+    transform: scale(1) translateY(0) rotate(0deg);
+  }
+}
+
+.anim-doctors-1 { animation: doctorHeartbeatThumpA 2.5s ease-in-out infinite; }
+.anim-doctors-2 { animation: doctorHeartbeatThumpB 2.7s ease-in-out infinite; animation-delay: -1.2s; }
+
+/* 4. SPECIALITIES SECTION: Enamel Shield Protective Barrier Glide */
+@keyframes specialityShieldProtectA {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    filter: drop-shadow(0 6px 14px rgba(16, 185, 129, 0.2));
+  }
+  25% {
+    transform: translate(-12px, -12px) rotate(-8deg) scale(1.08);
+    filter: drop-shadow(0 0 18px rgba(16, 185, 129, 0.6)) brightness(1.12);
+  }
+  50% {
+    transform: translate(0px, -16px) rotate(0deg) scale(1.04);
+  }
+  75% {
+    transform: translate(12px, -10px) rotate(8deg) scale(1.1);
+    filter: drop-shadow(0 0 18px rgba(200, 35, 51, 0.5)) brightness(1.12);
+  }
+}
+
+@keyframes specialityShieldProtectB {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  30% {
+    transform: translate(12px, -12px) rotate(8deg) scale(1.08);
+    filter: drop-shadow(0 0 18px rgba(200, 35, 51, 0.5)) brightness(1.1);
+  }
+  65% {
+    transform: translate(-12px, -14px) rotate(-8deg) scale(1.1);
+    filter: drop-shadow(0 0 18px rgba(16, 185, 129, 0.6)) brightness(1.12);
+  }
+}
+
+.anim-specialities-1 { animation: specialityShieldProtectA 3.2s ease-in-out infinite; }
+.anim-specialities-2 { animation: specialityShieldProtectB 3.5s ease-in-out infinite; animation-delay: -1.5s; }
+
+/* 5. OUR TEAM SECTION: Cheerful High-Five Companion Bounce */
+@keyframes teamHighFiveBounceA {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  18% {
+    transform: translateY(-16px) rotate(8deg) scale(1.08);
+  }
+  35% {
+    transform: translateY(-3px) rotate(0deg) scale(1.02);
+  }
+  52% {
+    transform: translateY(-18px) rotate(-8deg) scale(1.09);
+  }
+  70% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  85% {
+    transform: translateY(-6px) rotate(3deg) scale(1.03);
+  }
+}
+
+@keyframes teamHighFiveBounceB {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  22% {
+    transform: translateY(-15px) rotate(-7deg) scale(1.07);
+  }
+  40% {
+    transform: translateY(-2px) rotate(0deg) scale(1.02);
+  }
+  58% {
+    transform: translateY(-17px) rotate(7deg) scale(1.08);
+  }
+  75% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+.anim-team-1 { animation: teamHighFiveBounceA 2.5s cubic-bezier(0.28, 0.84, 0.42, 1) infinite; }
+.anim-team-2 { animation: teamHighFiveBounceB 2.8s cubic-bezier(0.28, 0.84, 0.42, 1) infinite; animation-delay: -1.3s; }
+
+/* 6. CLINIC LEGACY SECTION: Prominent Grandfather Clock Pendulum Sway */
+@keyframes legacyPendulumSwingA {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0);
+    transform-origin: top center;
+  }
+  25% {
+    transform: rotate(10deg) translateY(-6px);
+    filter: drop-shadow(0 12px 22px rgba(245, 158, 11, 0.35)) brightness(1.08);
+  }
+  50% {
+    transform: rotate(0deg) translateY(-12px);
+  }
+  75% {
+    transform: rotate(-10deg) translateY(-6px);
+    filter: drop-shadow(0 12px 22px rgba(245, 158, 11, 0.35)) brightness(1.08);
+  }
+}
+
+@keyframes legacyPendulumSwingB {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0);
+    transform-origin: top center;
+  }
+  30% {
+    transform: rotate(-11deg) translateY(-7px);
+    filter: drop-shadow(0 12px 22px rgba(245, 158, 11, 0.35)) brightness(1.08);
+  }
+  50% {
+    transform: rotate(0deg) translateY(-14px);
+  }
+  75% {
+    transform: rotate(11deg) translateY(-7px);
+  }
+}
+
+.anim-legacy-1 { animation: legacyPendulumSwingA 3.2s ease-in-out infinite; }
+.anim-legacy-2 { animation: legacyPendulumSwingB 3.6s ease-in-out infinite; animation-delay: -1.6s; }
+
+/* 7. GALLERY SECTION: Camera Snapshot Flash & Photographic Pan */
+@keyframes galleryCameraSnapshotA {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    filter: brightness(1) drop-shadow(0 6px 14px rgba(0,0,0,0.1));
+  }
+  25% {
+    transform: translate(14px, -10px) scale(1.06) rotate(4deg);
+    filter: brightness(1.15) drop-shadow(0 12px 24px rgba(255, 255, 255, 0.8));
+  }
+  48% {
+    transform: translate(0, -14px) scale(1.03);
+    filter: brightness(1.4) drop-shadow(0 0 24px rgba(255, 255, 255, 1)); /* Shutter flash! */
+  }
+  52% {
+    filter: brightness(1.05);
+  }
+  75% {
+    transform: translate(-14px, -8px) scale(1.07) rotate(-4deg);
+    filter: brightness(1.18) drop-shadow(0 12px 24px rgba(200, 35, 51, 0.4));
+  }
+}
+
+@keyframes galleryCameraSnapshotB {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    filter: brightness(1);
+  }
+  30% {
+    transform: translate(-12px, -12px) scale(1.07) rotate(-4deg);
+    filter: brightness(1.15);
+  }
+  50% {
+    transform: translate(0, -15px) scale(1.04);
+    filter: brightness(1.35) drop-shadow(0 0 22px rgba(255, 255, 255, 0.95)); /* Shutter flash! */
+  }
+  75% {
+    transform: translate(12px, -8px) scale(1.06) rotate(4deg);
+    filter: brightness(1.15);
+  }
+}
+
+.anim-gallery-1 { animation: galleryCameraSnapshotA 3.0s ease-in-out infinite; }
+.anim-gallery-2 { animation: galleryCameraSnapshotB 3.4s ease-in-out infinite; animation-delay: -1.5s; }
+
+/* 8. APPOINTMENT SECTION: Enthusiastic Beckoning & Booking Cheer */
+@keyframes appointmentBeckonCheerA {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  20% {
+    transform: translateY(-16px) rotate(9deg) scale(1.09);
+    filter: drop-shadow(0 14px 26px rgba(200, 35, 51, 0.35));
+  }
+  40% {
+    transform: translateY(-20px) rotate(-8deg) scale(1.11);
+    filter: drop-shadow(0 18px 30px rgba(200, 35, 51, 0.45));
+  }
+  60% {
+    transform: translateY(-8px) rotate(6deg) scale(1.05);
+  }
+  80% {
+    transform: translateY(-2px) rotate(0deg) scale(1.01);
+  }
+}
+
+@keyframes appointmentBeckonCheerB {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  24% {
+    transform: translateY(-17px) rotate(-8deg) scale(1.08);
+  }
+  45% {
+    transform: translateY(-22px) rotate(8deg) scale(1.1);
+  }
+  68% {
+    transform: translateY(-9px) rotate(-4deg) scale(1.04);
+  }
+}
+
+.anim-appointment-1 { animation: appointmentBeckonCheerA 2.5s cubic-bezier(0.28, 0.84, 0.42, 1) infinite; }
+.anim-appointment-2 { animation: appointmentBeckonCheerB 2.8s cubic-bezier(0.28, 0.84, 0.42, 1) infinite; animation-delay: -1.2s; }
+
+/* 9. LOCATION SECTION: GPS Satellite Radar Pin & Sonar Pulse */
+@keyframes locationRadarBeaconA {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 6px 14px rgba(59, 130, 246, 0.2));
+  }
+  22% {
+    transform: translateY(-15px) scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.65)) brightness(1.12);
+  }
+  48% {
+    transform: translateY(-19px) scale(1.05);
+    filter: drop-shadow(0 0 24px rgba(200, 35, 51, 0.55)) brightness(1.15);
+  }
+  72% {
+    transform: translateY(-6px) scale(1.02);
+  }
+}
+
+@keyframes locationRadarBeaconB {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-14px) scale(1.08);
+    filter: drop-shadow(0 0 18px rgba(200, 35, 51, 0.55));
+  }
+  52% {
+    transform: translateY(-18px) scale(1.05);
+    filter: drop-shadow(0 0 22px rgba(59, 130, 246, 0.6));
+  }
+}
+
+.anim-location-1 { animation: locationRadarBeaconA 2.6s ease-in-out infinite; }
+.anim-location-2 { animation: locationRadarBeaconB 2.9s ease-in-out infinite; animation-delay: -1.3s; }
+
+/* 10. CONTACT SECTION: Telephone Reception Chime Vibration */
+@keyframes contactPhoneRingA {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  10% {
+    transform: translateY(-6px) rotate(-12deg) scale(1.06);
+  }
+  20% {
+    transform: translateY(-10px) rotate(12deg) scale(1.08);
+  }
+  30% {
+    transform: translateY(-12px) rotate(-10deg) scale(1.09);
+  }
+  40% {
+    transform: translateY(-8px) rotate(8deg) scale(1.06);
+  }
+  50% {
+    transform: translateY(-3px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-9px) rotate(4deg) scale(1.03);
+  }
+}
+
+@keyframes contactPhoneRingB {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  12% {
+    transform: translateY(-8px) rotate(10deg) scale(1.06);
+  }
+  24% {
+    transform: translateY(-12px) rotate(-11deg) scale(1.08);
+  }
+  36% {
+    transform: translateY(-10px) rotate(9deg) scale(1.07);
+  }
+  48% {
+    transform: translateY(-4px) rotate(-3deg);
+  }
+  75% {
+    transform: translateY(-8px) rotate(-4deg);
+  }
+}
+
+.anim-contact-1 { animation: contactPhoneRingA 2.4s ease-in-out infinite; }
+.anim-contact-2 { animation: contactPhoneRingB 2.7s ease-in-out infinite; animation-delay: -1.2s; }
+
+/* Fallbacks */
+.anim-frame-1 { animation: heroToothWavingA 2.8s ease-in-out infinite; }
+.anim-frame-2 { animation: aboutBrushScrubA 2.6s ease-in-out infinite; }
+.anim-frame-3 { animation: doctorHeartbeatThumpA 2.5s ease-in-out infinite; }
+.anim-frame-4 { animation: teamHighFiveBounceA 2.5s cubic-bezier(0.28, 0.84, 0.42, 1) infinite; }
 
 /* Click Sparkle Particles Burst */
 .dental-cursor-sparkle {
@@ -3135,14 +3554,8 @@ textarea.form-control {
    RESPONSIVE SCALING & SAFETY CLEARANCE (ZERO OVERLAP GUARANTEE)
    ========================================================================== */
 @media (max-width: 1199px) {
-  .hero-section .dental-floating-character {
-    width: 52px;
-    height: 52px;
-  }
-  .section-padding .dental-floating-character {
-    width: 48px;
-    height: 48px;
-  }
+
+
   .pos-edge-top-left, .pos-edge-bottom-left {
     left: 8px;
   }
@@ -3152,14 +3565,8 @@ textarea.form-control {
 }
 
 @media (max-width: 991px) {
-  .hero-section .dental-floating-character {
-    width: 44px;
-    height: 44px;
-  }
-  .section-padding .dental-floating-character {
-    width: 42px;
-    height: 42px;
-  }
+
+
   .hero-section > .container,
   .section-padding > .container {
     padding-left: 28px !important;
@@ -3178,16 +3585,8 @@ textarea.form-control {
     top: 12px;
     right: 12px;
   }
-  .hero-section .pos-edge-top-right .dental-floating-character {
-    width: 40px;
-    height: 40px;
-    opacity: 0.60;
-  }
-  .section-padding .dental-floating-character {
-    width: 36px;
-    height: 36px;
-    opacity: 0.50;
-  }
+
+
   .pos-edge-top-left, .pos-edge-bottom-left {
     left: 4px;
   }
@@ -3765,6 +4164,82 @@ textarea.form-control {
   transform-origin: center center;
 }
 
+
+/* --------------------------------------------------------------------------
+   SECTION-SPECIFIC THEMATIC MICRO-ANIMATIONS
+   -------------------------------------------------------------------------- */
+/* Doctors: Specialist Stethoscope Heartbeat Pulse on Badges */
+.doctor-specialty-badge {
+  animation: doctorStethoscopePulse 4.5s ease-in-out infinite;
+}
+
+@keyframes doctorStethoscopePulse {
+  0%, 100% { transform: scale(1); }
+  12%      { transform: scale(1.06); box-shadow: 0 0 10px rgba(200, 35, 51, 0.25); }
+  22%      { transform: scale(1.01); }
+  34%      { transform: scale(1.08); box-shadow: 0 0 12px rgba(200, 35, 51, 0.35); }
+  48%      { transform: scale(1); box-shadow: none; }
+}
+
+/* Appointment: Inviting Primary Button Glow Pulse */
+.appointment-card .btn-primary {
+  animation: apptCtaPulse 3.8s ease-in-out infinite;
+}
+
+@keyframes apptCtaPulse {
+  0%, 100% { box-shadow: 0 4px 14px rgba(200, 35, 51, 0.28); }
+  50%      { box-shadow: 0 6px 22px rgba(200, 35, 51, 0.52), 0 0 10px rgba(248, 113, 113, 0.35); }
+}
+
+/* Location: Sonar Radar Wave Accent */
+.location-radar-pin .radar-sonar-ring {
+  border-color: var(--primary);
+  animation: sonarWave 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* Contact: Contact Badges Chime Hover */
+.contact-item:hover .contact-icon-box {
+  animation: contactChimeWobble 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes contactChimeWobble {
+  0%   { transform: rotate(0deg) scale(1); }
+  25%  { transform: rotate(-8deg) scale(1.12); }
+  50%  { transform: rotate(8deg) scale(1.12); }
+  75%  { transform: rotate(-4deg) scale(1.08); }
+  100% { transform: rotate(0deg) scale(1.1); }
+}
+
+/* Team: Warm card elevation & floating micro-cadence */
+.team-card {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 44px rgba(200, 35, 51, 0.12);
+}
+
+/* Gallery: Photo Frame Aperture Flash Sweep on Hover */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+}
+.gallery-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 60%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.gallery-card:hover::after {
+  opacity: 1;
+}
+
 /* --------------------------------------------------------------------------
    11. ACCESSIBILITY / PREFERS REDUCED MOTION
    -------------------------------------------------------------------------- */
@@ -3788,3 +4263,2162 @@ textarea.form-control {
     transform: none !important;
   }
 }
+
+
+/* ==========================================================================
+   ABOUT SECTION: CONTINUOUS RUNNING BACKGROUND & INTERACTIVE SLIDE CARDS
+   - Continuous Running ECG Vital Pulse & Luminous Aurora Ribbon
+   - Cards slide to the right on hover and on click with smooth standby & return
+   ========================================================================== */
+
+/* Running Background Engine */
+.about-running-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1; /* Below container content (which has z-index: 2) */
+}
+
+/* Stream 1: Continuous Running ECG Heartbeat Vital Pulse */
+.running-ecg-track {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  width: 2400px;
+  height: 110px;
+  display: flex;
+  opacity: 0.75;
+  animation: runEcgStream 15s linear infinite;
+  will-change: transform;
+}
+
+.running-ecg-svg {
+  width: 1200px;
+  height: 100%;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(200, 35, 51, 0.4));
+}
+
+@keyframes runEcgStream {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-1200px); }
+}
+
+/* Stream 2: Luminous Medical Aurora Gradient Stream */
+.running-aurora-track {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 200%;
+  height: 320px;
+  display: flex;
+  opacity: 0.35;
+  animation: runAuroraFlow 22s ease-in-out infinite alternate;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.running-aurora-ribbon {
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(200, 35, 51, 0.28) 0%, rgba(248, 113, 113, 0.16) 45%, transparent 72%);
+  filter: blur(50px);
+}
+
+@keyframes runAuroraFlow {
+  0%   { transform: translateX(0) scaleY(0.9); }
+  50%  { transform: translateX(-25%) scaleY(1.15); }
+  100% { transform: translateX(-40%) scaleY(1); }
+}
+
+/* Stream 3: Cleansing Micro-Bubbles & Sparkles Stream running across */
+.running-bubbles-stream {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.stream-bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0%, rgba(200, 35, 51, 0.25) 70%, transparent 100%);
+  box-shadow: 0 0 10px rgba(200, 35, 51, 0.3);
+  animation: streamBubbleRun 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.stream-bubble.b1 { width: 14px; height: 14px; top: 12%; left: -20px; animation-duration: 9s; animation-delay: 0s; }
+.stream-bubble.b2 { width: 22px; height: 22px; top: 28%; left: -30px; animation-duration: 12s; animation-delay: 2s; }
+.stream-bubble.b3 { width: 10px; height: 10px; top: 48%; left: -15px; animation-duration: 8s; animation-delay: 4.5s; }
+.stream-bubble.b4 { width: 18px; height: 18px; top: 65%; left: -25px; animation-duration: 11s; animation-delay: 1.5s; }
+.stream-bubble.b5 { width: 26px; height: 26px; top: 78%; left: -35px; animation-duration: 13s; animation-delay: 5s; }
+.stream-bubble.b6 { width: 12px; height: 12px; top: 22%; left: -15px; animation-duration: 10s; animation-delay: 7s; }
+.stream-bubble.b7 { width: 16px; height: 16px; top: 58%; left: -20px; animation-duration: 9.5s; animation-delay: 3s; }
+.stream-bubble.b8 { width: 20px; height: 20px; top: 88%; left: -25px; animation-duration: 11.5s; animation-delay: 6s; }
+
+@keyframes streamBubbleRun {
+  0% {
+    transform: translate(0, 0) scale(0.6);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(calc(100vw + 60px), -60px) scale(1.15);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   ABOUT CARDS: INTERACTIVE RIGHTWARD SLIDE WITH STANDBY & RETURN
+   ========================================================================== */
+.about-pillar-item,
+.legacy-node-card {
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.38s ease,
+              border-color 0.38s ease;
+  user-select: none;
+}
+
+/* Hover: Slides noticeably to the right */
+.about-pillar-item:hover,
+.legacy-node-card:hover {
+  transform: translateX(14px);
+  border-color: rgba(200, 35, 51, 0.45);
+  box-shadow: -6px 12px 28px rgba(200, 35, 51, 0.16);
+}
+
+/* Click Animation: Slides right, stands by, then smoothly returns to original place */
+.card-slide-standby {
+  animation: cardSlideRightReturn 1.25s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+}
+
+@keyframes cardSlideRightReturn {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+  28% {
+    transform: translateX(28px) scale(1.025);
+    border-color: var(--primary);
+    box-shadow: -10px 16px 36px rgba(200, 35, 51, 0.28);
+  }
+  58% {
+    transform: translateX(22px) scale(1.02);
+    border-color: var(--primary);
+    box-shadow: -8px 14px 30px rgba(200, 35, 51, 0.24);
+  }
+  78% {
+    transform: translateX(18px) scale(1.01);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    border-color: var(--neutral-200);
+    box-shadow: var(--shadow-card, 0 4px 14px rgba(0, 0, 0, 0.05));
+  }
+}
+
+/* Toggle Standby State: Holds card slightly shifted to right until clicked again */
+.is-standby-right {
+  transform: translateX(20px) !important;
+  border-color: var(--primary) !important;
+  box-shadow: -8px 16px 36px rgba(200, 35, 51, 0.24) !important;
+}
+
+.is-standby-right::after {
+  content: 'STANDBY';
+  position: absolute;
+  top: -10px;
+  right: 14px;
+  font-size: 9.5px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary) 0%, #9E1B28 100%);
+  color: #FFFFFF;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.8px;
+  box-shadow: 0 4px 12px rgba(200, 35, 51, 0.35);
+  animation: standbyBadgePulse 1.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes standbyBadgePulse {
+  0%, 100% { transform: scale(1); opacity: 0.95; }
+  50%      { transform: scale(1.08); opacity: 1; box-shadow: 0 4px 16px rgba(200, 35, 51, 0.55); }
+}
+
+
+/* ==========================================================================
+   SPECIALITIES SECTION: FLOATING BUBBLE CIRCLE SHAPES BACKGROUND
+   - Replaced zigzag lines with animated translucent clinic bubble circles
+   - Smooth rotating, floating, and sliding bubble orbs matching clinic colors
+   ========================================================================== */
+
+/* Bubbles Background Container */
+.specialities-bubbles-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Base Bubble Orb Shape */
+.bubble-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.9) 0%, rgba(248, 113, 113, 0.24) 45%, rgba(200, 35, 51, 0.16) 75%, transparent 100%);
+  border: 1.5px solid rgba(200, 35, 51, 0.28);
+  box-shadow: 0 8px 24px rgba(200, 35, 51, 0.12),
+              inset -2px -2px 6px rgba(200, 35, 51, 0.16);
+  animation: bubbleFloatSlide 8s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Concentric Dashed Ring on Larger Bubbles */
+.bubble-orb-1::before,
+.bubble-orb-3::before,
+.bubble-orb-6::before,
+.bubble-orb-9::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(200, 35, 51, 0.35);
+  animation: bubbleOrbRingSpin 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes bubbleOrbRingSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Individual Bubble Positions, Sizes, and Animation Speeds */
+.bubble-orb-1 {
+  width: 110px;
+  height: 110px;
+  top: 8%;
+  left: 5%;
+  animation-duration: 9s;
+}
+
+.bubble-orb-2 {
+  width: 54px;
+  height: 54px;
+  top: 22%;
+  left: 20%;
+  border-color: rgba(248, 113, 113, 0.35);
+  animation-duration: 7s;
+  animation-delay: -2s;
+}
+
+.bubble-orb-3 {
+  width: 140px;
+  height: 140px;
+  top: 14%;
+  right: 6%;
+  animation-duration: 11s;
+  animation-delay: -4s;
+}
+
+.bubble-orb-4 {
+  width: 68px;
+  height: 68px;
+  top: 48%;
+  left: 3%;
+  border-color: rgba(245, 158, 11, 0.32);
+  animation-duration: 8.5s;
+  animation-delay: -1s;
+}
+
+.bubble-orb-5 {
+  width: 82px;
+  height: 82px;
+  top: 42%;
+  right: 18%;
+  animation-duration: 10s;
+  animation-delay: -3.5s;
+}
+
+.bubble-orb-6 {
+  width: 125px;
+  height: 125px;
+  bottom: 12%;
+  left: 10%;
+  animation-duration: 10.5s;
+  animation-delay: -5s;
+}
+
+.bubble-orb-7 {
+  width: 48px;
+  height: 48px;
+  bottom: 28%;
+  left: 45%;
+  border-color: rgba(248, 113, 113, 0.35);
+  animation-duration: 7.5s;
+  animation-delay: -2.5s;
+}
+
+.bubble-orb-8 {
+  width: 95px;
+  height: 95px;
+  bottom: 8%;
+  right: 8%;
+  border-color: rgba(200, 35, 51, 0.32);
+  animation-duration: 9.5s;
+  animation-delay: -1.8s;
+}
+
+.bubble-orb-9 {
+  width: 76px;
+  height: 76px;
+  top: 68%;
+  right: 32%;
+  animation-duration: 8s;
+  animation-delay: -3s;
+}
+
+.bubble-orb-10 {
+  width: 38px;
+  height: 38px;
+  top: 32%;
+  left: 38%;
+  animation-duration: 6.5s;
+  animation-delay: -4.5s;
+}
+
+.bubble-orb-11 {
+  width: 58px;
+  height: 58px;
+  bottom: 38%;
+  right: 48%;
+  animation-duration: 8.8s;
+  animation-delay: -0.5s;
+}
+
+.bubble-orb-12 {
+  width: 92px;
+  height: 92px;
+  top: 4%;
+  left: 42%;
+  border-color: rgba(245, 158, 11, 0.28);
+  animation-duration: 11.5s;
+  animation-delay: -6s;
+}
+
+/* Floating, Sliding, and Breathing Animation for Bubble Circles */
+@keyframes bubbleFloatSlide {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  35% {
+    transform: translate(22px, -24px) scale(1.08) rotate(25deg);
+  }
+  70% {
+    transform: translate(-18px, 16px) scale(0.94) rotate(-15deg);
+  }
+  100% {
+    transform: translate(14px, -10px) scale(1.04) rotate(15deg);
+  }
+}
+
+/* ==========================================================================
+   SPECIALITY CARDS: CIRCLE SHAPES ROTATING AND SLIDING ANIMATION
+   ========================================================================== */
+.speciality-card {
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.38s ease,
+              border-color 0.38s ease;
+  user-select: none;
+}
+
+.speciality-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  border-color: rgba(200, 35, 51, 0.35);
+  box-shadow: 0 20px 42px rgba(200, 35, 51, 0.15);
+}
+
+/* The Circle Shape Icon Box: Perfect Circle with Rotating Outer Orbital Dash Ring */
+.speciality-icon-box {
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 50% !important; /* Perfect circle shape */
+  background: var(--primary-soft) !important;
+  color: var(--primary) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-bottom: 22px !important;
+  position: relative !important;
+  box-shadow: 0 4px 14px rgba(200, 35, 51, 0.12) !important;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.35s ease,
+              color 0.35s ease,
+              box-shadow 0.35s ease !important;
+  animation: circleRotateSlideAmbient 3.6s ease-in-out infinite !important;
+}
+
+/* Concentric Outer Dashed Orbit Ring around the Circle Shape */
+.speciality-icon-box::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px dashed rgba(200, 35, 51, 0.45);
+  animation: circleDashSpin 8s linear infinite;
+  pointer-events: none;
+}
+
+/* Ambient Rotating and Sliding Animation on the Circle Shape */
+@keyframes circleRotateSlideAmbient {
+  0%, 100% {
+    transform: translateX(0px) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateX(8px) rotate(14deg) scale(1.06);
+  }
+  50% {
+    transform: translateX(-4px) rotate(-10deg) scale(0.98);
+  }
+  75% {
+    transform: translateX(6px) rotate(8deg) scale(1.04);
+  }
+}
+
+@keyframes circleDashSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Hover: Circle slides right and spins 360 degrees */
+.speciality-card:hover .speciality-icon-box {
+  transform: translateX(12px) rotate(360deg) scale(1.18) !important;
+  background: linear-gradient(135deg, var(--primary) 0%, #9E1B28 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 8px 24px rgba(200, 35, 51, 0.38) !important;
+}
+
+/* Click Animation: Rapid rotating and sliding spring */
+.speciality-card.is-circle-spinning .speciality-icon-box {
+  animation: circleClickSpinSlide 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+@keyframes circleClickSpinSlide {
+  0% {
+    transform: translateX(0) rotate(0deg) scale(1);
+  }
+  40% {
+    transform: translateX(18px) rotate(360deg) scale(1.25);
+    background: linear-gradient(135deg, var(--primary) 0%, #9E1B28 100%);
+    color: #FFFFFF;
+    box-shadow: 0 10px 28px rgba(200, 35, 51, 0.45);
+  }
+  70% {
+    transform: translateX(10px) rotate(390deg) scale(1.1);
+  }
+  100% {
+    transform: translateX(0) rotate(360deg) scale(1);
+  }
+}
+
+
+/* ==========================================================================
+   SPECIALITIES 3D CIRCULAR / SPIRAL CAROUSEL ORBIT
+   - Continuous clockwise rotation around center
+   - Full complete cards move one after another along circular path
+   - Subtle depth scaling and opacity
+   - Hover pauses or slows rotation
+   - Perfectly preserves existing card design, content, and colors
+   ========================================================================== */
+
+.specialities-orbit-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1140px;
+  margin: 32px auto 0 auto;
+  user-select: none;
+}
+
+.specialities-orbit-stage {
+  position: relative;
+  width: 100%;
+  height: 680px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+}
+
+/* Center Clinic Core Hub */
+.orbit-center-hub {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFFFFF 0%, #FFF5F5 70%, #FEE2E2 100%);
+  border: 2px solid var(--primary-border);
+  box-shadow: 0 10px 30px rgba(200, 35, 51, 0.2), inset 0 0 15px rgba(200, 35, 51, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hub-pulse-ring {
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(200, 35, 51, 0.4);
+  animation: hubRingSpin 18s linear infinite;
+  pointer-events: none;
+}
+
+.hub-pulse-ring-2 {
+  inset: -28px;
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  animation: hubRingSpin 24s linear infinite reverse;
+}
+
+@keyframes hubRingSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hub-inner-core {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hub-logo-img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+  margin-bottom: 4px;
+  filter: drop-shadow(0 2px 4px rgba(200, 35, 51, 0.2));
+}
+
+.hub-title {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+.hub-sub {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--neutral-600);
+  letter-spacing: 0.3px;
+}
+
+/* Orbit Track */
+.specialities-orbit-track {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Orbit Cards: Absolute positioned, moving along the circular path */
+.specialities-orbit-track .speciality-card {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 270px !important;
+  max-width: 82vw !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  transform-origin: center center !important;
+  background: var(--neutral-white) !important;
+  border-radius: var(--radius-xl) !important;
+  padding: 24px 22px !important;
+  border: 1.5px solid var(--neutral-200) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08) !important;
+  will-change: transform, opacity !important;
+  transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              filter 0.3s ease !important;
+  margin-bottom: 0 !important;
+}
+
+/* Hover: highlights the card, lifts it slightly and keeps it 100% readable */
+.specialities-orbit-track .speciality-card:hover {
+  border-color: var(--primary) !important;
+  box-shadow: 0 24px 50px rgba(200, 35, 51, 0.28) !important;
+  filter: brightness(1.02);
+  z-index: 60 !important;
+}
+
+/* Controls Bar */
+.orbit-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 18px;
+  position: relative;
+  z-index: 10;
+}
+
+.orbit-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--neutral-white);
+  border: 1.5px solid var(--neutral-300);
+  color: var(--neutral-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all var(--transition-fast);
+}
+
+.orbit-nav-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.orbit-nav-btn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #FFFFFF;
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(200, 35, 51, 0.25);
+}
+
+.orbit-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--neutral-white);
+  border: 1px solid var(--neutral-200);
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.orbit-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  animation: orbitDotPulse 2s ease-in-out infinite;
+}
+
+@keyframes orbitDotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.4); opacity: 0.6; }
+}
+
+.orbit-status-text {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--neutral-700);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .specialities-orbit-stage {
+    height: 600px;
+  }
+  .specialities-orbit-track .speciality-card {
+    width: 240px !important;
+    padding: 20px 18px !important;
+  }
+  .orbit-center-hub {
+    width: 105px;
+    height: 105px;
+  }
+}
+
+@media (max-width: 768px) {
+  .specialities-orbit-stage {
+    height: 540px;
+  }
+  .specialities-orbit-track .speciality-card {
+    width: 220px !important;
+    padding: 16px 14px !important;
+  }
+  .orbit-center-hub {
+    width: 90px;
+    height: 90px;
+  }
+  .hub-logo-img {
+    width: 28px;
+    height: 28px;
+  }
+  .hub-title {
+    font-size: 9.5px;
+  }
+  .hub-sub {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .specialities-orbit-stage {
+    height: 500px;
+  }
+  .specialities-orbit-track .speciality-card {
+    width: 200px !important;
+    padding: 14px 12px !important;
+  }
+}
+
+
+/* ==========================================================================
+   OUR TEAM SECTION: RADIANT SPARKLE & GLINT CARDS ANIMATION
+   - Continuous diagonal light beam spark sweep across the cards
+   - Twinkling four-point diamond star sparks on card corners
+   - Luminous glowing border beam with golden/crimson spark reflection
+   - Interactive click burst generating dancing sparkle stars
+   ========================================================================== */
+
+.spark-card {
+  position: relative !important;
+  overflow: hidden !important;
+  cursor: pointer;
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.38s ease,
+              border-color 0.38s ease !important;
+}
+
+/* Traveling Diagonal Light Spark Glint across card face */
+.spark-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    115deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.45) 45%,
+    rgba(248, 113, 113, 0.35) 48%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(245, 158, 11, 0.35) 52%,
+    rgba(255, 255, 255, 0.45) 55%,
+    transparent 75%
+  );
+  transform: translateX(-160%) skewX(-20deg);
+  pointer-events: none;
+  z-index: 2;
+  animation: sparkSweepGlint 4.2s ease-in-out infinite;
+}
+
+/* Stagger spark sweeps across the specialist cards */
+.specialist-cards-grid .specialist-card-item:nth-child(1)::before {
+  animation-delay: 0.6s;
+}
+.specialist-cards-grid .specialist-card-item:nth-child(2)::before {
+  animation-delay: 1.4s;
+}
+.specialist-cards-grid .specialist-card-item:nth-child(3)::before {
+  animation-delay: 2.2s;
+}
+.emergency-care-banner::before {
+  animation-delay: 3s;
+}
+
+@keyframes sparkSweepGlint {
+  0% {
+    transform: translateX(-160%) skewX(-20deg);
+  }
+  35% {
+    transform: translateX(160%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(160%) skewX(-20deg);
+  }
+}
+
+/* Corner Twinkling Diamond Star Sparks */
+.card-sparkle-star {
+  position: absolute;
+  font-size: 16px;
+  line-height: 1;
+  color: #F59E0B;
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.9), 0 0 16px rgba(200, 35, 51, 0.6);
+  pointer-events: none;
+  z-index: 3;
+  animation: sparkleStarTwinkle 2.4s ease-in-out infinite;
+  user-select: none;
+}
+
+.card-sparkle-star.star-top-right {
+  top: 14px;
+  right: 16px;
+}
+
+.card-sparkle-star.star-bottom-left {
+  bottom: 14px;
+  left: 16px;
+  animation-delay: 1.2s;
+}
+
+.specialist-card-item:nth-child(2) .card-sparkle-star {
+  animation-delay: 0.8s;
+  color: #EF4444;
+}
+
+.specialist-card-item:nth-child(3) .card-sparkle-star {
+  animation-delay: 1.6s;
+  color: #F59E0B;
+}
+
+@keyframes sparkleStarTwinkle {
+  0%, 100% {
+    transform: scale(0.7) rotate(0deg);
+    opacity: 0.35;
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.35) rotate(45deg);
+    opacity: 1;
+    filter: brightness(1.4);
+    text-shadow: 0 0 12px rgba(245, 158, 11, 1), 0 0 22px rgba(200, 35, 51, 0.8);
+  }
+}
+
+/* Hover: Lifts card, illuminates border with warm spark aura */
+.spark-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  border-color: rgba(200, 35, 51, 0.5) !important;
+  box-shadow: 0 18px 40px rgba(200, 35, 51, 0.18),
+              0 0 20px rgba(248, 113, 113, 0.25) !important;
+}
+
+/* Avatar spark ring around Dr. Vindhya */
+.associate-avatar {
+  position: relative;
+}
+
+.associate-avatar::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px dashed rgba(245, 158, 11, 0.5);
+  animation: avatarSparkSpin 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes avatarSparkSpin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Click Spark Burst Pop */
+.spark-card.is-spark-popping {
+  animation: cardSparkPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes cardSparkPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.035) translateY(-8px); box-shadow: 0 22px 48px rgba(200, 35, 51, 0.3); }
+  100% { transform: scale(1); }
+}
+
+
+/* ==========================================================================
+   OUR TEAM SECTION: RUNNING GLOWING SPARK BG & FLICKERING SPARK ICONS
+   - Glowing spark ambient aurora sweeping in background
+   - Streaming starlight spark dust drifting across the section
+   - Flickering spark type animation on card icons with starlight corona
+   ========================================================================== */
+
+/* Running Spark Background */
+.team-spark-running-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Luminous Ambient Aurora Glows */
+.spark-ambient-aurora {
+  position: absolute;
+  width: 700px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(65px);
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.spark-ambient-aurora.aurora-1 {
+  top: 5%;
+  left: -100px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.18) 0%, rgba(200, 35, 51, 0.12) 45%, transparent 70%);
+  animation: sparkAuroraDrift 14s ease-in-out infinite alternate;
+}
+
+.spark-ambient-aurora.aurora-2 {
+  bottom: 0%;
+  right: -100px;
+  background: radial-gradient(circle, rgba(200, 35, 51, 0.16) 0%, rgba(248, 113, 113, 0.12) 50%, transparent 70%);
+  animation: sparkAuroraDrift 16s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes sparkAuroraDrift {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(60px, -40px) scale(1.18);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-40px, 30px) scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+/* Running Sparkling Starlight Dust Stream */
+.spark-dust-stream {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.spark-dust {
+  position: absolute;
+  font-size: 15px;
+  line-height: 1;
+  color: #F59E0B;
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.9), 0 0 18px rgba(200, 35, 51, 0.6);
+  animation: sparkDustGlide 12s linear infinite;
+  user-select: none;
+  opacity: 0;
+}
+
+.spark-dust.d1 { top: 12%; animation-duration: 11s; animation-delay: 0s; font-size: 14px; }
+.spark-dust.d2 { top: 28%; animation-duration: 13s; animation-delay: 2.5s; font-size: 18px; color: #EF4444; }
+.spark-dust.d3 { top: 45%; animation-duration: 9.5s; animation-delay: 5s; font-size: 12px; }
+.spark-dust.d4 { top: 62%; animation-duration: 14s; animation-delay: 1s; font-size: 16px; color: #F59E0B; }
+.spark-dust.d5 { top: 78%; animation-duration: 10.5s; animation-delay: 4s; font-size: 15px; }
+.spark-dust.d6 { top: 20%; animation-duration: 12.5s; animation-delay: 7s; font-size: 18px; color: #EF4444; }
+.spark-dust.d7 { top: 54%; animation-duration: 11.5s; animation-delay: 3.2s; font-size: 13px; }
+.spark-dust.d8 { top: 88%; animation-duration: 13.5s; animation-delay: 6s; font-size: 16px; color: #F59E0B; }
+
+@keyframes sparkDustGlide {
+  0% {
+    transform: translate(-30px, 0) scale(0.6) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+    transform: translate(15vw, -12px) scale(1.1) rotate(45deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(50vw, -25px) scale(1.25) rotate(120deg);
+    text-shadow: 0 0 14px rgba(245, 158, 11, 1), 0 0 24px rgba(200, 35, 51, 0.8);
+  }
+  85% {
+    opacity: 0.85;
+    transform: translate(85vw, -15px) scale(0.95) rotate(220deg);
+  }
+  100% {
+    transform: translate(calc(100vw + 40px), -30px) scale(0.6) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   FLICKERING SPARK TYPE ANIMATION ON TEAM CARD ICONS
+   ========================================================================== */
+.specialist-card-item .icon-circle {
+  position: relative !important;
+  animation: iconSparkFlicker 2.8s ease-in-out infinite !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* Stagger icon flickering across the 3 specialist cards */
+.specialist-cards-grid .specialist-card-item:nth-child(1) .icon-circle {
+  animation-delay: 0s !important;
+}
+.specialist-cards-grid .specialist-card-item:nth-child(2) .icon-circle {
+  animation-delay: 0.9s !important;
+}
+.specialist-cards-grid .specialist-card-item:nth-child(3) .icon-circle {
+  animation-delay: 1.8s !important;
+}
+
+/* Flickering Starlight Spark Corona Effect */
+.specialist-card-item .icon-circle::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(245, 158, 11, 0.45);
+  animation: iconSparkRingFlicker 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes iconSparkFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 3px rgba(200, 35, 51, 0.25));
+  }
+  12% {
+    transform: scale(1.08) rotate(5deg);
+    filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.85)) brightness(1.22);
+  }
+  20% {
+    transform: scale(0.98) rotate(0deg);
+    filter: drop-shadow(0 0 4px rgba(200, 35, 51, 0.2));
+  }
+  32% {
+    transform: scale(1.12) rotate(-4deg);
+    filter: drop-shadow(0 0 16px rgba(248, 113, 113, 0.95)) brightness(1.3);
+  }
+  48% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.35));
+  }
+  72% {
+    transform: scale(1.06) rotate(3deg);
+    filter: drop-shadow(0 0 12px rgba(200, 35, 51, 0.65)) brightness(1.18);
+  }
+}
+
+@keyframes iconSparkRingFlicker {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+  25% {
+    transform: rotate(90deg) scale(1.12);
+    opacity: 0.9;
+    border-color: rgba(245, 158, 11, 0.7);
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+    opacity: 0.4;
+  }
+  75% {
+    transform: rotate(270deg) scale(1.14);
+    opacity: 0.95;
+    border-color: rgba(239, 68, 68, 0.7);
+  }
+}
+
+/* Hover on card makes icon flicker with higher excitement */
+.specialist-card-item:hover .icon-circle {
+  transform: scale(1.16) rotate(10deg) !important;
+  filter: drop-shadow(0 0 18px rgba(245, 158, 11, 1)) brightness(1.35) !important;
+  background: linear-gradient(135deg, var(--primary) 0%, #9E1B28 100%) !important;
+  color: #FFFFFF !important;
+}
+
+/* Emergency banner icon flickering pulse */
+.emergency-banner-icon {
+  animation: emergencyIconFlicker 2.2s ease-in-out infinite;
+}
+
+@keyframes emergencyIconFlicker {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(200, 35, 51, 0.3));
+  }
+  15% {
+    transform: scale(1.14);
+    filter: drop-shadow(0 0 16px rgba(239, 68, 68, 0.9)) brightness(1.25);
+  }
+  26% {
+    transform: scale(1);
+  }
+  38% {
+    transform: scale(1.18);
+    filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.9)) brightness(1.35);
+  }
+}
+
+
+/* ==========================================================================
+   CLINIC LEGACY: SCROLL-DRIVEN COLOR-CHANGING CARDS & HERITAGE TREE BG
+   - Background: Artistic Heritage Lineage Tree with branching limbs & enamel leaves
+   - Scroll Tracking: Active card is dynamically highlighted in rich distinctive color
+     while other cards stay in serene resting state!
+   ========================================================================== */
+
+/* Heritage Tree Background Container */
+.legacy-tree-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.legacy-tree-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.tree-branch-line {
+  animation: treeBranchBreathe 8s ease-in-out infinite alternate;
+  will-change: opacity, filter;
+}
+
+.branch-1 { animation-delay: 0s; }
+.branch-2 { animation-delay: 1.5s; }
+.branch-3 { animation-delay: 3s; }
+.branch-4 { animation-delay: 4.5s; }
+.branch-5 { animation-delay: 6s; }
+
+@keyframes treeBranchBreathe {
+  0% {
+    opacity: 0.65;
+    filter: drop-shadow(0 0 0 rgba(200, 35, 51, 0));
+  }
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(200, 35, 51, 0.35));
+  }
+}
+
+/* ==========================================================================
+   TIMELINE STEPS: DYNAMIC SCROLL COLOR HIGHLIGHTING
+   ========================================================================== */
+.timeline-card {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s ease,
+              border-color 0.45s ease,
+              background 0.45s ease !important;
+  cursor: pointer;
+}
+
+.timeline-dot {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s ease,
+              border-color 0.45s ease,
+              background-color 0.45s ease !important;
+}
+
+.timeline-badge {
+  transition: all 0.35s ease !important;
+}
+
+/* Base Active Highlight State */
+.timeline-step.is-scroll-active .timeline-card {
+  transform: translateY(-5px) scale(1.035) !important;
+}
+
+/* STEP 1: Dr. M.G. Prabhu (Origin - Warm Clinic Crimson) */
+.timeline-step:nth-child(2).is-scroll-active .timeline-card,
+.timeline-step:nth-child(2) .timeline-card:hover {
+  border-color: #C82333 !important;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFF5F5 100%) !important;
+  box-shadow: 0 18px 42px rgba(200, 35, 51, 0.22) !important;
+}
+.timeline-step:nth-child(2).is-scroll-active .timeline-badge,
+.timeline-step:nth-child(2) .timeline-card:hover .timeline-badge {
+  background: #C82333 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(200, 35, 51, 0.4) !important;
+}
+.timeline-step:nth-child(2).is-scroll-active .timeline-dot {
+  border-color: #C82333 !important;
+  transform: scale(1.35) !important;
+  box-shadow: 0 0 0 6px rgba(200, 35, 51, 0.32) !important;
+  background-color: #FFF5F5 !important;
+}
+
+/* STEP 2: Clinic Legacy (Heritage - Rose Crimson) */
+.timeline-step:nth-child(3).is-scroll-active .timeline-card,
+.timeline-step:nth-child(3) .timeline-card:hover {
+  border-color: #E11D48 !important;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFF1F2 100%) !important;
+  box-shadow: 0 18px 42px rgba(225, 29, 72, 0.22) !important;
+}
+.timeline-step:nth-child(3).is-scroll-active .timeline-badge,
+.timeline-step:nth-child(3) .timeline-card:hover .timeline-badge {
+  background: #E11D48 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(225, 29, 72, 0.4) !important;
+}
+.timeline-step:nth-child(3).is-scroll-active .timeline-dot {
+  border-color: #E11D48 !important;
+  transform: scale(1.35) !important;
+  box-shadow: 0 0 0 6px rgba(225, 29, 72, 0.32) !important;
+  background-color: #FFF1F2 !important;
+}
+
+/* STEP 3: 2012 Handover (Milestone - Golden Amber) */
+.timeline-step:nth-child(4).is-scroll-active .timeline-card,
+.timeline-step:nth-child(4) .timeline-card:hover {
+  border-color: #F59E0B !important;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFFBEB 100%) !important;
+  box-shadow: 0 18px 42px rgba(245, 158, 11, 0.26) !important;
+}
+.timeline-step:nth-child(4).is-scroll-active .timeline-badge,
+.timeline-step:nth-child(4) .timeline-card:hover .timeline-badge {
+  background: #F59E0B !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.45) !important;
+}
+.timeline-step:nth-child(4).is-scroll-active .timeline-dot {
+  border-color: #F59E0B !important;
+  transform: scale(1.35) !important;
+  box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.35) !important;
+  background-color: #FFFBEB !important;
+}
+
+/* STEP 4: Leadership Duo (Leadership - Deep Royal Crimson) */
+.timeline-step:nth-child(5).is-scroll-active .timeline-card,
+.timeline-step:nth-child(5) .timeline-card:hover {
+  border-color: #991B1B !important;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FEF2F2 100%) !important;
+  box-shadow: 0 18px 42px rgba(153, 27, 27, 0.24) !important;
+}
+.timeline-step:nth-child(5).is-scroll-active .timeline-badge,
+.timeline-step:nth-child(5) .timeline-card:hover .timeline-badge {
+  background: #991B1B !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(153, 27, 27, 0.4) !important;
+}
+.timeline-step:nth-child(5).is-scroll-active .timeline-dot {
+  border-color: #991B1B !important;
+  transform: scale(1.35) !important;
+  box-shadow: 0 0 0 6px rgba(153, 27, 27, 0.32) !important;
+  background-color: #FEF2F2 !important;
+}
+
+/* STEP 5: Present & Future (Continuous Betterment - Enamel Emerald) */
+.timeline-step:nth-child(6).is-scroll-active .timeline-card,
+.timeline-step:nth-child(6) .timeline-card:hover {
+  border-color: #059669 !important;
+  background: linear-gradient(135deg, #FFFFFF 0%, #ECFDF5 100%) !important;
+  box-shadow: 0 18px 42px rgba(5, 150, 105, 0.22) !important;
+}
+.timeline-step:nth-child(6).is-scroll-active .timeline-badge,
+.timeline-step:nth-child(6) .timeline-card:hover .timeline-badge {
+  background: #059669 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.4) !important;
+}
+.timeline-step:nth-child(6).is-scroll-active .timeline-dot {
+  border-color: #059669 !important;
+  transform: scale(1.35) !important;
+  box-shadow: 0 0 0 6px rgba(5, 150, 105, 0.32) !important;
+  background-color: #ECFDF5 !important;
+}
+
+/* ==========================================================================
+   15. LOCATION & CONTACT: SIMPLE ANIMATED BACKGROUNDS & CARD HIGHLIGHT
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   A. LOCATION SIMPLE BACKGROUND ENGINE
+   Navigational coordinate grid, radar sonar waves & Mysore coordinate rings
+   -------------------------------------------------------------------------- */
+.location-simple-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.location-grid-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.loc-radar-ring.ring-1 {
+  transform-origin: 300px 300px;
+  animation: locRadarSpin 24s linear infinite;
+}
+
+.loc-radar-ring.ring-2 {
+  transform-origin: 300px 300px;
+  animation: locRadarPulse 5s ease-in-out infinite;
+}
+
+.loc-radar-ring.ring-3 {
+  transform-origin: 300px 300px;
+  animation: locRadarSpinReverse 32s linear infinite;
+}
+
+.loc-radar-ring.ring-4 {
+  transform-origin: 300px 300px;
+  animation: locRadarPulse 7s ease-in-out infinite 1.5s;
+}
+
+@keyframes locRadarSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes locRadarSpinReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes locRadarPulse {
+  0%, 100% {
+    opacity: 0.35;
+    stroke-width: 1.2px;
+  }
+  50% {
+    opacity: 0.85;
+    stroke-width: 2px;
+  }
+}
+
+.loc-sonar-pulse {
+  position: absolute;
+  left: 21%;
+  top: 50%;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(200, 35, 51, 0.25);
+  background: radial-gradient(circle, rgba(200, 35, 51, 0.08) 0%, rgba(200, 35, 51, 0) 70%);
+  transform: translate(-50%, -50%) scale(0.6);
+  opacity: 0;
+  pointer-events: none;
+  animation: locSonarRingExpand 5s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+}
+
+.loc-sonar-pulse.pulse-2 {
+  animation-delay: 2.5s;
+}
+
+@keyframes locSonarRingExpand {
+  0% {
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   B. CONTACT SIMPLE BACKGROUND ENGINE
+   Soft communication waves, connection arc & delicate ambient glow orbs
+   -------------------------------------------------------------------------- */
+.contact-simple-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.contact-waves-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.contact-comm-ring {
+  animation: contactRingBreathe 4.5s ease-in-out infinite;
+}
+
+.contact-comm-ring.c-ring-1 {
+  transform-origin: 240px 320px;
+  animation-delay: 0s;
+}
+
+.contact-comm-ring.c-ring-2 {
+  transform-origin: 720px 320px;
+  animation-delay: 1.2s;
+}
+
+.contact-comm-ring.c-ring-3 {
+  transform-origin: 1200px 320px;
+  animation-delay: 2.4s;
+}
+
+@keyframes contactRingBreathe {
+  0%, 100% {
+    opacity: 0.35;
+    stroke-width: 1.2px;
+  }
+  50% {
+    opacity: 0.9;
+    stroke-width: 2.2px;
+  }
+}
+
+.contact-wave-arc {
+  animation: contactArcFlow 12s linear infinite;
+  stroke-dasharray: 8 6;
+}
+
+@keyframes contactArcFlow {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: -100; }
+}
+
+.contact-ambient-glow {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(200, 35, 51, 0.08) 0%, rgba(248, 113, 113, 0.03) 50%, transparent 75%);
+  filter: blur(28px);
+  animation: contactGlowFloat 6s ease-in-out infinite alternate;
+}
+
+.contact-ambient-glow.glow-left {
+  left: 8%;
+  top: 35%;
+  animation-delay: 0s;
+}
+
+.contact-ambient-glow.glow-center {
+  left: 45%;
+  top: 40%;
+  animation-delay: 2s;
+}
+
+.contact-ambient-glow.glow-right {
+  left: 78%;
+  top: 35%;
+  animation-delay: 4s;
+}
+
+@keyframes contactGlowFloat {
+  0% { transform: translateY(0px) scale(0.95); opacity: 0.6; }
+  100% { transform: translateY(-15px) scale(1.1); opacity: 1; }
+}
+
+/* --------------------------------------------------------------------------
+   C. CONTACT CARDS INTERACTIVE CLICK-TO-HIGHLIGHT SYSTEM
+   Highlight card & icon on click with glowing crimson border, scale & pulse
+   -------------------------------------------------------------------------- */
+.contact-card-box {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              background-color 0.35s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Top Accent Highlight Strip */
+.contact-card-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: transparent;
+  transition: background 0.35s ease, height 0.35s ease;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  z-index: 2;
+}
+
+/* Dynamic Cursor Move & Active State for Contact Cards */
+.contact-card-box:hover,
+.contact-card-box.is-card-highlighted {
+  border-color: #C82333 !important;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFF5F7 100%) !important;
+  box-shadow: 0 20px 48px rgba(200, 35, 51, 0.20), 0 0 0 2px rgba(200, 35, 51, 0.22) !important;
+  transform: translateY(-8px) scale(1.02) !important;
+}
+
+.contact-card-box:hover::before,
+.contact-card-box.is-card-highlighted::before {
+  background: linear-gradient(90deg, #C82333 0%, #F87171 100%) !important;
+  height: 5px !important;
+}
+
+.contact-card-box:hover h4,
+.contact-card-box.is-card-highlighted h4 {
+  color: #C82333 !important;
+}
+
+.contact-card-box:hover .contact-card-icon,
+.contact-card-box.is-card-highlighted .contact-card-icon {
+  background: linear-gradient(135deg, #C82333 0%, #9E1B28 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 10px 24px rgba(200, 35, 51, 0.42), 0 0 0 5px rgba(200, 35, 51, 0.16) !important;
+  transform: scale(1.16) rotate(5deg) !important;
+}
+
+.contact-card-box:hover .btn-outline-primary,
+.contact-card-box.is-card-highlighted .btn-outline-primary {
+  background-color: var(--primary) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 6px 16px rgba(200, 35, 51, 0.32) !important;
+}
+
+@keyframes contactIconPulseGlow {
+  0%, 100% {
+    transform: scale(1.18) rotate(6deg);
+    box-shadow: 0 10px 24px rgba(200, 35, 51, 0.45), 0 0 0 5px rgba(200, 35, 51, 0.18);
+  }
+  50% {
+    transform: scale(1.24) rotate(-3deg);
+    box-shadow: 0 14px 30px rgba(200, 35, 51, 0.6), 0 0 0 8px rgba(200, 35, 51, 0.28);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   D. FOOTER & CONTACT CHANNELS WITH SPECIFIC ICONS
+   Address location icon, Timings clock, Contact phone, Emergency alert,
+   WhatsApp chat icon, and Email envelope icon.
+   -------------------------------------------------------------------------- */
+.footer-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #CBD5E1;
+}
+
+.footer-info-icon {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  margin-top: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.footer-info-row:hover .footer-info-icon {
+  transform: scale(1.15);
+}
+
+.footer-info-content {
+  flex: 1;
+}
+
+.footer-info-title {
+  color: #FFFFFF;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+  font-size: 14px;
+}
+
+.contact-channel-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contact-channel-icon {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  margin-top: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   16. TREATMENTS SECTION: CLASSY SEQUENTIAL MOVING CARDS & 3D FLIP CARDS
+   With Clinical Photography Thumbnails, Dynamic Cursor Highlight & Zero-Flicker Buttons
+   ========================================================================== */
+.treatments-carousel-wrap {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.treatments-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.treatments-counter-badge {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(200, 35, 51, 0.08);
+  border: 1px solid rgba(200, 35, 51, 0.22);
+  padding: 5px 16px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(200, 35, 51, 0.08);
+}
+
+.treatments-nav-arrows {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.treatment-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--neutral-300);
+  background: #FFFFFF;
+  color: var(--neutral-700);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.treatment-nav-btn:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #FFFFFF;
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(200, 35, 51, 0.3);
+}
+
+.treatment-nav-btn:active {
+  transform: scale(0.95);
+}
+
+.treatments-carousel-viewport {
+  overflow: hidden;
+  position: relative;
+  padding: 22px 10px 36px;
+  margin: -22px -10px -36px;
+}
+
+.treatments-carousel-track {
+  display: flex;
+  gap: 28px;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Individual Card Container with 3D Perspective */
+.treatment-card-item {
+  flex: 0 0 calc((100% - 56px) / 3);
+  perspective: 1200px;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 24px;
+  cursor: pointer;
+  user-select: none;
+  min-height: 520px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 3D Card Inner (Rotates 180deg on Flip) */
+.treatment-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  transition: transform 0.75s cubic-bezier(0.34, 1.35, 0.64, 1);
+  transform-style: preserve-3d;
+  border-radius: 24px;
+}
+
+.treatment-card-item.is-flipped .treatment-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT & BACK FACES */
+.treatment-card-front,
+.treatment-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* FRONT FACE STYLING */
+.treatment-card-front {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  padding: 16px 20px 22px;
+  z-index: 2;
+  transform: rotateY(0deg) translateZ(1px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  overflow: hidden;
+}
+
+/* Top Shimmer Stripe on Front */
+.treatment-card-front::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: transparent;
+  transition: background 0.35s ease, height 0.35s ease;
+  border-radius: 24px 24px 0 0;
+  z-index: 5;
+}
+
+/* Treatment Thumbnail Wrapper on Front */
+.treatment-card-thumb-wrap {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  border-radius: 18px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: #F1F5F9;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+.treatment-card-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.treatment-card-item:hover .treatment-card-thumb {
+  transform: scale(1.06);
+}
+
+/* Floating Highlighted Icon Badge on Thumbnail */
+.treatment-thumb-icon-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFF1F2 100%);
+  border: 1.5px solid rgba(200, 35, 51, 0.22);
+  color: #C82333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 3;
+}
+
+.treatment-thumb-icon-badge svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.35s ease;
+}
+
+.treatment-card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 4px;
+  letter-spacing: -0.2px;
+  transition: color 0.3s ease;
+}
+
+.treatment-card-subtitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #B45309; /* Warm gold */
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.treatment-card-desc {
+  font-size: 13.5px;
+  color: #64748B;
+  line-height: 1.55;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.treatment-card-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(241, 245, 249, 0.9);
+  padding-top: 14px;
+}
+
+.treatment-learn-btn {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #C82333;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.treatment-learn-btn span.arrow {
+  transition: transform 0.25s ease;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.treatment-learn-btn:hover span.arrow,
+.treatment-card-item:hover .treatment-learn-btn span.arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   DYNAMIC CURSOR HIGHLIGHT:
+   When cursor moves from one card to another, the hovered card highlights immediately!
+   No constant "stuck" highlight on un-hovered cards.
+   ========================================================================== */
+.treatment-card-item:hover,
+.treatment-card-item.is-active-spotlight {
+  transform: translateY(-8px);
+}
+
+.treatment-card-item:hover .treatment-card-front,
+.treatment-card-item.is-active-spotlight .treatment-card-front {
+  border-color: #C82333;
+  box-shadow: 0 20px 48px rgba(200, 35, 51, 0.16), 0 2px 8px rgba(0, 0, 0, 0.04);
+  background: linear-gradient(145deg, #FFFFFF 0%, #FFFBFB 100%);
+}
+
+.treatment-card-item:hover .treatment-card-front::before,
+.treatment-card-item.is-active-spotlight .treatment-card-front::before {
+  background: linear-gradient(90deg, #C82333 0%, #F59E0B 100%);
+  height: 5px;
+}
+
+.treatment-card-item:hover .treatment-thumb-icon-badge,
+.treatment-card-item.is-active-spotlight .treatment-thumb-icon-badge {
+  background: linear-gradient(135deg, #C82333 0%, #9E1B28 100%);
+  color: #FFFFFF;
+  border-color: transparent;
+  transform: scale(1.12) rotate(3deg);
+  box-shadow: 0 8px 20px rgba(200, 35, 51, 0.4), 0 0 0 4px rgba(200, 35, 51, 0.16);
+}
+
+.treatment-card-item:hover .treatment-card-title,
+.treatment-card-item.is-active-spotlight .treatment-card-title {
+  color: #C82333;
+}
+
+/* When the viewport is hovered, prioritize the specifically hovered card */
+.treatments-carousel-viewport:hover .treatment-card-item.is-active-spotlight:not(:hover) {
+  transform: translateY(0);
+  border-color: rgba(226, 232, 240, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+.treatments-carousel-viewport:hover .treatment-card-item.is-active-spotlight:not(:hover) .treatment-card-front::before {
+  background: transparent;
+}
+.treatments-carousel-viewport:hover .treatment-card-item.is-active-spotlight:not(:hover) .treatment-thumb-icon-badge {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFF1F2 100%);
+  color: #C82333;
+  border-color: rgba(200, 35, 51, 0.22);
+  transform: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+.treatments-carousel-viewport:hover .treatment-card-item.is-active-spotlight:not(:hover) .treatment-card-title {
+  color: #0F172A;
+}
+
+/* BACK FACE STYLING (FLIPPED INFORMATION) */
+.treatment-card-back {
+  background: linear-gradient(150deg, #FFFFFF 0%, #FFFDF9 50%, #FFF9EE 100%);
+  border: 1.5px solid rgba(180, 83, 9, 0.35);
+  box-shadow: 0 18px 45px rgba(180, 83, 9, 0.16), 0 4px 16px rgba(15, 23, 42, 0.06);
+  padding: 24px 22px 20px;
+  transform: rotateY(180deg) translateZ(1px);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.treatment-card-item.is-flipped {
+  transform: translateY(-8px);
+}
+
+.treatment-back-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.treatment-back-badge {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #B45309;
+  background: rgba(180, 83, 9, 0.1);
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+.treatment-back-close {
+  background: #FFFFFF;
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748B;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.treatment-back-close:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #FFFFFF;
+}
+
+.treatment-back-title {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.treatment-back-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.treatment-back-points li {
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.45;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.treatment-back-points li .back-bullet-icon {
+  color: #16A34A;
+  font-weight: 800;
+  font-size: 14px;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+
+.treatment-back-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background: #FFFFFF;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+}
+
+.treatment-meta-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.treatment-meta-lbl {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #94A3B8;
+  font-weight: 600;
+}
+
+.treatment-meta-val {
+  font-size: 12.5px;
+  color: #0F172A;
+  font-weight: 700;
+}
+
+.treatment-back-action {
+  margin-top: auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* ==========================================================================
+   100% FLICKER-FREE BOOK APPOINTMENT BUTTON:
+   Eliminated 2D transform inside 3D context that caused the rapid jitter/flicker!
+   Uses stable brightness filter and box-shadow boost instead of translateY.
+   ========================================================================== */
+.treatment-card-book-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #C82333 0%, #A51D2A 100%);
+  color: #FFFFFF !important;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(200, 35, 51, 0.3);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  transform: translateZ(2px); /* Stable position above backface, NO jitter */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: background 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.treatment-card-book-btn:hover {
+  background: linear-gradient(135deg, #B91C1C 0%, #851722 100%);
+  box-shadow: 0 8px 24px rgba(200, 35, 51, 0.45);
+  filter: brightness(1.08);
+  /* DO NOT translateY here! Keeps cursor firmly planted on the button with ZERO flickering */
+  transform: translateZ(2px);
+}
+
+.treatment-card-book-btn:active {
+  filter: brightness(0.95);
+  box-shadow: 0 2px 8px rgba(200, 35, 51, 0.3);
+}
+
+/* Pagination Dots */
+.treatments-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.treatment-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background: #CBD5E1;
+  border: none;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+}
+
+.treatment-dot.active {
+  width: 34px;
+  background: linear-gradient(90deg, #C82333 0%, #F59E0B 100%);
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(200, 35, 51, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .treatment-card-item {
+    flex: 0 0 calc((100% - 28px) / 2);
+    min-height: 530px;
+  }
+  .treatment-card-inner {
+    min-height: 530px;
+  }
+  .treatment-card-thumb-wrap {
+    height: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .treatment-card-item {
+    flex: 0 0 100%;
+    min-height: 540px;
+  }
+  .treatment-card-inner {
+    min-height: 540px;
+  }
+  .treatment-card-thumb-wrap {
+    height: 170px;
+  }
+}
+
