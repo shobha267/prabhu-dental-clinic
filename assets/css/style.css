@@ -2425,23 +2425,23 @@ textarea.form-control {
 .site-footer {
   background-color: #0B111E;
   color: #94A3B8;
-  padding-top: 36px;
-  padding-bottom: 18px;
+  padding-top: 28px;
+  padding-bottom: 14px;
   border-top: 3px solid var(--primary);
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-  gap: 28px;
-  margin-bottom: 24px;
+  gap: 24px;
+  margin-bottom: 16px;
 }
 
 .footer-brand-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 8px;
+  gap: 8px;
+  margin-bottom: 5px;
 }
 
 .footer-logo-wrap {
@@ -2476,27 +2476,27 @@ textarea.form-control {
 
 .footer-kannada {
   font-family: var(--font-kannada);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   color: #F87171;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .footer-brand p {
-  font-size: 13px;
+  font-size: 12px;
   color: #94A3B8;
-  line-height: 1.5;
-  margin-bottom: 10px;
+  line-height: 1.4;
+  margin-bottom: 8px;
 }
 
 .footer-col h4 {
   font-family: var(--font-display);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
   color: var(--neutral-white);
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   position: relative;
 }
 
@@ -2513,16 +2513,16 @@ textarea.form-control {
 .footer-links {
   display: flex;
   flex-direction: column;
-  gap: 7px;
+  gap: 5px;
 }
 
 .footer-links a {
-  font-size: 14px;
+  font-size: 12px;
   color: #94A3B8;
   transition: color var(--transition-fast), transform var(--transition-fast);
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .footer-links a:hover {
@@ -2548,15 +2548,15 @@ textarea.form-control {
 }
 
 .footer-bottom {
-  padding-top: 14px;
+  padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 12px;
+  font-size: 11px;
   color: #64748B;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
 @media (max-width: 992px) {
@@ -5787,15 +5787,15 @@ textarea.form-control {
 .footer-info-block {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .footer-info-row {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  font-size: 14px;
-  line-height: 1.6;
+  gap: 8px;
+  font-size: 12px;
+  line-height: 1.4;
   color: #CBD5E1;
 }
 
@@ -5823,17 +5823,17 @@ textarea.form-control {
   color: #FFFFFF;
   font-weight: 700;
   display: block;
-  margin-bottom: 2px;
-  font-size: 14px;
+  margin-bottom: 1px;
+  font-size: 12px;
 }
 
 .contact-channel-row {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 10px;
-  font-size: 14px;
-  line-height: 1.6;
+  gap: 6px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 .contact-channel-icon {
