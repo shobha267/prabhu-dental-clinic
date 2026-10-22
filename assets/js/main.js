@@ -1998,21 +1998,36 @@ function initTreatmentsCarousel() {
     });
   });
 
-  // Dynamic Cursor Move Highlight:
-  // When cursor moves into ANY card, THAT card highlights immediately!
+  // Dynamic Cursor Move Highlight + Hover Flip:
+  // When cursor moves into ANY card, THAT card highlights AND flips immediately!
   track.querySelectorAll('.treatment-card-item').forEach(card => {
     card.addEventListener('mouseenter', () => {
       hoveredCard = card;
+      isHovered = true;
+      // Spotlight
       track.querySelectorAll('.treatment-card-item').forEach(c => {
         c.classList.toggle('is-active-spotlight', c === card);
       });
+      // Flip this card; unflip all others
+      track.querySelectorAll('.treatment-card-item').forEach(c => {
+        if (c !== card) c.classList.remove('is-flipped');
+      });
+      card.classList.add('is-flipped');
+      isAnyCardFlipped = true;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      // Unflip this card when cursor leaves it
+      card.classList.remove('is-flipped');
+      isAnyCardFlipped = !!track.querySelector('.treatment-card-item.is-flipped');
     });
   });
 
   viewport.addEventListener('mouseleave', () => {
     hoveredCard = null;
     isHovered = false;
-    // Re-sync spotlight with current index
+    // Unflip all cards and re-sync spotlight with current index
+    unflipAllCards();
     const normalizedIdx = currentIndex % totalCards;
     track.querySelectorAll('.treatment-card-item').forEach((c, i) => {
       c.classList.toggle('is-active-spotlight', (i % totalCards) === normalizedIdx && !c.classList.contains('is-clone'));

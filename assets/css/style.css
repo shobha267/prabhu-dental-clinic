@@ -2425,23 +2425,23 @@ textarea.form-control {
 .site-footer {
   background-color: #0B111E;
   color: #94A3B8;
-  padding-top: 80px;
-  padding-bottom: 32px;
+  padding-top: 36px;
+  padding-bottom: 18px;
   border-top: 3px solid var(--primary);
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-  gap: 48px;
-  margin-bottom: 64px;
+  gap: 28px;
+  margin-bottom: 24px;
 }
 
 .footer-brand-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 10px;
+  margin-bottom: 8px;
 }
 
 .footer-logo-wrap {
@@ -2476,27 +2476,27 @@ textarea.form-control {
 
 .footer-kannada {
   font-family: var(--font-kannada);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: #F87171;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .footer-brand p {
-  font-size: 14px;
+  font-size: 13px;
   color: #94A3B8;
-  line-height: 1.7;
-  margin-bottom: 20px;
+  line-height: 1.5;
+  margin-bottom: 10px;
 }
 
 .footer-col h4 {
   font-family: var(--font-display);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--neutral-white);
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   position: relative;
 }
 
@@ -2513,7 +2513,7 @@ textarea.form-control {
 .footer-links {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 7px;
 }
 
 .footer-links a {
@@ -2548,15 +2548,15 @@ textarea.form-control {
 }
 
 .footer-bottom {
-  padding-top: 32px;
+  padding-top: 14px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 13px;
+  font-size: 12px;
   color: #64748B;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 8px;
 }
 
 @media (max-width: 992px) {
@@ -3895,14 +3895,10 @@ textarea.form-control {
 }
 
 .doctor-specialty-badge {
-  transition: all var(--transition-fast);
+  transition: box-shadow 0.3s ease;
 }
 
-.doctor-card:hover .doctor-specialty-badge {
-  background-color: var(--primary);
-  color: #FFFFFF;
-  transform: translateY(-1px);
-}
+/* Specialisation badge stays always visible, no color change on hover */
 
 /* Speciality Cards */
 .speciality-card {
@@ -4168,17 +4164,9 @@ textarea.form-control {
 /* --------------------------------------------------------------------------
    SECTION-SPECIFIC THEMATIC MICRO-ANIMATIONS
    -------------------------------------------------------------------------- */
-/* Doctors: Specialist Stethoscope Heartbeat Pulse on Badges */
+/* Doctors: Specialist badge — always visible, no pulse animation */
 .doctor-specialty-badge {
-  animation: doctorStethoscopePulse 4.5s ease-in-out infinite;
-}
-
-@keyframes doctorStethoscopePulse {
-  0%, 100% { transform: scale(1); }
-  12%      { transform: scale(1.06); box-shadow: 0 0 10px rgba(200, 35, 51, 0.25); }
-  22%      { transform: scale(1.01); }
-  34%      { transform: scale(1.08); box-shadow: 0 0 12px rgba(200, 35, 51, 0.35); }
-  48%      { transform: scale(1); box-shadow: none; }
+  /* No animation — specialisation is always shown clearly */
 }
 
 /* Appointment: Inviting Primary Button Glow Pulse */
