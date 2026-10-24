@@ -55,7 +55,7 @@ const translations = {
     "hero.badge_loc_title": "Saraswathipuram",
     "hero.badge_loc_sub": "Near Bus Stop, Mysore",
     "hero.badge_timing_title": "Monday – Saturday & Sunday",
-    "hero.badge_timing_sub": "10:30 AM–1 PM, 5–9 PM &bull; Sun: 10:30 AM–1 PM",
+    "hero.badge_timing_sub": "10:30 AM–1:00 PM, 5:00 PM–9:00 PM",
     "hero.badge_sparkle": "Specialist Care Duo",
 
     // About Section
@@ -371,7 +371,7 @@ const translations = {
     "hero.badge_loc_title": "ಸರಸ್ವತಿಪುರಂ",
     "hero.badge_loc_sub": "ಬಸ್ ನಿಲ್ದಾಣದ ಹತ್ತಿರ, ಮೈಸೂರು",
     "hero.badge_timing_title": "ಸೋಮವಾರ – ಶನಿವಾರ & ಭಾನುವಾರ",
-    "hero.badge_timing_sub": "ಬೆಳಿಗ್ಗೆ 10:30–01:00, ಸಂಜೆ 05:00–09:00 &bull; ಭಾನು: ಬೆಳಿಗ್ಗೆ 10:30–01:00",
+    "hero.badge_timing_sub": "ಬೆಳಿಗ್ಗೆ 10:30–01:00, ಸಂಜೆ 05:00–09:00",
     "hero.badge_sparkle": "ತಜ್ಞ ವೈದ್ಯ ದಂಪತಿ",
 
     // About Section

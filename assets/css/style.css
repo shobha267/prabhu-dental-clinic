@@ -1055,6 +1055,14 @@ html[lang="kn"] .nav-link {
   bottom: -42px;
   left: 24px;
   right: auto;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+}
+
+.floating-badge-timing .floating-badge-content h4,
+.floating-badge-timing .floating-badge-content p {
+  white-space: nowrap;
 }
 
 .floating-badge-location {
@@ -1102,6 +1110,19 @@ html[lang="kn"] .nav-link {
   .floating-badge {
     position: static;
     margin-top: 14px;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .floating-badge-timing {
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-badge-timing .floating-badge-content p {
+    white-space: normal;
   }
 }
 
