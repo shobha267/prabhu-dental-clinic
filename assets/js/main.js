@@ -17,7 +17,7 @@ const translations = {
     "topbar.address": "388, 5th Cross, 14th Main, Near Bus Stop, Saraswathipuram, Mysore",
     "lang.choose": "Language:",
     "topbar.whatsapp": "WhatsApp: 9448984480",
-    "topbar.hours": "Mon – Sat: 10:30 AM – 1:00 PM &bull; 5:00 PM – 9:00 PM | Sun: 10:30 AM – 1:00 PM",
+    "topbar.hours": "Mon – Sat: 10:30 AM – 1:30 PM &bull; 5:00 PM – 9:00 PM | Sun: 10:30 AM – 1:30 PM",
     "hero.stat2_num": "2 MDS",
 
     // Navigation
@@ -55,7 +55,7 @@ const translations = {
     "hero.badge_loc_title": "Saraswathipuram",
     "hero.badge_loc_sub": "Near Bus Stop, Mysore",
     "hero.badge_timing_title": "Monday – Saturday & Sunday",
-    "hero.badge_timing_sub": "10:30 AM–1:00 PM, 5:00 PM–9:00 PM",
+    "hero.badge_timing_sub": "10:30 AM–1:30 PM, 5:00 PM–9:00 PM",
     "hero.badge_sparkle": "Specialist Care Duo",
 
     // About Section
@@ -183,7 +183,7 @@ const translations = {
     // Team Section
     "team.tag": "Clinical Team",
     "team.title": "Our Team",
-    "team.subtitle": "Associate Dental Surgeon, experienced specialist panel, and medical emergency tie-ups.",
+    "team.subtitle": "Experienced specialist panel and medical emergency tie-ups.",
     "team.associate_role": "Associate Dental Surgeon",
     "team.associate_deg": "B.D.S. &bull; Associate Dental Surgeon",
     "team.associate_bio": '"She has graduated in the year 2011 and is associated with us since 2013. She is a friendly and caring professional who regularly attends dental courses to keep abreast with latest developments in the field of dentistry."',
@@ -207,7 +207,6 @@ const translations = {
     "doctors.mds_deg": "M.D.S.",
     "spec.orbit_hub_sub": "Specialities Orbit",
     "spec.orbit_status": "Continuous Clockwise Orbit (Hover or Click Card to Focus)",
-    "team.vindhya_name": "Dr. Vindhya S.",
     "legacy.step1_badge": "Origin",
     "legacy.step1_desc": "The established clinical foundation and dental practice that laid the bedrock of patient care in Saraswathipuram.",
     "legacy.step2_badge": "Heritage",
@@ -255,11 +254,11 @@ const translations = {
     "app.plan_title": "Plan Your Clinic Visit",
     "app.plan_desc": "Fill out the request form with your preferred consultation date and dental concern.",
     "app.benefit1": "Consultations with Dr. Mahesh H.V. (MDS) or Dr. Ramya K.S. (MDS)",
-    "app.benefit2": "Morning Session (10:30 AM – 01:00 PM)",
+    "app.benefit2": "Morning Session (10:30 AM – 01:30 PM)",
     "app.benefit3": "Evening Session (05:00 PM – 09:00 PM)",
     "app.benefit4": "Convenient location near Bus Stop, Saraswathipuram, Mysore",
     "app.timings_heading": "Clinic Timings",
-    "app.timings_schedule": "Monday – Saturday:<br>10:30 AM – 01:00 PM<br>05:00 PM – 09:00 PM<br><br>Sunday:<br>10:30 AM – 01:00 PM",
+    "app.timings_schedule": "Monday – Saturday:<br>10:30 AM – 01:30 PM<br>05:00 PM – 09:00 PM<br><br>Sunday:<br>10:30 AM – 01:30 PM",
     "app.label_name": "Patient Name",
     "app.ph_name": "Patient full name",
     "app.label_mobile": "Mobile Number",
@@ -267,7 +266,7 @@ const translations = {
     "app.label_date": "Preferred Date",
     "app.label_time": "Preferred Time",
     "app.opt_time_select": "Select preferred session...",
-    "app.opt_time_morning": "10:30 AM - 01:00 PM (Morning Session)",
+    "app.opt_time_morning": "10:30 AM - 01:30 PM (Morning Session)",
     "app.opt_time_evening": "05:00 PM - 09:00 PM (Evening Session)",
     "app.label_reason": "Reason for Visit",
     "app.opt_reason_select": "Select specialty or reason...",
@@ -292,9 +291,9 @@ const translations = {
     "loc.full_address": "388, 5th Cross, 14th Main,<br>Near Bus Stop,<br>Saraswathipuram, Saraswatipuram.,<br>Mysore",
     "loc.timings_title": "Clinic Timings",
     "loc.days": "MONDAY – SATURDAY",
-    "loc.hours": "10:30 AM – 01:00 PM<br>05:00 PM – 09:00 PM",
+    "loc.hours": "10:30 AM – 01:30 PM<br>05:00 PM – 09:00 PM",
     "loc.sunday_label": "SUNDAY",
-    "loc.sunday_hours": "10:30 AM – 01:00 PM",
+    "loc.sunday_hours": "10:30 AM – 01:30 PM",
     "loc.landmark": "Near Bus Stop, Saraswathipuram, Mysore",
     "loc.btn_directions": "GET DIRECTIONS",
 
@@ -313,8 +312,8 @@ const translations = {
     "contact.whatsapp_btn": "WhatsApp",
     "loc.coordinates": "Coordinates: 12.302484, 76.627998",
     "loc.city": "Saraswathipuram, Mysore",
-    "loc.hours_inline": "10:30 AM – 01:00 PM &bull; 05:00 PM – 09:00 PM",
-    "loc.sunday_hours_inline": "10:30 AM – 01:00 PM",
+    "loc.hours_inline": "10:30 AM – 01:30 PM &bull; 05:00 PM – 09:00 PM",
+    "loc.sunday_hours_inline": "10:30 AM – 01:30 PM",
     "lightbox.title": "Prabhu Dental Clinic Exterior &amp; Signboard",
 
     // Footer
@@ -333,7 +332,7 @@ const translations = {
     "topbar.address": "388, 5ನೇ ಕ್ರಾಸ್, 14ನೇ ಮುಖ್ಯರಸ್ತೆ, ಬಸ್ ನಿಲ್ದಾಣದ ಹತ್ತಿರ, ಸರಸ್ವತಿಪುರಂ, ಮೈಸೂರು",
     "lang.choose": "ಭಾಷೆ:",
     "topbar.whatsapp": "ವಾಟ್ಸಾಪ್: 9448984480",
-    "topbar.hours": "ಸೋಮ – ಶನಿ: ಬೆಳಿಗ್ಗೆ 10:30 – 1:00 &bull; ಸಂಜೆ 5:00 – 9:00 | ಭಾನು: ಬೆಳಿಗ್ಗೆ 10:30 – 1:00",
+    "topbar.hours": "ಸೋಮ – ಶನಿ: ಬೆಳಿಗ್ಗೆ 10:30 – 1:30 &bull; ಸಂಜೆ 5:00 – 9:00 | ಭಾನು: ಬೆಳಿಗ್ಗೆ 10:30 – 1:30",
 
     // Navigation
     "nav.home": "ಮುಖಪುಟ",
@@ -371,7 +370,7 @@ const translations = {
     "hero.badge_loc_title": "ಸರಸ್ವತಿಪುರಂ",
     "hero.badge_loc_sub": "ಬಸ್ ನಿಲ್ದಾಣದ ಹತ್ತಿರ, ಮೈಸೂರು",
     "hero.badge_timing_title": "ಸೋಮವಾರ – ಶನಿವಾರ & ಭಾನುವಾರ",
-    "hero.badge_timing_sub": "ಬೆಳಿಗ್ಗೆ 10:30–01:00, ಸಂಜೆ 05:00–09:00",
+    "hero.badge_timing_sub": "ಬೆಳಿಗ್ಗೆ 10:30–01:30, ಸಂಜೆ 05:00–09:00",
     "hero.badge_sparkle": "ತಜ್ಞ ವೈದ್ಯ ದಂಪತಿ",
 
     // About Section
@@ -507,10 +506,9 @@ const translations = {
     // Team Section
     "team.tag": "ಚಿಕಿತ್ಸಾ ತಂಡ",
     "team.title": "ನಮ್ಮ ತಂಡ",
-    "team.subtitle": "ಸಹಾಯಕ ದಂತ ಶಸ್ತ್ರಚಿಕಿತ್ಸಕಿ, ಅನುಭವಿ ತಜ್ಞರ ಸಮಿತಿ ಮತ್ತು ವೈದ್ಯಕೀಯ ತುರ್ತು ಸೌಲಭ್ಯ.",
+    "team.subtitle": "ಅನುಭವಿ ತಜ್ಞರ ಸಮಿತಿ ಮತ್ತು ವೈದ್ಯಕೀಯ ತುರ್ತು ಸೌಲಭ್ಯ.",
     "team.associate_role": "ಸಹಾಯಕ ದಂತ ಶಸ್ತ್ರಚಿಕಿತ್ಸಕಿ",
     "team.associate_deg": "ಬಿ.ಡಿ.ಎಸ್. &bull; ಸಹಾಯಕ ದಂತ ಶಸ್ತ್ರಚಿಕಿತ್ಸಕಿ",
-    "team.vindhya_name": "ಡಾ. ವಿಂಧ್ಯ ಎಸ್.",
     "team.associate_bio": '"ಅವರು 2011 ರಲ್ಲಿ ಪದವಿ ಪಡೆದಿದ್ದು, 2013 ರಿಂದ ನಮ್ಮೊಂದಿಗೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದ್ದಾರೆ. ರೋಗಿ ಸ್ನೇಹಿ ವೃತ್ತಿಪರರಾಗಿದ್ದು, ದಂತವೈದ್ಯಕೀಯ ಕ್ಷೇತ್ರದ ಇತ್ತೀಚಿನ ಬೆಳವಣಿಗೆಗಳ ಬಗ್ಗೆ ನಿರಂತರವಾಗಿ ತರಬೇತಿ ಪಡೆಯುತ್ತಿದ್ದಾರೆ."',
     "team.panel_title": "ತಜ್ಞರ ಸಮಿತಿ",
     "team.panel_desc": "ನಮ್ಮ ರೋಗಿಗಳ ಎಲ್ಲಾ ದಂತ ಚಿಕಿತ್ಸಾ ಅಗತ್ಯಗಳನ್ನು ಪೂರೈಸಲು ಕ್ಲಿನಿಕ್ ತನ್ನದೇ ಆದ ಅನುಭವಿ ತಜ್ಞರ ತಂಡವನ್ನು ಹೊಂದಿದೆ:",
@@ -571,11 +569,11 @@ const translations = {
     "app.plan_title": "ನಿಮ್ಮ ಭೇಟಿಯನ್ನು ಯೋಜಿಸಿ",
     "app.plan_desc": "ನಿಮ್ಮ ಅಪೇಕ್ಷಿತ ದಿನಾಂಕ ಮತ್ತು ದಂತ ಸಮಸ್ಯೆಯನ್ನು ನಮೂದಿಸಿ ಫಾರ್ಮ್ ಭರ್ತಿ ಮಾಡಿ.",
     "app.benefit1": "ಡಾ. ಮಹೇಶ್ ಹೆಚ್.ವಿ. (ಎಂ.ಡಿ.ಎಸ್.) ಅಥವಾ ಡಾ. ರಮ್ಯಾ ಕೆ.ಎಸ್. (ಎಂ.ಡಿ.ಎಸ್.) ಅವರೊಂದಿಗೆ ಸಮಾಲೋಚನೆ",
-    "app.benefit2": "ಬೆಳಗಿನ ಅವಧಿ (ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:00)",
+    "app.benefit2": "ಬೆಳಗಿನ ಅವಧಿ (ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:30)",
     "app.benefit3": "ಸಂಜೆಯ ಅವಧಿ (ಸಂಜೆ 05:00 – ರಾತ್ರಿ 09:00)",
     "app.benefit4": "ಬಸ್ ನಿಲ್ದಾಣದ ಹತ್ತಿರ ಸುಲಭವಾಗಿ ತಲುಪಬಹುದಾದ ಸ್ಥಳ, ಸರಸ್ವತಿಪುರಂ, ಮೈಸೂರು",
     "app.timings_heading": "ಕ್ಲಿನಿಕ್ ಸಮಯ",
-    "app.timings_schedule": "ಸೋಮವಾರ – ಶನಿವಾರ:<br>ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:00<br>ಸಂಜೆ 05:00 – ರಾತ್ರಿ 09:00<br><br>ಭಾನುವಾರ:<br>ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:00",
+    "app.timings_schedule": "ಸೋಮವಾರ – ಶನಿವಾರ:<br>ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:30<br>ಸಂಜೆ 05:00 – ರಾತ್ರಿ 09:00<br><br>ಭಾನುವಾರ:<br>ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:30",
     "app.label_name": "ರೋಗಿಯ ಹೆಸರು",
     "app.ph_name": "ರೋಗಿಯ ಪೂರ್ಣ ಹೆಸರು",
     "app.label_mobile": "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",
@@ -583,7 +581,7 @@ const translations = {
     "app.label_date": "ಅಪೇಕ್ಷಿತ ದಿನಾಂಕ",
     "app.label_time": "ಅಪೇಕ್ಷಿತ ಸಮಯ",
     "app.opt_time_select": "ಅಪೇಕ್ಷಿತ ಅವಧಿಯನ್ನು ಆರಿಸಿ...",
-    "app.opt_time_morning": "ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:00 (ಬೆಳಗಿನ ಅವಧಿ)",
+    "app.opt_time_morning": "ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:30 (ಬೆಳಗಿನ ಅವಧಿ)",
     "app.opt_time_evening": "ಸಂಜೆ 05:00 – ರಾತ್ರಿ 09:00 (ಸಂಜೆಯ ಅವಧಿ)",
     "app.label_reason": "ಭೇಟಿಯ ಉದ್ದೇಶ / ಚಿಕಿತ್ಸೆ",
     "app.opt_reason_select": "ವಿಶೇಷತೆ ಅಥವಾ ಸಮಸ್ಯೆಯನ್ನು ಆರಿಸಿ...",
@@ -608,9 +606,9 @@ const translations = {
     "loc.full_address": "388, 5ನೇ ಕ್ರಾಸ್, 14ನೇ ಮುಖ್ಯರಸ್ತೆ,<br>ಬಸ್ ನಿಲ್ದಾಣದ ಹತ್ತಿರ,<br>ಸರಸ್ವತಿಪುರಂ, ಸರಸ್ವತೀಪುರಂ.,<br>ಮೈಸೂರು",
     "loc.timings_title": "ಕ್ಲಿನಿಕ್ ಸಮಯ",
     "loc.days": "ಸೋಮವಾರ – ಶನಿವಾರ",
-    "loc.hours": "ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:00<br>ಸಂಜೆ 05:00 – ರಾತ್ರಿ 09:00",
+    "loc.hours": "ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:30<br>ಸಂಜೆ 05:00 – ರಾತ್ರಿ 09:00",
     "loc.sunday_label": "ಭಾನುವಾರ",
-    "loc.sunday_hours": "ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:00",
+    "loc.sunday_hours": "ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:30",
     "loc.landmark": "ಬಸ್ ನಿಲ್ದಾಣದ ಹತ್ತಿರ, ಸರಸ್ವತಿಪುರಂ, ಮೈಸೂರು",
     "loc.btn_directions": "ದಾರಿ ನಕ್ಷೆ ನೋಡಿ",
 
@@ -629,8 +627,8 @@ const translations = {
     "contact.whatsapp_btn": "ವಾಟ್ಸಾಪ್",
     "loc.coordinates": "ಭೌಗೋಳಿಕ ನಿರ್ದೇಶಾಂಕಗಳು: 12.302484, 76.627998",
     "loc.city": "ಸರಸ್ವತಿಪುರಂ, ಮೈಸೂರು",
-    "loc.hours_inline": "ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:00 &bull; ಸಂಜೆ 05:00 – ರಾತ್ರಿ 09:00",
-    "loc.sunday_hours_inline": "ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:00",
+    "loc.hours_inline": "ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:30 &bull; ಸಂಜೆ 05:00 – ರಾತ್ರಿ 09:00",
+    "loc.sunday_hours_inline": "ಬೆಳಿಗ್ಗೆ 10:30 – ಮಧ್ಯಾಹ್ನ 01:30",
     "lightbox.title": "ಪ್ರಭು ಡೆಂಟಲ್ ಕ್ಲಿನಿಕ್ ಮುಂಭಾಗ &amp; ನಾಮಫಲಕ",
 
     // Footer
@@ -735,7 +733,7 @@ function setLanguage(lang) {
 /**
  * 2. Live Clinic Open / Closed Status Calculation
  * Monday - Saturday:
- * - Shift 1: 10:00 AM to 01:00 PM (10:00 - 13:00)
+ * - Shift 1: 10:30 AM to 01:30 PM (10:30 - 13:30)
  * - Shift 2: 05:00 PM to 09:00 PM (17:00 - 21:00)
  * Sunday: Closed
  */
@@ -751,7 +749,7 @@ function initLiveClinicStatus() {
     const currentTimeInMinutes = hours * 60 + minutes;
 
     const mMorningStart = 10 * 60 + 30; // 10:30 AM -> 630
-    const mMorningEnd = 13 * 60;        // 01:00 PM -> 780
+    const mMorningEnd = 13 * 60 + 30;   // 01:30 PM -> 810
     const mEveningStart = 17 * 60;      // 05:00 PM -> 1020
     const mEveningEnd = 21 * 60;        // 09:00 PM -> 1260
 
@@ -759,12 +757,12 @@ function initLiveClinicStatus() {
     let badgeClass = 'closed';
 
     if (day === 0) {
-      // Sunday: 10:30 AM - 1:00 PM
+      // Sunday: 10:30 AM - 1:30 PM
       if (currentTimeInMinutes >= mMorningStart && currentTimeInMinutes < mMorningEnd) {
         badgeClass = 'open';
         statusText = currentLang === 'kn'
-          ? 'ತೆರೆದಿದೆ • ಭಾನುವಾರದ ಬೆಳಗಿನ ಅವಧಿ ಮಧ್ಯಾಹ್ನ 1:00 ರವರೆಗೆ'
-          : 'Open Now • Sunday Morning Session until 1:00 PM';
+          ? 'ತೆರೆದಿದೆ • ಭಾನುವಾರದ ಬೆಳಗಿನ ಅವಧಿ ಮಧ್ಯಾಹ್ನ 1:30 ರವರೆಗೆ'
+          : 'Open Now • Sunday Morning Session until 1:30 PM';
       } else if (currentTimeInMinutes < mMorningStart) {
         badgeClass = 'closed';
         statusText = currentLang === 'kn'
@@ -781,8 +779,8 @@ function initLiveClinicStatus() {
       if (currentTimeInMinutes >= mMorningStart && currentTimeInMinutes < mMorningEnd) {
         badgeClass = 'open';
         statusText = currentLang === 'kn'
-          ? 'ತೆರೆದಿದೆ • ಬೆಳಗಿನ ಅವಧಿ ಮಧ್ಯಾಹ್ನ 1:00 ರವರೆಗೆ'
-          : 'Open Now • Morning Session until 1:00 PM';
+          ? 'ತೆರೆದಿದೆ • ಬೆಳಗಿನ ಅವಧಿ ಮಧ್ಯಾಹ್ನ 1:30 ರವರೆಗೆ'
+          : 'Open Now • Morning Session until 1:30 PM';
       } else if (currentTimeInMinutes >= mEveningStart && currentTimeInMinutes < mEveningEnd) {
         badgeClass = 'open';
         statusText = currentLang === 'kn'
