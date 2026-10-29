@@ -971,10 +971,10 @@ function initAppointmentForm() {
 
   if (!form || !successBox) return;
 
-  // Real-time restriction: Patient Name field only accepts letters, spaces and dots (rejects numbers)
+  // Real-time restriction: Patient Name field only accepts letters, spaces and dots (rejects numbers and special characters)
   if (form.patientName) {
     form.patientName.addEventListener('input', function() {
-      this.value = this.value.replace(/[\d]/g, '');
+      this.value = this.value.replace(/[^a-zA-Z\u0C80-\u0CFF\s\.]/g, '');
     });
   }
 
@@ -1002,11 +1002,11 @@ function initAppointmentForm() {
       return;
     }
 
-    // Name validation: must contain letters and no numbers
-    if (/[\d]/.test(name) || !/[A-Za-z\u0C80-\u0CFF]/.test(name)) {
+    // Name validation: must contain only letters, spaces and dots (no numbers or special characters)
+    if (/[^A-Za-z\u0C80-\u0CFF\s\.]/.test(name) || !/[A-Za-z\u0C80-\u0CFF]/.test(name)) {
       const nameMsg = currentLang === 'kn'
-        ? 'ದಯವಿಟ್ಟು ಸರಿಯಾದ ಹೆಸರನ್ನು ನಮೂದಿಸಿ (ಕೇವಲ ಅಕ್ಷರಗಳನ್ನು ಬಳಸಿ).'
-        : 'Please enter a valid patient name (letters only, no numbers).';
+        ? 'ದಯವಿಟ್ಟು ಸರಿಯಾದ ಹೆಸರನ್ನು ನಮೂದಿಸಿ (ಕೇವಲ ಅಕ್ಷರಗಳನ್ನು ಬಳಸಿ, ಸಂಖ್ಯೆಗಳು ಅಥವಾ ವಿಶೇಷ ಚಿಹ್ನೆಗಳಲ್ಲ).'
+        : 'Please enter a valid patient name (letters only, no numbers or special characters).';
       alert(nameMsg);
       form.patientName.focus();
       return;
