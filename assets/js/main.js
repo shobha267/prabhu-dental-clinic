@@ -971,6 +971,20 @@ function initAppointmentForm() {
 
   if (!form || !successBox) return;
 
+  // Real-time restriction: Patient Name field only accepts letters, spaces and dots (rejects numbers)
+  if (form.patientName) {
+    form.patientName.addEventListener('input', function() {
+      this.value = this.value.replace(/[\d]/g, '');
+    });
+  }
+
+  // Real-time restriction: Mobile Number field only accepts digits (rejects alphabets), max 10 digits
+  if (form.mobileNumber) {
+    form.mobileNumber.addEventListener('input', function() {
+      this.value = this.value.replace(/\D/g, '').slice(0, 10);
+    });
+  }
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -988,8 +1002,18 @@ function initAppointmentForm() {
       return;
     }
 
+    // Name validation: must contain letters and no numbers
+    if (/[\d]/.test(name) || !/[A-Za-z\u0C80-\u0CFF]/.test(name)) {
+      const nameMsg = currentLang === 'kn'
+        ? 'ದಯವಿಟ್ಟು ಸರಿಯಾದ ಹೆಸರನ್ನು ನಮೂದಿಸಿ (ಕೇವಲ ಅಕ್ಷರಗಳನ್ನು ಬಳಸಿ).'
+        : 'Please enter a valid patient name (letters only, no numbers).';
+      alert(nameMsg);
+      form.patientName.focus();
+      return;
+    }
+
     const phoneClean = phone.replace(/\D/g, '');
-    if (phoneClean.length < 10) {
+    if (phoneClean.length !== 10) {
       const phoneMsg = currentLang === 'kn'
         ? 'ದಯವಿಟ್ಟು 10 ಅಂಕಿಗಳ ಸರಿಯಾದ ಮೊಬೈಲ್ ಸಂಖ್ಯೆಯನ್ನು ನಮೂದಿಸಿ.'
         : 'Please enter a valid 10-digit mobile number.';
