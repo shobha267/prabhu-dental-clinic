@@ -281,7 +281,7 @@ const translations = {
     "app.modal_title": "Appointment Request Received!",
     "app.modal_subtitle": "Thank you for contacting Prabhu Dental Clinic. Your visit request has been recorded for our presentation prototype.",
     "app.modal_note": "This is a frontend demonstration prototype. No actual booking or payment was processed.",
-    "app.modal_btn_close": "Close Window",
+    "app.modal_btn_close": "Close",
 
     // Location & Contact Section
     "loc.tag": "Find Prabhu Dental Clinic",
@@ -596,7 +596,7 @@ const translations = {
     "app.modal_title": "ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಕೋರಿಕೆ ಸ್ವೀಕರಿಸಲಾಗಿದೆ!",
     "app.modal_subtitle": "ಪ್ರಭು ಡೆಂಟಲ್ ಕ್ಲಿನಿಕ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು. ನಿಮ್ಮ ಭೇಟಿಯ ಕೋರಿಕೆಯನ್ನು ಪ್ರದರ್ಶನಕ್ಕಾಗಿ ದಾಖಲಿಸಲಾಗಿದೆ.",
     "app.modal_note": "ಇದು ಮುಂಗಡ ಪ್ರದರ್ಶನ ಮಾದರಿಯಾಗಿದೆ. ಯಾವುದೇ ನೈಜ ಬುಕಿಂಗ್ ಅಥವಾ ಪಾವತಿ ಪ್ರಕ್ರಿಯೆಯಲ್ಲ.",
-    "app.modal_btn_close": "ಕಿಟಕಿ ಮುಚ್ಚಿ",
+    "app.modal_btn_close": "ಮುಚ್ಚಿ",
 
     // Location & Contact Section
     "loc.tag": "ಕ್ಲಿನಿಕ್ ವಿಳಾಸ",
